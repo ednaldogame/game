@@ -254,6 +254,7 @@
       </sprites>
       <sprites name="Enemies">
         <sprite>sprites\spr_jumper</sprite>
+        <sprite>sprites\spr_jumper_air</sprite>
         <sprite>sprites\spr_badnik_block</sprite>
         <sprites name="Bosses">
           <sprites name="Poodle">
@@ -314,6 +315,7 @@
           <sprite>sprites\spr_mission_card_title_bar</sprite>
         </sprites>
         <sprite>sprites\spr_dialog</sprite>
+        <sprite>sprites\spr_dialog_mugshot</sprite>
         <sprite>sprites\spr_filter_black</sprite>
         <sprite>sprites\spr_dialog_continue</sprite>
         <sprite>sprites\spr_dialog_end</sprite>
@@ -379,6 +381,11 @@
       </sprites>
       <sprites name="Startup">
         <sprite>sprites\spr_sage_startup</sprite>
+      </sprites>
+      <sprites name="Options">
+        <sprite>sprites\spr_options_sphere</sprite>
+        <sprite>sprites\spr_ednaldo_options</sprite>
+        <sprite>sprites\spr_options_tab</sprite>
       </sprites>
       <sprite>sprites\spr_UI_health</sprite>
     </sprites>
@@ -477,6 +484,7 @@
       </backgrounds>
       <backgrounds name="Main Menu">
         <background>background\bg_paraiba_ground</background>
+        <background>background\bg_options</background>
       </backgrounds>
       <backgrounds name="Mapa">
         <background>background\bg_NTZ_cave</background>
@@ -731,6 +739,7 @@
     <font>fonts\fnt_speech10</font>
     <font>fonts\Orbitron</font>
     <font>fonts\fnt_comic_12</font>
+    <font>fonts\fnt_mario64</font>
   </fonts>
   <objects name="objects">
     <objects name="STAGE ASSETS">
@@ -859,6 +868,9 @@
         </objects>
         <objects name="Startup">
           <object>objects\obj_SAGE_startup</object>
+        </objects>
+        <objects name="Options">
+          <object>objects\obj_options</object>
         </objects>
       </objects>
       <objects name="Fades">
@@ -994,6 +1006,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_options</room>
     <room>rooms\rm_chancerecords</room>
     <room>rooms\rm_CC</room>
     <room>rooms\rm_jojo</room>
