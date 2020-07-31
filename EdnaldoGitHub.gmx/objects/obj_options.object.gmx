@@ -67,6 +67,8 @@ TweenFireTo(id, EaseOutQuad, 0, false, 60, 80, "car_off", 0);
     bind_status         = 1;
     bind_key            = "";
     option_ended        = 0;
+    controller_frame = 0;
+    
 </string>
           </argument>
         </arguments>
@@ -209,11 +211,11 @@ y = ystart+lengthdir_y(12,ang_radius)
        {
            switch(bind_status)
            {
-                  case 1: { global.gmp_action  = bind_check; option_delay = 40; bind_status = 2; break; }
-                  case 2: { global.gmp_special = bind_check; option_delay = 40; bind_status = 3; break; }              
-                  case 3: { global.gmp_specialB = bind_check; option_delay = 40; bind_status = 4; break; }              
-                  case 4: { global.gmp_specialC = bind_check; option_delay = 40; bind_status = 5; break; }               
-                  case 5: { global.gmp_enter   = bind_check; option_delay = 40; bind_status = 6; break; }                                                                                        
+                  case 1: { global.gmp_action  = bind_check; controller_frame = 1; option_delay = 40; bind_status = 2; break; }
+                  case 2: { global.gmp_special = bind_check; controller_frame = 2; option_delay = 40; bind_status = 3; break; }              
+                  case 3: { global.gmp_specialB = bind_check; controller_frame = 3; option_delay = 40; bind_status = 4; break; }              
+                  case 4: { global.gmp_specialC = bind_check; controller_frame = 4; option_delay = 40; bind_status = 5; break; }               
+                  case 5: { global.gmp_enter   = bind_check; controller_frame = 0; option_delay = 40; bind_status = 6; break; }                                                                                        
            }
            
            
@@ -541,6 +543,8 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
     }
     
     draw_sprite_ext(spr_options_overlay, 0, 0, 0, 1, 1, 0, c_white, overlay_alpha);
+    draw_sprite_ext(spr_options_controller, controller_frame, global.screen_width/2, global.screen_height/2, 1, 1, 0, c_white, overlay_alpha);
+    
     if(option_bind &gt; 0)
     {
           draw_text(global.screen_width/2, global.screen_height/2, "PRESS ANY KEY FOR: "+string(bind_key))                       

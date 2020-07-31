@@ -387,6 +387,7 @@
         <sprite>sprites\spr_options_sphere</sprite>
         <sprite>sprites\spr_ednaldo_options</sprite>
         <sprite>sprites\spr_options_tab</sprite>
+        <sprite>sprites\spr_options_controller</sprite>
       </sprites>
       <sprite>sprites\spr_UI_health</sprite>
     </sprites>
@@ -1013,6 +1014,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_paraiba</room>
+    <room>rooms\rm_CC</room>
     <room>rooms\rm_options</room>
     <rooms name="Game">
       <room>rooms\rm_language</room>
@@ -1026,12 +1029,10 @@
       <room>rooms\rm_map</room>
       <rooms name="Stages">
         <room>rooms\rm_tutorial</room>
-        <room>rooms\rm_paraiba</room>
         <room>rooms\rm_shoestore</room>
         <room>rooms\rm_jojo</room>
         <room>rooms\rm_chancerecords</room>
         <room>rooms\rm_train</room>
-        <room>rooms\rm_CC</room>
         <room>rooms\rm_SAGE</room>
       </rooms>
     </rooms>

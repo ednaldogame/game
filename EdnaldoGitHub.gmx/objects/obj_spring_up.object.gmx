@@ -55,6 +55,51 @@ y_strength = -9;
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_vehicle">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if other.y_speed &gt;= 0
+{
+    with other
+    {
+        if state = STATE_GROUNDPOUND
+        {
+            groundpound_end()
+        }
+        
+        y_speed = other.y_strength;
+        jump_flag = false;
+        ground = false;
+        state = STATE_DEFAULT;
+        doubleJumping = false;
+    }
+
+    if image_index = 0
+    {
+        image_index = 1;
+        aud_play_simple(snd_spring);
+        alarm[0] = 20;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
