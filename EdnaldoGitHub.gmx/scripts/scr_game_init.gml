@@ -19,6 +19,14 @@
     global.key_specialB      = ord("D");
     global.key_specialC      = ord("W");
     global.key_enter        = vk_enter;
+    
+ // Gamepad input:
+    global.gmp_enabled      = false;
+    global.gmp_action       = 0;
+    global.gmp_special      = 0;
+    global.gmp_specialB      = 0;
+    global.gmp_specialC      = 0;
+    global.gmp_enter        = 0;
 
  // Stage.
     global.main_player = noone;
@@ -44,6 +52,7 @@
     
  // Saving System
     global.current_save = 0;
+    save_global_load();
     
     // Delete 'No Save' Save File.
         if file_exists("save00.ini")

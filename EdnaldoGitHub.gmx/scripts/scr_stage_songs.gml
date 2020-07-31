@@ -11,6 +11,8 @@
     set_song(rm_disclaimer, bgm_wii);
     set_song(rm_title_screen, bgm_title);
     set_song(rm_menu, bgm_title);
+    set_song(rm_options, bgm_title);
+
     set_song(rm_map, bgm_map);
     set_song(rm_data_select, bgm_data_select);
 

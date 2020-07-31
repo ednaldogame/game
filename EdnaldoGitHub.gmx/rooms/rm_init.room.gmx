@@ -54,6 +54,7 @@ room_goto_next()</code>
   <instances>
     <instance objName="obj_global_controller" x="16" y="0" name="inst_BD6BF35E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_SharedTweener" x="16" y="32" name="inst_C02A3F5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gamepad_controller" x="48" y="0" name="inst_2F1CE566" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

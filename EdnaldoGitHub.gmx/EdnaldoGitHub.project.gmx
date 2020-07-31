@@ -302,7 +302,7 @@
         </sprites>
       </sprites>
     </sprites>
-    <sprites name="UI">
+    <sprites name="Interface e HUD">
       <sprites name="Stages">
         <sprites name="HUD">
           <sprite>sprites\spr_UI_faces</sprite>
@@ -323,6 +323,7 @@
         <sprite>sprites\spr_torch_overlay</sprite>
         <sprite>sprites\spr_UI_wasted</sprite>
         <sprite>sprites\spr_chico_melancia</sprite>
+        <sprite>sprites\spr_options_overlay</sprite>
       </sprites>
       <sprites name="Menus">
         <sprites name="Main Menu">
@@ -649,6 +650,9 @@
         </scripts>
       </scripts>
       <script>scripts\scr_afterimage_ext.gml</script>
+      <scripts name="Gamepad">
+        <script>scripts\gamepad_check.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Player">
       <scripts name="Animation">
@@ -705,6 +709,8 @@
     <scripts name="Saving">
       <script>scripts\scr_save_game.gml</script>
       <script>scripts\scr_load_game.gml</script>
+      <script>scripts\save_global_create.gml</script>
+      <script>scripts\save_global_load.gml</script>
       <script>scripts\collectable_check.gml</script>
       <script>scripts\collectable_collect.gml</script>
     </scripts>
@@ -871,6 +877,7 @@
         </objects>
         <objects name="Options">
           <object>objects\obj_options</object>
+          <object>objects\obj_gamepad_controller</object>
         </objects>
       </objects>
       <objects name="Fades">
@@ -1007,14 +1014,6 @@
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_options</room>
-    <room>rooms\rm_chancerecords</room>
-    <room>rooms\rm_CC</room>
-    <room>rooms\rm_jojo</room>
-    <room>rooms\rm_train</room>
-    <room>rooms\rm_SAGE</room>
-    <room>rooms\rm_map</room>
-    <room>rooms\rm_tutorial</room>
-    <room>rooms\rm_paraiba</room>
     <rooms name="Game">
       <room>rooms\rm_language</room>
       <room>rooms\rm_disclaimer</room>
@@ -1024,8 +1023,16 @@
       <room>rooms\rm_intro_ingame</room>
       <room>rooms\rm_intro_spaceship</room>
       <room>rooms\rm_resistance</room>
+      <room>rooms\rm_map</room>
       <rooms name="Stages">
+        <room>rooms\rm_tutorial</room>
+        <room>rooms\rm_paraiba</room>
         <room>rooms\rm_shoestore</room>
+        <room>rooms\rm_jojo</room>
+        <room>rooms\rm_chancerecords</room>
+        <room>rooms\rm_train</room>
+        <room>rooms\rm_CC</room>
+        <room>rooms\rm_SAGE</room>
       </rooms>
     </rooms>
     <rooms name="Misc">
