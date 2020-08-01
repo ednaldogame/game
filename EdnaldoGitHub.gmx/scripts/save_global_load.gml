@@ -6,7 +6,9 @@
     {
        global.screen_scale = ini_read_real("Display",   "Scale",      1);
        global.bgm_volume   = ini_read_real("Audio", "BGMVolume",      1);       
-       global.sfx_volume   = ini_read_real("Audio", "SFXVolume",      1);          
+       global.sfx_volume   = ini_read_real("Audio", "SFXVolume",      0.5);      
+       global.voice_volume   = ini_read_real("Audio", "VoiceVolume",      1);          
+    
        global.key_up       = ini_read_real("Keyboard",  "KeyUp",      vk_up);        
        global.key_down     = ini_read_real("Keyboard",  "KeyDown",    vk_down); 
        global.key_left     = ini_read_real("Keyboard",  "KeyLeft",    vk_left);     

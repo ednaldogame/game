@@ -280,7 +280,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_background_tiled(bg_options, 0, -off*2)
+            <string>/// Draw GFX
+draw_background_tiled(bg_options, 0, -off*2)
 draw_sprite_ext(spr_options_sphere, off/2, 0, 160 + base_off, 1, 1, 0, c_white, 1)
 draw_sprite_ext(spr_ednaldo_options, 0, 18 - car_off, 7 + y, 1, 1, 0, c_white, 1)
 draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
@@ -305,16 +306,18 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           <argument>
             <kind>1</kind>
             <string>/// Draw option pages.
+    var xoff, yadd;
+    xoff = 509 + menu_off;
+    yadd = 10;
 
     draw_set_font(fnt_century_26);
     draw_set_halign(fa_left);
     draw_set_color(c_white)
-    draw_text(global.screen_width/2, 0, "SETTINGS")
-    draw_text(global.screen_width/2, global.screen_height-32, "----------------#"+string(option_description));
+    draw_text_shadowed_normal(261 + menu_off, 6, "SETTINGS")
     draw_set_color(c_white);
-    draw_set_font(fnt_normal_12); 
+    draw_set_font(fnt_normal_8); 
     draw_set_halign(fa_right);   
-    
+
     if(option_bind == 0)
     {
      
@@ -322,7 +325,7 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           if(keyboard_check_pressed(global.key_down) &amp;&amp; option_ended != 1)
           {  
              aud_play_sound(snd_menu_bleep, global.sfx_volume, 1, 0, 0);
-             if(option_selected &lt; 5)
+             if(option_selected &lt; 6)
              {
                 option_selected += 1;
              }
@@ -344,7 +347,8 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
              }
           } 
            
-       // Draw options.
+// =========== RESOLUTION
+
           if(option_selected == 0)
           {
              option_description = "- Change the Display Resolution -"
@@ -414,8 +418,11 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text(global.screen_width/2, 48, "DISPLAY RESOLUTION - ["+string(global.screen_width*global.screen_scale)+"x"+string(global.screen_height*global.screen_scale)+"]")
+          draw_text_shadowed_normal(xoff, 48 + yadd, "RESOLUTION - ["+string(global.screen_width*global.screen_scale)+"x"+string(global.screen_height*global.screen_scale)+"]")
        
+          
+// =========== BACKGROUND MUSIC
+          
           if(option_selected == 1)
           {
              option_description = "- Change the Volume for Background Music -"
@@ -443,8 +450,10 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text(global.screen_width/2, 64, "BGM VOLUME - "+string( max(floor(global.bgm_volume*100),min(0))) + "%")      
+          draw_text_shadowed_normal(xoff, 64 + yadd, "MUSIC VOL. - "+string( max(floor(global.bgm_volume*100),min(0))) + "%")      
        
+// =========== SOUND EFFECTS
+          
           if(option_selected == 2)
           {
              option_description = "- Change the Volume for Sound Effects -"
@@ -472,9 +481,42 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text(global.screen_width/2, 80, "SFX VOLUME - "+string( max(floor(global.sfx_volume*100),min(0))) + "%") 
+          draw_text_shadowed_normal(xoff, 80 + yadd, "SOUND VOL. - "+string( max(floor(global.sfx_volume*100),min(0))) + "%") 
        
+// =========== VOICE EFFECTS
+          
           if(option_selected == 3)
+          {
+             option_description = "- Change the Volume for Voice Lines -"
+             draw_set_color(c_yellow);
+             if(keyboard_check(global.key_left) &amp;&amp; option_ended != 1)
+             {
+                aud_play_sound(snd_menu_bleep, global.voice_volume, 1, 0, 0);             
+                global.voice_volume -= 0.01;
+                if(global.voice_volume &lt; 0.01)
+                {
+                   global.voice_volume = 0;
+                }
+             }
+             if(keyboard_check(global.key_right) &amp;&amp; option_ended != 1)
+             {
+                aud_play_sound(snd_menu_bleep, global.voice_volume, 1, 0, 0);             
+                global.voice_volume += 0.01;
+                if(global.voice_volume &gt;= 1)
+                {
+                   global.voice_volume = 1;
+                }                
+             }              
+          }
+          else
+          {
+             draw_set_color(c_white);
+          } 
+          draw_text_shadowed_normal(xoff, 96 + yadd, "VOICE VOL. - "+string( max(floor(global.voice_volume*100),min(0))) + "%") 
+       
+// =========== KEYBOARD
+          
+          if(option_selected == 4)
           {
              option_description = "- Change the Keyboard bindings -"
              draw_set_color(c_yellow);
@@ -488,9 +530,11 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text(global.screen_width/2, 96, "KEYBOARD BINDINGS") 
+          draw_text_shadowed_normal(xoff, 112 + yadd, "KEYBOARD BINDINGS") 
        
-          if(option_selected == 4)
+// =========== GAMEPAD
+          
+          if(option_selected == 5)
           {
              option_description = "- Change the Gamepad bindings -"
              if(obj_gamepad_controller.gmp_check == 1)
@@ -515,9 +559,11 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text(global.screen_width/2, 112, "GAMEPAD BINDINGS") 
+          draw_text_shadowed_normal(xoff, 128 + yadd, "GAMEPAD BINDINGS") 
+          
+// =========== EXIT
                            
-          if(option_selected == 5)
+          if(option_selected == 6)
           {
              option_description = "- Return to the Title Screen -"
              draw_set_color(c_yellow);
@@ -538,16 +584,35 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text(global.screen_width/2, global.screen_height-48, "EXIT")                  
+          draw_text_shadowed_normal(xoff, global.screen_height-38, "EXIT")                  
         
     }
+    
+// ============== OPTION DESCRIPTION
+    
+    draw_set_font(fnt_century_8);
+    draw_set_halign(fa_left);
+    draw_sprite(spr_black_bar, 0, 0, 266);
+    draw_text_shadowed(2, 269, option_description);
+    
+    if option_selected &lt; 4
+    {
+        draw_key(398, 267, "LEFT");
+        draw_key(421, 267, "RIGHT");
+    }
+    
+    draw_key(444, 267, "UP")
+    draw_key(467, 267, "DOWN")
+    draw_key(490, 267, "ENTER")
+        
+// =========== GAMEPAD
     
     draw_sprite_ext(spr_options_overlay, 0, 0, 0, 1, 1, 0, c_white, overlay_alpha);
     draw_sprite_ext(spr_options_controller, controller_frame, global.screen_width/2, global.screen_height/2, 1, 1, 0, c_white, overlay_alpha);
     
     if(option_bind &gt; 0)
     {
-          draw_text(global.screen_width/2, global.screen_height/2, "PRESS ANY KEY FOR: "+string(bind_key))                       
+          draw_text_shadowed_normal(global.screen_width/2, global.screen_height/2, "PRESS ANY KEY FOR: "+string(bind_key))                       
     }
     draw_set_halign(-1);
 </string>
