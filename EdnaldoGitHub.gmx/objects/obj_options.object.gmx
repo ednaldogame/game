@@ -128,14 +128,14 @@ y = ystart+lengthdir_y(12,ang_radius)
        }       
        switch(bind_status)
        {
-              case 1: { bind_key = "UP";      break; }
-              case 2: { bind_key = "DOWN";    break; }
-              case 3: { bind_key = "LEFT";    break; }
-              case 4: { bind_key = "RIGHT";   break; }
-              case 5: { bind_key = "ACTION A";  break; }
-              case 6: { bind_key = "ACTION S"; break; }
-              case 7: { bind_key = "ACTION D"; break; }
-              case 8: { bind_key = "ACTION W"; break; }
+              case 1: { bind_key = text("UP", "CIMA");      break; }
+              case 2: { bind_key = text("DOWN", "BAIXO");    break; }
+              case 3: { bind_key = text("LEFT", "ESQUERDA");    break; }
+              case 4: { bind_key = text("RIGHT", "DIREITA");   break; }
+              case 5: { bind_key = text("ACTION A", "TECLA A");  break; }
+              case 6: { bind_key = text("ACTION S", "TECLA S"); break; }
+              case 7: { bind_key = text("ACTION D", "TECLA D"); break; }
+              case 8: { bind_key = text("ACTION W", "TECLA W"); break; }
               case 9: { bind_key = "ENTER";   break; }
        }       
        if(option_delay == 0)
@@ -156,6 +156,8 @@ y = ystart+lengthdir_y(12,ang_radius)
                   case 8: { global.key_specialC = bind_check; option_delay = 30; bind_status = 9; keyboard_clear(vk_anykey);  break; }      
                   case 9: { global.key_enter   = bind_check; option_delay = 30; bind_status = 10; keyboard_clear(vk_anykey);  break; }                                                                                      
            }
+           
+           aud_play_simple(snd_menu_accept);
        }       
     }
     
@@ -197,10 +199,10 @@ y = ystart+lengthdir_y(12,ang_radius)
        }       
        switch(bind_status)
        {
-              case 1: { bind_key = "ACTION A";   break; }
-              case 2: { bind_key = "ACTION S";  break; }
-              case 3: { bind_key = "ACTION D";  break; }
-              case 4: { bind_key = "ACTION W";  break; }
+              case 1: { bind_key = text("ACTION A", "AÇÃO A");   break; }
+              case 2: { bind_key = text("ACTION S", "AÇÃO S");  break; }
+              case 3: { bind_key = text("ACTION D", "AÇÃO D");  break; }
+              case 4: { bind_key = text("ACTION W", "AÇÃO W");  break; }
               case 5: { bind_key = "ENTER";    break; }
        }       
        if(option_delay == 0)
@@ -313,7 +315,7 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
     draw_set_font(fnt_century_26);
     draw_set_halign(fa_left);
     draw_set_color(c_white)
-    draw_text_shadowed_normal(261 + menu_off, 6, "SETTINGS")
+    draw_text_shadowed_normal(261 + menu_off, 6, text("SETTINGS", "CONFIGURAÇÕES"))
     draw_set_color(c_white);
     draw_set_font(fnt_normal_8); 
     draw_set_halign(fa_right);   
@@ -351,7 +353,7 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
 
           if(option_selected == 0)
           {
-             option_description = "- Change the Display Resolution -"
+             option_description = text("- Change the Display Resolution -", "- Altere a resolução da tela -")
              draw_set_color(c_yellow);
              if(keyboard_check_pressed(global.key_left) &amp;&amp; option_ended != 1)
              {
@@ -418,14 +420,14 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text_shadowed_normal(xoff, 48 + yadd, "RESOLUTION - ["+string(global.screen_width*global.screen_scale)+"x"+string(global.screen_height*global.screen_scale)+"]")
+          draw_text_shadowed_normal(xoff, 48 + yadd, text("RESOLUTION - [", "RESOLUÇÃO - [")+string(global.screen_width*global.screen_scale)+"x"+string(global.screen_height*global.screen_scale)+"]")
        
           
 // =========== BACKGROUND MUSIC
           
           if(option_selected == 1)
           {
-             option_description = "- Change the Volume for Background Music -"
+             option_description = text("- Change the Volume for Background Music -", "- Altere o volume da música de fundo -")
              draw_set_color(c_yellow);
              if(keyboard_check(global.key_left) &amp;&amp; option_ended != 1)
              {
@@ -450,13 +452,13 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text_shadowed_normal(xoff, 64 + yadd, "MUSIC VOL. - "+string( max(floor(global.bgm_volume*100),min(0))) + "%")      
+          draw_text_shadowed_normal(xoff, 64 + yadd, text("MUSIC VOLUME - ", "VOLUME DA MÚSICA - ")+string( max(floor(global.bgm_volume*100),min(0))) + "%")      
        
 // =========== SOUND EFFECTS
           
           if(option_selected == 2)
           {
-             option_description = "- Change the Volume for Sound Effects -"
+             option_description = text("- Change the Volume for Sound Effects -", "- Altere o volume dos efeitos sonoros -")
              draw_set_color(c_yellow);
              if(keyboard_check(global.key_left) &amp;&amp; option_ended != 1)
              {
@@ -481,13 +483,13 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text_shadowed_normal(xoff, 80 + yadd, "SOUND VOL. - "+string( max(floor(global.sfx_volume*100),min(0))) + "%") 
+          draw_text_shadowed_normal(xoff, 80 + yadd, text("SOUND VOLUME - ", "VOLUME DE SOM -") + string( max(floor(global.sfx_volume*100),min(0))) + "%") 
        
 // =========== VOICE EFFECTS
           
           if(option_selected == 3)
           {
-             option_description = "- Change the Volume for Voice Lines -"
+             option_description = text("- Change the Volume for Voice Lines -", "- Altere o volume das linhas de voz -")
              draw_set_color(c_yellow);
              if(keyboard_check(global.key_left) &amp;&amp; option_ended != 1)
              {
@@ -512,44 +514,46 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text_shadowed_normal(xoff, 96 + yadd, "VOICE VOL. - "+string( max(floor(global.voice_volume*100),min(0))) + "%") 
+          draw_text_shadowed_normal(xoff, 96 + yadd, text("VOICE VOLUME - ", "VOLUME DE VOZ -")+string( max(floor(global.voice_volume*100),min(0))) + "%") 
        
 // =========== KEYBOARD
           
           if(option_selected == 4)
           {
-             option_description = "- Change the Keyboard bindings -"
+             option_description = text("- Change the Keyboard bindings -", "- Altere as teclas do teclado -")
              draw_set_color(c_yellow);
-             if(keyboard_check_pressed(global.key_action) &amp;&amp; option_ended != 1)
+             if((keyboard_check_pressed(global.key_action)) &amp;&amp; option_ended != 1)
              {
                 option_delay = 30;
                 option_bind  = 1;
+                aud_play_simple(snd_menu_accept);
              }
           }
           else
           {
              draw_set_color(c_white);
           } 
-          draw_text_shadowed_normal(xoff, 112 + yadd, "KEYBOARD BINDINGS") 
+          draw_text_shadowed_normal(xoff, 112 + yadd, text("KEYBOARD BINDINGS", "TECLAS NO TECLADO")) 
        
 // =========== GAMEPAD
           
           if(option_selected == 5)
           {
-             option_description = "- Change the Gamepad bindings -"
+             option_description = text("- Change the Gamepad bindings -", "- Altere as config. do Gamepad -")
              if(obj_gamepad_controller.gmp_check == 1)
              {
                 draw_set_color(c_yellow);
-                if(keyboard_check_pressed(global.key_action) &amp;&amp; option_ended != 1)
+                if((keyboard_check_pressed(global.key_action)) &amp;&amp; option_ended != 1)
                 {
                    option_delay = 30;
                    option_bind  = 2;
+                   aud_play_simple(snd_menu_accept);
                 }            
              }
              else
              {
                 draw_set_color(c_red);    
-                if(keyboard_check_pressed(global.key_action) &amp;&amp; option_ended != 1)
+                if((keyboard_check_pressed(global.key_action)) &amp;&amp; option_ended != 1)
                 {
                    aud_play_sound(snd_hurt, global.sfx_volume, 1, 0, 0);   
                 }            
@@ -559,15 +563,15 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text_shadowed_normal(xoff, 128 + yadd, "GAMEPAD BINDINGS") 
+          draw_text_shadowed_normal(xoff, 128 + yadd, text("GAMEPAD BINDINGS", " CONFIG. DO CONTROLE")) 
           
 // =========== EXIT
                            
           if(option_selected == 6)
           {
-             option_description = "- Return to the Title Screen -"
+             option_description = text("- Return to the Title Screen -", "- Retorne à tela de título -")
              draw_set_color(c_yellow);
-             if(keyboard_check_pressed(global.key_action) &amp;&amp; option_ended != 1)
+             if((keyboard_check_pressed(global.key_action)) &amp;&amp; option_ended != 1)
              {
                 if(instance_exists(objFadeToValue) == false)
                 {                   
@@ -576,6 +580,7 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
                    {
                         value = rm_title_screen;
                    }
+                   aud_play_simple(snd_menu_accept);
                    save_global_create();
                 }
              }
@@ -584,7 +589,7 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           {
              draw_set_color(c_white);
           } 
-          draw_text_shadowed_normal(xoff, global.screen_height-38, "EXIT")                  
+          draw_text_shadowed_normal(xoff, global.screen_height-38, text("EXIT", "SAIR"))                  
         
     }
     
@@ -603,17 +608,26 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
     
     draw_key(444, 267, "UP")
     draw_key(467, 267, "DOWN")
-    draw_key(490, 267, "ENTER")
+    draw_key(490, 267, "A")
         
 // =========== GAMEPAD
     
     draw_sprite_ext(spr_options_overlay, 0, 0, 0, 1, 1, 0, c_white, overlay_alpha);
-    draw_sprite_ext(spr_options_controller, controller_frame, global.screen_width/2, global.screen_height/2, 1, 1, 0, c_white, overlay_alpha);
     
-    if(option_bind &gt; 0)
+    if (option_bind = 1)
     {
-          draw_text_shadowed_normal(global.screen_width/2, global.screen_height/2, "PRESS ANY KEY FOR: "+string(bind_key))                       
+        draw_set_halign(fa_center);
+        draw_text_shadowed_normal(global.screen_width/2, global.screen_height/2, text("PRESS ANY KEY FOR: ", "PRESSIONE QUALQUER TECLA PARA: ")+string(bind_key));                       
     }
+    
+    if(option_bind = 2)
+    {
+        draw_set_halign(fa_left);
+        draw_set_font(fnt_century_8);
+        draw_sprite_ext(spr_options_controller, controller_frame, global.screen_width/2, global.screen_height/2, 1, 1, 0, c_white, overlay_alpha);
+        draw_text_shadowed_normal(2, 269, text("PRESS ANY KEY FOR: ", "PRESSIONE QUALQUER BOTÃO NO SEU CONTROLE PARA: ")+string(bind_key))                       
+    }
+    
     draw_set_halign(-1);
 </string>
           </argument>

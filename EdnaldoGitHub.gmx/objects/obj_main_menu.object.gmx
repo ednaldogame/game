@@ -31,11 +31,12 @@ previous_image = 0;
 ednaldo_off = 512;
 shadow_off = 512;
 bar_alpha = 0;
+sidebar_x = 600;
 
 TweenFireTo(id, EaseInOutQuad, 0, false, 30, 80, "ednaldo_off", 0);
 TweenFireTo(id, EaseInOutQuad, 0, false, 60, 80, "shadow_off", 0);
 TweenFireTo(id, EaseInOutQuad, 0, false, 100, 60, "bar_alpha", 1);
-
+TweenFireTo(id, EaseInOutQuad, 0, false, 130, 60, "sidebar_x", 423);
 
 current_alpha = 1;
 current_option = 0;
@@ -306,6 +307,11 @@ var i;
     draw_set_halign(fa_left);
     draw_set_color(c_white);
     draw_text(8, 243, string(GAME_NAME) + "#" + string(GAME_VERSION));
+    
+    draw_sprite(spr_small_sidebar, -1, sidebar_x, 6)
+    draw_key(sidebar_x + 9, 2, "UP")
+    draw_key(sidebar_x + 32, 2, "DOWN")
+    draw_key(sidebar_x + 55, 2, "ENTER")
 </string>
           </argument>
         </arguments>

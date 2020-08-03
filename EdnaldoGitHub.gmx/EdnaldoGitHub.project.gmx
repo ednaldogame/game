@@ -313,6 +313,7 @@
           <sprite>sprites\spr_mission_card_main_mission</sprite>
           <sprite>sprites\spr_mission_card_side_mission</sprite>
           <sprite>sprites\spr_mission_card_title_bar</sprite>
+          <sprite>sprites\spr_small_sidebar</sprite>
         </sprites>
         <sprite>sprites\spr_dialog</sprite>
         <sprite>sprites\spr_dialog_mugshot</sprite>
