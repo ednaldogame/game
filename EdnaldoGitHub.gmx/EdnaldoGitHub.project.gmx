@@ -91,6 +91,9 @@
       <sound>sound\snd_score_total</sound>
       <sound>sound\snd_gun_fast</sound>
       <sound>sound\snd_type_fast</sound>
+      <sound>sound\snd_camera_zoom_in</sound>
+      <sound>sound\snd_camera_zoom_out</sound>
+      <sound>sound\snd_camera_click</sound>
     </sounds>
     <sounds name="BGM">
       <sound>sound\bgm_paraiba</sound>
@@ -203,6 +206,8 @@
         <sprite>sprites\spr_collision_slope_2</sprite>
         <sprite>sprites\spr_collision_hill</sprite>
         <sprite>sprites\spr_collision_hill_2</sprite>
+        <sprite>sprites\spr_collision_slope_3</sprite>
+        <sprite>sprites\spr_collision_slope_4</sprite>
       </sprites>
       <sprite>sprites\spr_camera</sprite>
       <sprite>sprites\sprBossStartplace</sprite>
@@ -214,6 +219,7 @@
     <sprites name="ASSETS">
       <sprites name="Mechanics">
         <sprite>sprites\spr_collectable</sprite>
+        <sprite>sprites\spr_camera_finder</sprite>
         <sprite>sprites\spr_watermelon</sprite>
         <sprite>sprites\spr_letters</sprite>
         <sprites name="Letters">
@@ -232,6 +238,7 @@
         <sprite>sprites\spr_golden_note_empty</sprite>
         <sprite>sprites\spr_golden_note_collected</sprite>
         <sprite>sprites\spr_portal</sprite>
+        <sprite>sprites\spr_portal_open</sprite>
         <sprite>sprites\spr_torch_post_activated</sprite>
         <sprite>sprites\spr_torch_post_activates</sprite>
         <sprite>sprites\spr_torch_post</sprite>
@@ -357,6 +364,7 @@
       </sprites>
       <sprites name="Data Select">
         <sprite>sprites\spr_data_box</sprite>
+        <sprite>sprites\spr_data_box_segmented</sprite>
       </sprites>
       <sprites name="Cutscenes">
         <sprite>sprites\spr_intro_scene_01</sprite>
@@ -392,6 +400,8 @@
       </sprites>
       <sprite>sprites\spr_UI_health</sprite>
       <sprite>sprites\spr_black_bar</sprite>
+      <sprite>sprites\spr_stage_icon_outline</sprite>
+      <sprite>sprites\spr_stage_icons</sprite>
     </sprites>
     <sprites name="VFX">
       <sprites name="Stage">
@@ -468,6 +478,9 @@
       <backgrounds name="Cidade Capital">
         <background>background\tl_cidadecapital</background>
       </backgrounds>
+      <backgrounds name="Chance Records">
+        <background>background\tiles_chancerecords</background>
+      </backgrounds>
     </backgrounds>
     <backgrounds name="Backgrounds">
       <backgrounds name="Paraiba">
@@ -476,6 +489,7 @@
         <background>background\bg_paraiba_clouds_front</background>
         <background>background\bg_paraiba_clouds</background>
         <background>background\bg_paraiba_mountains</background>
+        <background>background\bg_ghz_water_outline</background>
         <background>background\bg_ghz_parallax_water_1</background>
         <background>background\bg_ghz_parallax_water_2</background>
         <background>background\bg_ghz_parallax_water_3</background>
@@ -654,6 +668,10 @@
         </scripts>
       </scripts>
       <script>scripts\scr_afterimage_ext.gml</script>
+      <script>scripts\string_make_width.gml</script>
+      <script>scripts\scr_tear_apart.gml</script>
+      <script>scripts\scr_draw_background_tiled_area.gml</script>
+      <script>scripts\scr_lightsource.gml</script>
       <scripts name="Gamepad">
         <script>scripts\gamepad_check.gml</script>
       </scripts>
@@ -730,10 +748,6 @@
       <script>scripts\wrap_angle.gml</script>
       <script>scripts\rotate_towards.gml</script>
     </scripts>
-    <script>scripts\string_make_width.gml</script>
-    <script>scripts\scr_tear_apart.gml</script>
-    <script>scripts\scr_lightsource.gml</script>
-    <script>scripts\scr_draw_background_tiled_area.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_normal_12</font>
@@ -756,6 +770,7 @@
       <objects name="Main">
         <object>objects\obj_collectable</object>
         <object>objects\obj_endstage_portal</object>
+        <object>objects\obj_camera_finder</object>
         <object>objects\obj_watermelon</object>
         <objects name="Letters">
           <object>objects\par_letter</object>
@@ -950,6 +965,8 @@
         <object>objects\obj_collision_platform</object>
         <object>objects\obj_collision_hill_1</object>
         <object>objects\obj_collision_hill_2</object>
+        <object>objects\obj_collision_slope_3</object>
+        <object>objects\obj_collision_slope_4</object>
         <object>objects\obj_collision_slope_1</object>
         <object>objects\obj_collision_slope_2</object>
       </objects>
@@ -1017,7 +1034,6 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_options</room>
     <rooms name="Game">
       <room>rooms\rm_language</room>
       <room>rooms\rm_disclaimer</room>
@@ -1029,9 +1045,9 @@
       <room>rooms\rm_resistance</room>
       <room>rooms\rm_map</room>
       <rooms name="Stages">
+        <room>rooms\rm_tutorial</room>
         <room>rooms\rm_paraiba</room>
         <room>rooms\rm_CC</room>
-        <room>rooms\rm_tutorial</room>
         <room>rooms\rm_shoestore</room>
         <room>rooms\rm_jojo</room>
         <room>rooms\rm_chancerecords</room>
@@ -1043,6 +1059,7 @@
       <room>rooms\rm_ednaldo_prologue</room>
       <room>rooms\rm_tests</room>
       <room>rooms\rm_template</room>
+      <room>rooms\rm_options</room>
     </rooms>
     <room>rooms\room14</room>
   </rooms>

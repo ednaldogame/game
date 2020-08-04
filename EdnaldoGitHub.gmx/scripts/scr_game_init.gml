@@ -3,6 +3,8 @@
     global.stages_unlocked = 3;
     global.MissionName = "";
     global.angle_mode = 1;
+    global.last_icon = 0;
+    global.letter_order = false;
     
  // Language
     global.lang = LANG_PORTUGUESE;

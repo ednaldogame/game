@@ -46,7 +46,10 @@
     starty = 0;
     var OverallYOffset; OverallYOffset = 0.96;
 
-    scr_parallax_add_node(3, bg_resistencia, 0.85, 0, 0, 0, 0,           0.8, 0, 0, 0, 0, 0, 0, -1, -1);
+    scr_parallax_add_node(3, bg_NTZ_starview, 0.999, -0.5, 0, 0, 0,           0.98, -0.05, 0, 0, 0, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_NTZ_clouds_bg, 0.998, -0.1, 0, 0, 0,           0.96, 0, 0, 215, 0, 0, 0, -1, -1);
+    scr_parallax_add_node(3, bg_NTZ_cave, 0.997, -0.1, 0, 0, 0,           0.94, 0, 0, 0, 0, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_NTZ_clouds_fg, 0.996, -0.2, 0, 0, 0,           0.90, 0, 0, 222, 0, 0, 0, -1, -1);
     ang_radius = 0;
 </string>
           </argument>
@@ -54,6 +57,20 @@
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -70,10 +87,47 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ang_radius +=2;
-y = starty+lengthdir_y(16,ang_radius)
+            <string>ang_radius +=1;
+y = starty+lengthdir_y(8,ang_radius)
 
 generalParallaxYOffset = y;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_background_tiled(bg_resistencia, view_xview[0] * 0.75, view_yview[0] * 0.75)
 </string>
           </argument>
         </arguments>

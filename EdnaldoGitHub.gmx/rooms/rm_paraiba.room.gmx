@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
-  <colour>4077633</colour>
+  <colour>8484230</colour>
   <showcolour>-1</showcolour>
   <code>global.MissionName = text(
 "Guarabira - Deja Vú",
@@ -129,7 +129,6 @@ global.SideObjectives = text(
     <instance objName="obj_collectable" x="2656" y="864" name="inst_7AD259F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_jumper" x="2576" y="1120" name="inst_3B5F0CCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_jumper" x="2688" y="1440" name="inst_3EFB75D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_jumper" x="3888" y="662" name="inst_C2AC01B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="3551" y="1456" name="inst_CB753DE7" locked="0" code="y_strength = -16;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="3168" y="1872" name="inst_015D3CEF" locked="0" code="y_strength = -30;&#xA;" scaleX="12.8596487045288" scaleY="3.52631568908691" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="2032" y="1520" name="inst_EBAD66BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -151,9 +150,6 @@ global.SideObjectives = text(
     <instance objName="obj_collectable" x="2976" y="688" name="inst_1090C4AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="3008" y="688" name="inst_97B78A32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="3040" y="688" name="inst_EB70FBC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collectable" x="3232" y="624" name="inst_78C360E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collectable" x="3264" y="624" name="inst_80C732D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collectable" x="3296" y="624" name="inst_99B3CBAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="2656" y="1008" name="inst_F9376D09" locked="0" code="y_strength = -15;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="2720" y="1104" name="inst_3F70F615" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="2720" y="1072" name="inst_665898BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -168,7 +164,7 @@ global.SideObjectives = text(
     <instance objName="obj_letter_e" x="2032" y="1744" name="inst_5B4CCCAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_d_1" x="2592" y="738" name="inst_BD846B48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_n" x="2848" y="1088" name="inst_3A1F29BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_letter_a" x="3968" y="643" name="inst_31DE840A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_letter_a" x="3981" y="658" name="inst_31DE840A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_l" x="8092" y="331" name="inst_684CA952" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_d_2" x="4984" y="985" name="inst_48067406" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_o" x="7687" y="1718" name="inst_27318EE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -403,14 +399,14 @@ global.SideObjectives = text(
     <instance objName="obj_collectable" x="7328" y="1184" name="inst_D5937F9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="7360" y="1184" name="inst_EFF6F5A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="7392" y="1184" name="inst_88489A25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_waterfall" x="3840" y="576" name="inst_21FC3221" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_waterfall" x="3904" y="576" name="inst_21FC3221" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3776" y="576" name="inst_7C1776B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3712" y="576" name="inst_B103E9E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3712" y="448" name="inst_F5E44160" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3776" y="448" name="inst_4E31BAEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3840" y="448" name="inst_DA6A8514" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3968" y="576" name="inst_296A41F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_waterfall" x="3904" y="576" name="inst_DF3519B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_waterfall" x="3840" y="576" name="inst_DF3519B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3904" y="448" name="inst_BE661C87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3968" y="448" name="inst_923A092E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3712" y="320" name="inst_B907E7DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -536,12 +532,11 @@ global.SideObjectives = text(
     <instance objName="obj_torch_post" x="3103" y="1536" name="inst_864FBE34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch_post" x="675" y="1280" name="inst_36812426" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch_post" x="2779" y="768" name="inst_2E6D963A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_torch_post" x="3577" y="704" name="inst_9793C728" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_torch_post" x="4391" y="1343" name="inst_C834043F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_torch_post" x="4391" y="1344" name="inst_C834043F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch_post" x="7122" y="1408" name="inst_D4C1EA8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_torch_post" x="8558" y="383" name="inst_46C09808" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_torch_post" x="8943" y="383" name="inst_69EFA284" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_torch_post" x="5697" y="639" name="inst_E6953B5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_torch_post" x="8558" y="384" name="inst_46C09808" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_torch_post" x="8943" y="384" name="inst_69EFA284" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_torch_post" x="5697" y="640" name="inst_E6953B5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="9747" y="-79" name="inst_18DBE5E2" locked="0" code="" scaleX="0.200000002980232" scaleY="8.015625" colour="4294967295" rotation="0"/>
     <instance objName="obj_boss_wall" x="10112" y="1344" name="inst_D172892A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boss_wall" x="10112" y="1408" name="inst_52D4D920" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -630,8 +625,45 @@ global.SideObjectives = text(
     <instance objName="obj_collision_basic" x="11968" y="1216" name="inst_C76A8522" locked="0" code="" scaleX="5" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_hill_1" x="12288" y="1216" name="inst_63ECF380" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="12544" y="1280" name="inst_CBF1D6AB" locked="0" code="" scaleX="5" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="obj_camera_finder" x="3265" y="613" name="inst_43BA77B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_torch_post" x="3572" y="704" name="inst_BD0B0494" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_jumper" x="3902" y="684" name="inst_D51A8CCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
+    <tile bgName="tiles_paraiba" x="1600" y="1472" w="64" h="64" xo="192" yo="320" id="10012738" name="inst_00DA549A" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="1856" y="1728" w="64" h="64" xo="192" yo="320" id="10012739" name="inst_C55923C7" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="1792" y="1728" w="64" h="64" xo="192" yo="320" id="10012740" name="inst_B83F6B44" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="1920" y="1792" w="64" h="64" xo="192" yo="320" id="10012741" name="inst_268404D8" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="1728" y="1600" w="64" h="64" xo="192" yo="320" id="10012743" name="inst_29D542F4" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="1664" y="1600" w="64" h="64" xo="192" yo="320" id="10012744" name="inst_92456B48" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="2752" y="768" w="64" h="64" xo="192" yo="320" id="10012745" name="inst_42EBCDE0" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="4032" y="704" w="64" h="64" xo="192" yo="320" id="10012746" name="inst_3E52C93B" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="4544" y="640" w="64" h="64" xo="192" yo="320" id="10012748" name="inst_2F6EA8F3" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="4608" y="640" w="64" h="64" xo="192" yo="320" id="10012749" name="inst_8E5A281E" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="4672" y="640" w="64" h="64" xo="192" yo="320" id="10012750" name="inst_548FA5D9" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="4864" y="640" w="64" h="64" xo="192" yo="320" id="10012751" name="inst_EF286CFC" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5312" y="640" w="64" h="64" xo="192" yo="320" id="10012755" name="inst_D61ECE4E" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5248" y="640" w="64" h="64" xo="192" yo="320" id="10012756" name="inst_25AF15BC" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5120" y="640" w="64" h="64" xo="192" yo="320" id="10012757" name="inst_598A61E0" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5056" y="1024" w="64" h="64" xo="192" yo="320" id="10012758" name="inst_7E6FE78F" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5504" y="1408" w="64" h="64" xo="64" yo="320" id="10012760" name="inst_A52C6459" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7552" y="1664" w="64" h="64" xo="192" yo="320" id="10012761" name="inst_0FBB2168" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7616" y="1728" w="64" h="64" xo="192" yo="320" id="10012762" name="inst_2C247604" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7616" y="1792" w="64" h="64" xo="192" yo="320" id="10012763" name="inst_31CC067A" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="8768" y="1792" w="64" h="64" xo="192" yo="320" id="10012764" name="inst_D859F2B8" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="8256" y="1472" w="64" h="64" xo="192" yo="320" id="10012765" name="inst_C9C9063E" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="8256" y="1600" w="64" h="64" xo="192" yo="320" id="10012766" name="inst_683661AE" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="8832" y="384" w="64" h="64" xo="192" yo="320" id="10012767" name="inst_9FE2BD96" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7232" y="1408" w="64" h="64" xo="192" yo="320" id="10012768" name="inst_02CB35E1" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6976" y="1408" w="64" h="64" xo="64" yo="320" id="10012770" name="inst_5B768CED" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="3264" y="1536" w="64" h="64" xo="128" yo="320" id="10012771" name="inst_61743D2D" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="3456" y="1472" w="64" h="64" xo="192" yo="320" id="10012772" name="inst_A810E30A" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="3520" y="1472" w="64" h="64" xo="192" yo="320" id="10012773" name="inst_482BC530" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="3584" y="1216" w="64" h="64" xo="192" yo="320" id="10012774" name="inst_71367CAE" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="4352" y="1344" w="64" h="64" xo="192" yo="320" id="10012775" name="inst_1BA0C4B2" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5056" y="1344" w="64" h="64" xo="192" yo="320" id="10012776" name="inst_543AA447" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7360" y="1408" w="64" h="64" xo="64" yo="320" id="10012777" name="inst_C7475621" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7296" y="1408" w="64" h="64" xo="192" yo="320" id="10012778" name="inst_C549EC37" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="5952" y="768" w="64" h="64" xo="128" yo="320" id="10001842" name="inst_D3048FC9" depth="111" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="5952" y="832" w="64" h="64" xo="128" yo="320" id="10001843" name="inst_2A8C92F2" depth="111" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="5952" y="896" w="64" h="64" xo="128" yo="320" id="10001844" name="inst_35D07CCF" depth="111" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -3033,6 +3065,8 @@ global.SideObjectives = text(
     <tile bgName="tiles_paraiba" x="3520" y="1664" w="64" h="64" xo="64" yo="512" id="10009960" name="inst_54ACBFE7" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="3520" y="1600" w="64" h="64" xo="64" yo="512" id="10009961" name="inst_15E4ACD6" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="3520" y="1536" w="64" h="64" xo="64" yo="512" id="10009962" name="inst_399B2B3D" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="3200" y="640" w="64" h="64" xo="0" yo="320" id="10012788" name="inst_6F58F39C" depth="-2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="3264" y="640" w="64" h="64" xo="0" yo="320" id="10012789" name="inst_F9CA7817" depth="-2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

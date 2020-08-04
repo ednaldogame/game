@@ -146,6 +146,11 @@ alarm[0] = 3.75;
         ax = 0.875 - (a * 0.05);
         ay = 0.125 + (a * 0.05);
         scr_draw_background_tiled_area(sea_back, 0, a * 16, view_xview[view_current] * ax, view_yview[0] * 0.97 + (a * 16) + 234, view_xview[view_current] * ay + view_wview, 16);
+        
+        if a &lt;= 1
+        {
+            scr_draw_background_tiled_area(bg_ghz_water_outline, 0, a * 16, view_xview[view_current] * ax, view_yview[0] * 0.97 + (a * 16) + 234, view_xview[view_current] * ay + view_wview, 5);
+        }
     }
 </string>
           </argument>

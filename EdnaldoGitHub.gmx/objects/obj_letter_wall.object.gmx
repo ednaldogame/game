@@ -81,6 +81,8 @@
             <string>if !instance_exists(par_letter) &amp;&amp; destroy = false
 {
     destroy = true;
+    scr_display_message(0, text("YOU GOT ALL LETTERS!#HEAD ON TO THE EXIT OF THE STAGE.", "VOCÊ PEGOU TODAS LETRAS!#PROSSIGA AO FIM DA FASE."))
+    aud_play_simple(snd_event);
     
     with obj_player
     {

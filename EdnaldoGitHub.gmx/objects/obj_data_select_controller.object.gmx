@@ -35,6 +35,11 @@ data_text[2] = "";
 data_text[3] = "";
 data_text[4] = "";
 
+data_icon[1] = 0;
+data_icon[2] = 0;
+data_icon[3] = 0;
+data_icon[4] = 0;
+
 option_min = 0;
 option_max = 3;
 current_option = 1;
@@ -52,6 +57,78 @@ TweenFire(id, EaseInOutQuad, 0, false, 120, 60, "save_alpha", 0, 1);
         file_delete("save00.ini")
     }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>10</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Handle Files.
+var i;
+for (i = 0; i &lt; 5; i += 1)
+{
+    if !file_exists("save0" + string(i) + ".ini")
+    {
+        data_text[i] = text("File 0" + string(i) + " is empty.", "Arquivo 0" + string(i) + " está vazio.")
+        data_icon[i] = 0;
+    }
+    else
+    {
+        ini_open("save0" + string(i) + ".ini")
+            var createdate;  
+            createdate = ini_read_string("Misc","createdate","----");
+            
+            var stages;  
+            stages = ini_read_real("Values","stages_unlocked",global.stages_unlocked);
+            
+            data_icon[i] = ini_read_real("Values", "last_icon", 0)
+        ini_close();
+    
+        data_text[i] = text(
+        "File 0" + string(i) + " - " + string(stages) + " stages unlocked.#Created In: " + string(createdate),
+        "Arquivo 0" + string(i) + " - " + string(stages) + " fases desbloqueadas.#Criado em: " + string(createdate));
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -140,29 +217,7 @@ TweenFire(id, EaseInOutQuad, 0, false, 120, 60, "save_alpha", 0, 1);
     }
 }
 
-/// Handle File Names.
-var i;
-for (i = 0; i &lt; 5; i += 1)
-{
-    if !file_exists("save0" + string(i) + ".ini")
-    {
-        data_text[i] = text("File 0" + string(i) + " is empty.", "Arquivo 0" + string(i) + " está vazio.")
-    }
-    else
-    {
-        ini_open("save0" + string(i) + ".ini")
-        var createdate;  
-        createdate = ini_read_string("Misc","createdate","----");
-        
-        var stages;  
-        stages = ini_read_real("Values","stages_unlocked",global.stages_unlocked);
-        ini_close();
-    
-        data_text[i] = text(
-        "File 0" + string(i) + " - " + string(stages) + " stages unlocked.#Created In: " + string(createdate),
-        "Arquivo 0" + string(i) + " - " + string(stages) + " fases desbloqueadas.#Criado em: " + string(createdate));
-    }
-}
+
 </string>
           </argument>
         </arguments>
@@ -189,17 +244,24 @@ for (i = 0; i &lt; 5; i += 1)
 draw_set_color(c_white);
 draw_set_font(fnt_normal_8)
 
+// No Save File
 draw_sprite_ext(spr_data_box, option_highlighted[0], 5, 31, 1, 1, 0, c_white, save_alpha)
 draw_text(11, 39, text("PLAY WITHOUT SAVING", "JOGAR SEM SALVAR"))
 
-draw_sprite_ext(spr_data_box, option_highlighted[1], 5, 91, 1, 1, 0, c_white, save_alpha)
-draw_text(11, 99, string(data_text[1]))
+// Save 1
+draw_sprite_ext(spr_data_box_segmented, option_highlighted[1], 5, 91, 1, 1, 0, c_white, save_alpha)
+draw_sprite_ext(spr_stage_icons, data_icon[1], 28, 91 + 23, 0.5, 0.5, 0, c_white, save_alpha)
+draw_text(11 + 45, 99, string(data_text[1]))
 
-draw_sprite_ext(spr_data_box, option_highlighted[2], 5, 151, 1, 1, 0, c_white, save_alpha)
-draw_text(11, 159, string(data_text[2]))
+// Save 2
+draw_sprite_ext(spr_data_box_segmented, option_highlighted[2], 5, 151, 1, 1, 0, c_white, save_alpha)
+draw_sprite_ext(spr_stage_icons, data_icon[2], 28, 151 + 23, 0.5, 0.5, 0, c_white, save_alpha)
+draw_text(11 + 45, 159, string(data_text[2]))
 
-draw_sprite_ext(spr_data_box, option_highlighted[3], 5, 211, 1, 1, 0, c_white, save_alpha)
-draw_text(11, 219, string(data_text[3]))
+// Save 3
+draw_sprite_ext(spr_data_box_segmented, option_highlighted[3], 5, 211, 1, 1, 0, c_white, save_alpha)
+draw_sprite_ext(spr_stage_icons, data_icon[3], 28, 211 + 23, 0.5, 0.5, 0, c_white, save_alpha)
+draw_text(11 + 45, 219, string(data_text[3]))
 
 
     draw_set_color(c_black)

@@ -65,7 +65,7 @@
             <string>/// Collectable?
 event_inherited()
 
-if instance_exists(obj_letter_l)
+if instance_exists(obj_letter_l) &amp;&amp; global.letter_order = true
 {
     image_blend = c_ltgray;
     image_alpha = 0.5;

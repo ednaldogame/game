@@ -41,6 +41,7 @@
             <kind>1</kind>
             <string>ang_radius = 0;
 sprite = spr_mugshot_dummy;
+image_speed = 0.2;
 </string>
           </argument>
         </arguments>
