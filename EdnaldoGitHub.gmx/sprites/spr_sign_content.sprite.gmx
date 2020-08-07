@@ -21,5 +21,6 @@
   <height>86</height>
   <frames>
     <frame index="0">images\spr_sign_content_0.png</frame>
+    <frame index="1">images\spr_sign_content_1.png</frame>
   </frames>
 </sprite>

@@ -146,6 +146,9 @@
         <sound>sound\snd_voice_narrator_9</sound>
         <sound>sound\snd_voice_narrator_10</sound>
       </sounds>
+      <sounds name="NPCs">
+        <sound>sound\snd_voice_sergio_pereira</sound>
+      </sounds>
     </sounds>
     <sound>sound\bgm_result</sound>
   </sounds>
@@ -1064,6 +1067,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_paraiba</room>
     <room>rooms\rm_train</room>
     <room>rooms\rm_tests</room>
     <room>rooms\rm_tutorial</room>
@@ -1078,7 +1082,6 @@
       <room>rooms\rm_resistance</room>
       <room>rooms\rm_map</room>
       <rooms name="Stages">
-        <room>rooms\rm_paraiba</room>
         <room>rooms\rm_CC</room>
         <room>rooms\rm_shoestore</room>
         <room>rooms\rm_jojo</room>

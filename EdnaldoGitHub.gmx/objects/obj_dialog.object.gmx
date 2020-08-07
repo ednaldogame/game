@@ -37,6 +37,7 @@
 //Default Value:
 varmsg = "No message was set";
 mugshot = noone;
+snd = noone;
 
 //Font
 font = fnt_century_8; //fnt_normal_6;//global.font_message;
@@ -111,6 +112,11 @@ aud_play_simple(snd_message_open);
             <kind>1</kind>
             <string>global.main_player.control_lock = false;
 aud_play_simple(snd_message_close);
+
+if snd != noone
+{
+audio_stop_sound(snd);
+}
 </string>
           </argument>
         </arguments>
@@ -148,7 +154,14 @@ newtext = "";
 event_user(0);
 
 //The text should start displaying now
-showing = true;
+if showing = false
+{
+    if snd != noone
+    {
+        voice_play(snd);
+    }
+    showing = true;
+}
 </string>
           </argument>
         </arguments>

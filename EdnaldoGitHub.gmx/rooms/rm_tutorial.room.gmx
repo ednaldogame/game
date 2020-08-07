@@ -195,7 +195,7 @@ global.SideObjectives = text(
     <instance objName="obj_collision_basic" x="6368" y="736" name="inst_6A75ED82" locked="0" code="" scaleX="2.5" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="6080" y="736" name="inst_DF968AC1" locked="0" code="" scaleX="4.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="6110" y="1008" name="inst_478A3338" locked="0" code="y_strength = -16;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDebugStartPlace" x="8332" y="559" name="inst_90D12755" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDebugStartPlace" x="6562" y="672" name="inst_90D12755" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch_post" x="6444" y="736" name="inst_FE8CCA65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="6688" y="736" name="inst_E49140A2" locked="0" code="" scaleX="3.5" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="6738" y="719" name="inst_AA582467" locked="0" code="y_strength = -13;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -220,7 +220,7 @@ global.SideObjectives = text(
     <instance objName="obj_collision_basic" x="6976" y="0" name="inst_351E5026" locked="0" code="" scaleX="2.5" scaleY="15.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="6931" y="1103" name="inst_F58A7966" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="6528" y="1120" name="inst_FCD92FD6" locked="0" code="" scaleX="16" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_8bitnaldo" x="6305" y="723" name="inst_2EE383B3" locked="0" code="varmsg = text(&quot;Well, now I have a complicated task for you. See that torch? It is a magic torch! By activating more than one torch you can teleport between them. Crazy, right? Well, to test your skills I made this arena here where you need to get the block up there in the generator, then use the torch to teleport back here and then put the block on the button down there to the right. Good luck!&quot;,&#xA;&quot;Bom, agora tenho uma tarefa complicadinha pra você. Está vendo essa tocha? Ela é uma tocha mágica! Ativando mais que uma tocha você pode se teletransportar entre elas. Doideira né? Bom, para testar suas capacidades fiz essa arena aqui onde você precisa pegar o bloco lá em cima no gerador, usar a tocha para se teletransportar e depois colocar o bloco no botão lá em baixo na direita. Boa sorte!&quot;)&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_8bitnaldo" x="6305" y="723" name="inst_2EE383B3" locked="0" code="varmsg = text(&quot;Well, now I have a complicated task for you. See that torch? It is a magic torch! By activating more than one torch you can teleport between them. Crazy, right? Well, to test your skills I made this arena here where you need to get the block up there in the generator, then use the torch to teleport back here and then put the block on the button down there to the right. Good luck!#PS: Ignore the picture I made there, my mother is very small because I'm made of few pixels, I don't know how to draw lol&quot;,&#xA;&quot;Bom, agora tenho uma tarefa complicadinha pra você. Está vendo essa tocha? Ela é uma tocha mágica! Ativando mais que uma tocha você pode se teletransportar entre elas. Doideira né? Bom, para testar suas capacidades fiz essa arena aqui onde você precisa pegar o bloco lá em cima no gerador, usar a tocha para se teletransportar e depois colocar o bloco no botão lá em baixo na direita. Boa sorte!#PS: Ignora o quadro que eu fiz ali, minha mãe é muito pequena porque eu sou feito de poucos pixels, não sei desenhar kkkk&quot;)&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="6422" y="720" name="inst_576C09A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="6446" y="698" name="inst_F30048FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="6468" y="718" name="inst_F78E79D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -255,11 +255,11 @@ global.SideObjectives = text(
     <instance objName="obj_collision_basic" x="8480" y="0" name="inst_A03C05D5" locked="0" code="" scaleX="0.5" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="8128" y="576" name="inst_DDDA0A4D" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="8000" y="544" name="inst_C86EF646" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collision_platform" x="7648" y="160" name="inst_716B039C" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision_platform" x="7584" y="480" name="inst_716B039C" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="7808" y="160" name="inst_4525522F" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="7968" y="160" name="inst_AA7C66CE" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="8128" y="160" name="inst_72D8DF35" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collision_platform" x="7520" y="160" name="inst_8D5C1A55" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision_platform" x="7488" y="480" name="inst_8D5C1A55" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="7968" y="1344" name="inst_5D8A45B1" locked="0" code="" scaleX="24.380952835083" scaleY="0.509999990463257" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="6336" y="1280" name="inst_D6991A87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="6336" y="1248" name="inst_896233A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -276,7 +276,9 @@ global.SideObjectives = text(
     <instance objName="obj_endstage_portal" x="9056" y="96" name="inst_B460A4D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="9068" y="1329" name="inst_444910C9" locked="0" code="y_strength = -35;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_camera_finder" x="8426" y="581" name="inst_EB91280B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_sign" x="1345" y="680" name="inst_00EE6950" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision_platform" x="7648" y="160" name="inst_DF33BD93" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision_platform" x="7520" y="160" name="inst_83D3B87B" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_sign" x="6632" y="712" name="inst_D4E2C7C1" locked="0" code="content = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tl_ednildows" x="0" y="1216" w="160" h="32" xo="0" yo="0" id="10003531" name="inst_D85925E6" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

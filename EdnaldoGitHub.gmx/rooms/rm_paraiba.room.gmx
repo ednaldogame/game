@@ -96,10 +96,9 @@ global.SideObjectives = text(
     <instance objName="obj_collision_platform" x="3200" y="640" name="inst_749CEFCF" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="3392" y="1216" name="inst_E2D351D5" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="1664" y="1472" name="inst_618CA494" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collectable" x="512" y="1200" name="inst_72104403" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collectable" x="607" y="1200" name="inst_72104403" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="575" y="1200" name="inst_25EA67AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="544" y="1201" name="inst_409FA07E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collectable" x="384" y="1200" name="inst_58BA2E4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="992" y="1200" name="inst_F03A7782" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="1024" y="1200" name="inst_25534797" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="1056" y="1200" name="inst_B8B15FF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -158,9 +157,6 @@ global.SideObjectives = text(
     <instance objName="obj_collectable" x="2720" y="976" name="inst_166FAC67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_jumper" x="3837" y="1228" name="inst_5E0C8889" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_jumper" x="1310" y="1116" name="inst_7E721E74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collectable" x="416" y="1200" name="inst_DA7FE275" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collectable" x="448" y="1200" name="inst_E94B4674" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collectable" x="480" y="1200" name="inst_C4AB5997" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_e" x="2032" y="1744" name="inst_5B4CCCAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_d_1" x="2592" y="738" name="inst_BD846B48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_n" x="2848" y="1088" name="inst_3A1F29BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -429,7 +425,7 @@ global.SideObjectives = text(
     <instance objName="obj_waterfall" x="3840" y="-64" name="inst_F1ED04C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3904" y="-64" name="inst_0DEDDDE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_waterfall" x="3968" y="-64" name="inst_2542E34E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_toad" x="303" y="1203" name="inst_292C0D29" locked="0" code="varmsg = text(&#xA;&quot;Uncle Sergio:#Sup Pereira!#Welcome to planet Guarabira, here you need to find the letters of your name in order to complete the area. Good luck!#Reminder: Press S to use your belly attack, useful to defeat robots.&quot;,&#xA;&quot;Tio Sérgio:#Fala Pereira!#Bem vindo ao planeta Guarabira, aqui você precisa encontrar as letras do seu nome para conseguir completar a area. Boa sorte!# Lembrete: Aperte S para usar seu ataque barrigal, util para destruir os robos da Elite Preta.&quot;&#xA;)&#xA;sprite_index = spr_NPC_sergio;&#xA;mugshot = spr_mugshot_sergio;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_toad" x="442" y="1203" name="inst_292C0D29" locked="0" code="varmsg = text(&#xA;&quot;Uncle Sergio:#Sup Pereira!#Welcome to planet Guarabira, here you need to find the letters of your name in order to complete the area. Good luck!#Reminder: Press S to use your belly attack, useful to defeat robots.&quot;,&#xA;&quot;Tio Sérgio:#Fala Pereira!#Bem vindo ao planeta Guarabira, aqui você precisa encontrar as letras do seu nome para conseguir completar a area. Boa sorte!# Lembrete: Aperte S para usar seu ataque barrigal, util para destruir os robos da Elite Preta.&quot;&#xA;)&#xA;sprite_index = spr_NPC_sergio;&#xA;mugshot = spr_mugshot_sergio;&#xA;snd = snd_voice_sergio_pereira;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="5984" y="672" name="inst_1E84A0DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="5984" y="640" name="inst_0A413158" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="5984" y="608" name="inst_AF49AB0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
