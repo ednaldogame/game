@@ -32,49 +32,15 @@ face_timer[0] = -1;
 face_timer[1] = -1;
 if instance_exists(obj_mission_card)
 {
-screenoff = 480;
+    screenoff = 480;
 }else
 {
-screenoff = 0;
+    screenoff = 0;   
 }
 
+display_alpha = 1;
 ai_exists = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Smart Display
-    // General
-        fadein_speed = 0.1;
-        fadeout_speed = 0.05;
-    
-    // Lil Notes
-        lilnotes_alpha = 0;
-        display_lilnotes_timer = -1;
-        
-    // Health
-        health_alpha = 0;
-        display_health_timer = -1;
-        
-    // Letter
-        letter_alpha = 0;
-        display_letter_timer = -1;
+hurt_alpha = 0;
 </string>
           </argument>
         </arguments>
@@ -368,50 +334,11 @@ event_user(1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Handle Smart Display 
-if display_lilnotes_timer &gt; -1
+            <string>/// Timer
+if !global.game_paused
 {
-    // Reduce Timer.
-    display_lilnotes_timer -= 1;
-
-    // Let 'em in
-    lilnotes_alpha = scr_approach(lilnotes_alpha, 1, fadein_speed)
+    global.game_time += 1000/60;
 }
-else
-{
-    // Get 'em out
-    lilnotes_alpha = scr_approach(lilnotes_alpha, 0, fadeout_speed)
-}
-
-// HP
-    if display_health_timer &gt; -1
-    {
-        // Reduce Timer.
-        display_health_timer -= 1;
-    
-        // Let 'em in
-        health_alpha = scr_approach(health_alpha, 1, fadein_speed)
-    }
-    else
-    {
-        // Get 'em out
-        health_alpha = scr_approach(health_alpha, 0, fadeout_speed)
-    }
-    
-// Letter
-    if display_letter_timer &gt; -1
-    {
-        // Reduce Timer.
-        display_letter_timer -= 1;
-    
-        // Let 'em in
-        letter_alpha = scr_approach(letter_alpha, 1, fadein_speed)
-    }
-    else
-    {
-        // Get 'em out
-        letter_alpha = scr_approach(letter_alpha, 0, fadeout_speed)
-    }
 </string>
           </argument>
         </arguments>
@@ -432,10 +359,24 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Timer
-if !global.game_paused
+            <string>/// Display Alpha
+if instance_exists(obj_player) &amp;&amp; instance_exists(global.main_player) &amp;&amp; global.main_player.control_lock = false
 {
-    global.game_time += 1000/60;
+    display_alpha = scr_approach(display_alpha, 1, 0.025)
+}
+else
+{
+    display_alpha = scr_approach(display_alpha, 0, 0.05)
+}
+
+// Hurt Alpha
+if instance_exists(obj_player) &amp;&amp; instance_exists(global.main_player) &amp;&amp; global.main_player.hp &lt;= 1
+{
+    hurt_alpha = scr_approach(hurt_alpha, 1, 0.025);
+}
+else
+{
+    hurt_alpha = scr_approach(hurt_alpha, 0, 0.0125);
 }
 </string>
           </argument>
@@ -459,7 +400,8 @@ if !global.game_paused
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>TweenFireTo(id, EaseInOutQuad, 0, false, 0, 60, "screenoff", 0);
+            <string>// Fade In Things
+TweenFireTo(id, EaseInOutQuad, 0, false, 0, 60, "screenoff", 0);
 
 </string>
           </argument>
@@ -538,21 +480,25 @@ global.hit_times = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Heads
-/*    if instance_exists(obj_player)
-    {
-     var _frame;
-     _frame = 0;
-     
-     draw_sprite_ext(spr_UI_faces, head_frame[0], view_xview[0] + 2 - screenoff, view_yview[0] + 2, 1, 1, 0, c_white, 1)
-    }
-    
-    if instance_exists(obj_ai_player) &amp;&amp; ai_exists
-    {
-     draw_sprite_ext(spr_UI_faces, head_frame[1], view_xview[0] + 68 - screenoff, view_yview[0] + 2, 0.5, 0.5, 0, c_white, 1)
-    }
-    
+            <string>/// General Display
+draw_sprite_ext(spr_HUD_bar, 0, view_xview[0], view_yview[0] + 269 + screenoff, 1, 1, image_angle, c_white, display_alpha)
+draw_sprite_ext(spr_HUD_blue_bar, 0, view_xview[0], view_yview[0] + 260 + screenoff, 1, 1, image_angle, c_white, display_alpha)
+draw_sprite_ext(spr_HUD_hp, global.main_player.hp, view_xview[0] + 169, view_yview[0] + 265 + screenoff, 1, 1, image_angle, c_white, display_alpha)
 
+draw_set_alpha(display_alpha);
+draw_set_font(fnt_century_11);
+draw_set_halign(fa_left);
+draw_text(view_xview[0] + 96, view_yview[0] + 263, ":"+string(string_add_zeros(global.lilnotes,3))+ "/" + string(global.lilnotes_total))
+
+draw_set_font(fnt_consolas_8);
+draw_text(view_xview[0] + 223, view_yview[0] + 262, text("SCORE", "PONTOS"))
+draw_text(view_xview[0] + 223, view_yview[0] + 271, text("TIME", "TEMPO"))
+
+draw_set_halign(fa_right);
+draw_text(view_xview[0] + 306, view_yview[0] + 262, string(string_add_zeros(score,6)))
+draw_text(view_xview[0] + 306, view_yview[0] + 271, string(floor(global.game_time/60000))+":"+string_place_number(floor(global.game_time/1000) mod 60, 2, 0))
+
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
@@ -682,15 +628,21 @@ global.hit_times = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// General Display
-/*draw_set_alpha(lilnotes_alpha)
-draw_set_font(fnt_normal_12);
-draw_set_halign(fa_right);
-draw_text_shadowed(view_xview[0] + 471, view_yview[0] + 33, string(global.lilnotes) + "/" + string(global.lilnotes_total))
-draw_set_alpha(1)
-draw_set_halign(fa_left);
-draw_sprite_ext(spr_collectable, 0, view_xview[0] + 494 - 9, view_yview[0] + 37 + 6, 1, 1, 0, c_white, lilnotes_alpha);
-draw_sprite_ext(spr_UI_health, global.main_player.hp, view_xview[0] + 303, view_yview[0] + 2, 1, 1, 0, c_white, health_alpha);
+            <string>/// Heads
+    if instance_exists(obj_player)
+    {
+     var _frame;
+     _frame = 0;
+     
+     draw_sprite_ext(spr_UI_faces, head_frame[0], view_xview[0] + 4 - screenoff, view_yview[0] + 218, 1, 1, 0, c_white, display_alpha)
+    }
+    
+    if instance_exists(obj_ai_player) &amp;&amp; ai_exists
+    {
+     draw_sprite_ext(spr_UI_faces, head_frame[1], view_xview[0] + 48 - screenoff, view_yview[0] + 248, 0.5, 0.5, 0, c_white, display_alpha/2)
+    }
+    
+
 </string>
           </argument>
         </arguments>
@@ -711,30 +663,9 @@ draw_sprite_ext(spr_UI_health, global.main_player.hp, view_xview[0] + 303, view_
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*draw_text_shadowed(view_xview[0], view_yview[0], string(floor(global.game_time/60000))+" "+string_place_number(floor(global.game_time/1000) mod 60, 2, 0))
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="119">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_create(obj_player.x,obj_player.y,obj_ai_player);
+            <string>// Filter
+draw_sprite_ext(spr_death_filter, 0, view_xview[0], view_yview[0], 1, 1, 0, c_white, hurt_alpha);
+///draw_text_shadowed(view_xview[0], view_yview[0], string(floor(global.game_time/60000))+" "+string_place_number(floor(global.game_time/1000) mod 60, 2, 0))
 </string>
           </argument>
         </arguments>

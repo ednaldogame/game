@@ -137,7 +137,7 @@
           }            
     
        // Right:
-          if(joystick_pov(1) == 90 || joystick_direction(1) == 102)
+          if(joystick_pov(1) == 90 || joystick_direction(1) == 102 || joystick_direction(1) == 45)
           {
              gmp_cright = true;
              keyboard_key_press(global.key_right);

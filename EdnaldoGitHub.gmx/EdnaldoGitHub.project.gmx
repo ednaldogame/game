@@ -153,6 +153,8 @@
     <sprites name="Playable">
       <sprites name="Ednaldo">
         <sprite>sprites\spr_ednaldo_idle</sprite>
+        <sprite>sprites\spr_ednaldo_lookup</sprite>
+        <sprite>sprites\spr_ednaldo_crouch</sprite>
         <sprite>sprites\spr_ednaldo_sunglasses_activate</sprite>
         <sprite>sprites\spr_ednaldo_sunglasses_deactivate</sprite>
         <sprite>sprites\spr_ednaldo_mask</sprite>
@@ -252,6 +254,8 @@
         <sprite>sprites\spr_button</sprite>
         <sprite>sprites\spr_groundpound_blocks</sprite>
         <sprite>sprites\spr_wood_door</sprite>
+        <sprite>sprites\spr_block_ninja</sprite>
+        <sprite>sprites\spr_block_fire</sprite>
       </sprites>
       <sprites name="Waterfall">
         <sprite>sprites\spr_waterfall</sprite>
@@ -288,16 +292,20 @@
           </sprites>
         </sprites>
         <sprites name="NPCs">
+          <sprite>sprites\spr_sign</sprite>
+          <sprite>sprites\spr_sign_content</sprite>
           <sprite>sprites\spr_NPC_sign</sprite>
           <sprite>sprites\spr_npc_timmaia</sprite>
           <sprite>sprites\spr_NPC_edjosuke</sprite>
           <sprite>sprites\spr_npc_8bit_ednaldo</sprite>
           <sprite>sprites\spr_npc_toad</sprite>
           <sprite>sprites\spr_NPC_doomer</sprite>
+          <sprite>sprites\spr_NPC_sergio</sprite>
         </sprites>
         <sprites name="Mugshots and Messages">
           <sprite>sprites\spr_message_display</sprite>
           <sprite>sprites\spr_mugshot_back</sprite>
+          <sprite>sprites\spr_mugshot_sergio</sprite>
           <sprite>sprites\spr_mugshot_cellbit</sprite>
           <sprite>sprites\spr_mugshot_dummy</sprite>
           <sprite>sprites\spr_mugshot_edjosuke</sprite>
@@ -313,6 +321,9 @@
       <sprites name="Stages">
         <sprites name="HUD">
           <sprite>sprites\spr_UI_faces</sprite>
+          <sprite>sprites\spr_HUD_bar</sprite>
+          <sprite>sprites\spr_HUD_blue_bar</sprite>
+          <sprite>sprites\spr_HUD_hp</sprite>
         </sprites>
         <sprites name="Mission Starrt">
           <sprite>sprites\spr_mission_card_bars</sprite>
@@ -398,10 +409,10 @@
         <sprite>sprites\spr_options_tab</sprite>
         <sprite>sprites\spr_options_controller</sprite>
       </sprites>
-      <sprite>sprites\spr_UI_health</sprite>
       <sprite>sprites\spr_black_bar</sprite>
       <sprite>sprites\spr_stage_icon_outline</sprite>
       <sprite>sprites\spr_stage_icons</sprite>
+      <sprite>sprites\spr_death_filter</sprite>
     </sprites>
     <sprites name="VFX">
       <sprites name="Stage">
@@ -534,6 +545,10 @@
         <background>background\bg_train_mountains_1</background>
         <background>background\bg_train_mountains_2</background>
         <background>background\bg_train_mountains_3</background>
+        <background>background\bg_train_cloud_1</background>
+        <background>background\bg_train_cloud_2</background>
+        <background>background\bg_train_cloud_3</background>
+        <background>background\bg_train_cloud_4</background>
       </backgrounds>
       <backgrounds name="Cidade Capital">
         <background>background\bg_buildings</background>
@@ -675,6 +690,11 @@
       <scripts name="Gamepad">
         <script>scripts\gamepad_check.gml</script>
       </scripts>
+      <script>scripts\scr_return_on.gml</script>
+      <script>scripts\draw_number_zero.gml</script>
+      <script>scripts\string_add_zeros.gml</script>
+      <script>scripts\instance_place_enlarged.gml</script>
+      <script>scripts\define_npc.gml</script>
     </scripts>
     <scripts name="Player">
       <scripts name="Animation">
@@ -696,6 +716,8 @@
         <script>scripts\player_state_spin.gml</script>
         <script>scripts\player_state_groundpound.gml</script>
         <script>scripts\groundpound_end.gml</script>
+        <script>scripts\player_state_lookup.gml</script>
+        <script>scripts\player_state_crouch.gml</script>
       </scripts>
       <scripts name="inputs">
         <script>scripts\player_inputs_null.gml</script>
@@ -755,7 +777,9 @@
     <font>fonts\fnt_normal_6</font>
     <font>fonts\fnt_century_8</font>
     <font>fonts\fnt_century_10</font>
+    <font>fonts\fnt_century_11</font>
     <font>fonts\fnt_century_12</font>
+    <font>fonts\fnt_century_14</font>
     <font>fonts\fnt_century_17</font>
     <font>fonts\fnt_century_20</font>
     <font>fonts\fnt_century_26</font>
@@ -764,6 +788,7 @@
     <font>fonts\Orbitron</font>
     <font>fonts\fnt_comic_12</font>
     <font>fonts\fnt_mario64</font>
+    <font>fonts\fnt_consolas_8</font>
   </fonts>
   <objects name="objects">
     <objects name="STAGE ASSETS">
@@ -819,6 +844,7 @@
         <object>objects\obj_waterfall_parallaxed_bg</object>
       </objects>
       <objects name="NPCs">
+        <object>objects\obj_sign</object>
         <object>objects\obj_NPC_template</object>
         <object>objects\obj_npc_8bitnaldo</object>
         <object>objects\obj_NPC_sign</object>
@@ -832,6 +858,10 @@
         </objects>
         <object>objects\obj_golden_note_main</object>
         <object>objects\obj_golden_note_lilnotes</object>
+      </objects>
+      <objects name="Power Ups">
+        <object>objects\par_interactable_block</object>
+        <object>objects\obj_block_ninja</object>
       </objects>
     </objects>
     <objects name="Game">
@@ -1034,6 +1064,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_train</room>
+    <room>rooms\rm_tests</room>
+    <room>rooms\rm_tutorial</room>
     <rooms name="Game">
       <room>rooms\rm_language</room>
       <room>rooms\rm_disclaimer</room>
@@ -1045,25 +1078,22 @@
       <room>rooms\rm_resistance</room>
       <room>rooms\rm_map</room>
       <rooms name="Stages">
-        <room>rooms\rm_tutorial</room>
         <room>rooms\rm_paraiba</room>
         <room>rooms\rm_CC</room>
         <room>rooms\rm_shoestore</room>
         <room>rooms\rm_jojo</room>
         <room>rooms\rm_chancerecords</room>
-        <room>rooms\rm_train</room>
         <room>rooms\rm_SAGE</room>
       </rooms>
     </rooms>
     <rooms name="Misc">
       <room>rooms\rm_ednaldo_prologue</room>
-      <room>rooms\rm_tests</room>
       <room>rooms\rm_template</room>
       <room>rooms\rm_options</room>
     </rooms>
     <room>rooms\room14</room>
   </rooms>
-  <constants number="44">
+  <constants number="46">
     <constant name="GAME_NAME">"EDNALDO PEREIRA: MESCLADASSO"</constant>
     <constant name="GAME_VERSION">"vPRE RELEASE"</constant>
     <constant name="CHAR_EDNALDO">1</constant>
@@ -1077,6 +1107,8 @@
     <constant name="STATE_GROUNDPOUND">3</constant>
     <constant name="STATE_SPIN">4</constant>
     <constant name="STATE_STATUE">5</constant>
+    <constant name="STATE_LOOKUP">6</constant>
+    <constant name="STATE_CROUCH">7</constant>
     <constant name="LANG_PORTUGUESE">0</constant>
     <constant name="LANG_ENGLISH">1</constant>
     <constant name="ITEM_THROWBLOCK">1</constant>

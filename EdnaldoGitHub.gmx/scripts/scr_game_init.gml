@@ -5,6 +5,8 @@
     global.angle_mode = 1;
     global.last_icon = 0;
     global.letter_order = false;
+    global.debug = true;
+    global.vsync = false;
     
  // Language
     global.lang = LANG_PORTUGUESE;

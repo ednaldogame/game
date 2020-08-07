@@ -32,7 +32,7 @@ TweenFire(id, EaseInOutQuad, 0, false, 0, 15, "off", 128, 0);
 TweenFire(id, EaseInOutQuad, 0, false, 0, 10, "alpha", 0, 1);
 
 txt = "Oww, acho que Ednaldo não vai conseguir vencer assim!";
-snd = snd_voice_chico_winning;
+snd = snd_voice_chico_loose_1;
 state = 0;
 
 alarm[0] = 5;

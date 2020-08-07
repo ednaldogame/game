@@ -68,7 +68,7 @@ TweenFireTo(id, EaseOutQuad, 0, false, 60, 80, "car_off", 0);
     bind_key            = "";
     option_ended        = 0;
     controller_frame = 0;
-    
+    option_max = 7;
 </string>
           </argument>
         </arguments>
@@ -327,7 +327,7 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
           if(keyboard_check_pressed(global.key_down) &amp;&amp; option_ended != 1)
           {  
              aud_play_sound(snd_menu_bleep, global.sfx_volume, 1, 0, 0);
-             if(option_selected &lt; 6)
+             if(option_selected &lt; option_max)
              {
                 option_selected += 1;
              }
@@ -345,7 +345,7 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
              }
              else
              {
-                option_selected = 5;
+                option_selected = option_max - 1;
              }
           } 
            
@@ -564,10 +564,35 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
              draw_set_color(c_white);
           } 
           draw_text_shadowed_normal(xoff, 128 + yadd, text("GAMEPAD BINDINGS", " CONFIG. DO CONTROLE")) 
+     
+// =========== VSYNC
           
+          if(option_selected == 6)
+          {
+             option_description = text("- Change the VSync Settings. -", "- Altere as config. do VSync. -")
+             draw_set_color(c_yellow);
+             
+             if(keyboard_check_pressed(global.key_left) &amp;&amp; option_ended != 1)
+             {
+                global.vsync = false;
+                display_reset(0, global.vsync);
+             }
+             
+             if(keyboard_check_pressed(global.key_right) &amp;&amp; option_ended != 1)
+             {
+                global.vsync = true;
+                display_reset(0, global.vsync);            
+             }             
+          }
+          else
+          {
+             draw_set_color(c_white);
+          } 
+          draw_text_shadowed_normal(xoff, 144 + yadd, "VSYNC: " + string(scr_return_on(global.vsync))) 
+               
 // =========== EXIT
                            
-          if(option_selected == 6)
+          if(option_selected == 7)
           {
              option_description = text("- Return to the Title Screen -", "- Retorne à tela de título -")
              draw_set_color(c_yellow);
@@ -600,7 +625,7 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
     draw_sprite(spr_black_bar, 0, 0, 266);
     draw_text_shadowed(2, 269, option_description);
     
-    if option_selected &lt; 4
+    if option_selected &lt; 4 or option_selected = 6
     {
         draw_key(398, 267, "LEFT");
         draw_key(421, 267, "RIGHT");

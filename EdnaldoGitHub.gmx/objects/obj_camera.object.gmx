@@ -30,6 +30,7 @@ camera_locked = false;
 
 //Shake
 cam_y_shake = 0;
+cam_y_shift = 0;
 shake_vertical = false;
 
 //View Borders
@@ -129,7 +130,7 @@ exit;
 }
 
 //Move Towards Player
-if instance_exists(cam_obj) &amp;&amp; (camera_locked = false){
+    if instance_exists(cam_obj) &amp;&amp; (camera_locked = false){
     if cam_obj.object_index == obj_player
     {
         cam_x += floor((cam_obj.x + cam_obj.x_speed * 5 - cam_x) * 0.3);
@@ -147,6 +148,52 @@ if instance_exists(cam_obj) &amp;&amp; (camera_locked = false){
         cam_y += floor((cam_obj.y - cam_y) * 0.1);
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Camera Shift
+    if instance_exists(cam_obj) &amp;&amp; (camera_locked = false)
+    {
+        if cam_obj.object_index == obj_player
+        {
+           // Looking up:
+              if(cam_obj.state == STATE_LOOKUP &amp;&amp; cam_obj.timer_up &gt;= 40)
+              {
+                 cam_y_shift = max(-154, cam_y_shift-2);
+              }
+              else
+           // Looking down:
+              if(cam_obj.state == STATE_CROUCH &amp;&amp; cam_obj.timer_down &gt;= 40)
+              {
+                 cam_y_shift = min(154, cam_y_shift+2);
+              }       
+              else // Center camera.
+              {
+                 cam_y_shift = max(0, abs(cam_y_shift)-2)*sign(cam_y_shift);
+              } 
+           }
+    }
+    else
+    {
+      cam_y_shift = max(0, abs(cam_y_shift)-2)*sign(cam_y_shift);  
+    }
 </string>
           </argument>
         </arguments>
@@ -203,6 +250,7 @@ if instance_exists(cam_obj) &amp;&amp; (camera_locked = false){
    // Room Limiters.
         x = clamp(cam_x, 512/2, room_width - 512/2);
         y = clamp(cam_y + cam_y_shake, 288/2, room_height - 288/2);
+        y = clamp(y + cam_y_shift, 288/2, room_height - 288/2);
         
    // Apply View
         view_xview[0] = floor(x - 512/2);

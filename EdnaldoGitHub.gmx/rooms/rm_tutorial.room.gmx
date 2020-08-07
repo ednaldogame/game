@@ -238,7 +238,7 @@ global.SideObjectives = text(
     <instance objName="obj_letter_e" x="7816" y="845" name="inst_6774FF4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_wall" x="7968" y="896" name="inst_D3440372" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_wall" x="8032" y="896" name="inst_FD66ADE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_8bitnaldo" x="7724" y="884" name="inst_26224981" locked="0" code="varmsg = text(&#xA;&quot;Here is your last objective. Try collecting all the letters that spell 'EDNALDO' in order. If you manage to do this, the 'ABC' blocks will disappear and you will be able to finish the stage!&quot;&#xA;,&#xA;&quot;Aqui está o seu último objetivo. Tente coletar todas as letras que soletram 'EDNALDO' em ordem. Se você conseguir fazer isso, os blocos 'ABC' iram desaparecer e você poderá terminar a fase!&quot;&#xA;)&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_8bitnaldo" x="7724" y="884" name="inst_26224981" locked="0" code="varmsg = text(&#xA;&quot;Here is your last objective. Try collecting all the letters that spell 'EDNALDO'. If you manage to do this, the 'ABC' blocks will disappear and you will be able to finish the stage!&quot;&#xA;,&#xA;&quot;Aqui está o seu último objetivo. Tente coletar todas as letras que soletram 'EDNALDO'. Se você conseguir fazer isso, os blocos 'ABC' iram desaparecer e você poderá terminar a fase!&quot;&#xA;)&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_letter_d_1" x="7882" y="833" name="inst_E58B65DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="7552" y="896" name="inst_33D8166C" locked="0" code="" scaleX="6.5" scaleY="7.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="8274" y="882" name="inst_76F44F82" locked="0" code="y_strength = -16;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -276,6 +276,7 @@ global.SideObjectives = text(
     <instance objName="obj_endstage_portal" x="9056" y="96" name="inst_B460A4D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="9068" y="1329" name="inst_444910C9" locked="0" code="y_strength = -35;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_camera_finder" x="8426" y="581" name="inst_EB91280B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_sign" x="1345" y="680" name="inst_00EE6950" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tl_ednildows" x="0" y="1216" w="160" h="32" xo="0" yo="0" id="10003531" name="inst_D85925E6" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

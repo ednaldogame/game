@@ -48,6 +48,16 @@
 
     scr_parallax_add_node(1, bg_train_gradient, 1, 0, 0, 0, 0,           0.98, 0, 0, -10, 0, 0, 0, -1, -1);
     scr_parallax_add_node(0, bg_train_sun, 1, -0.002, 0, 376, 0,           0.97, 0, 0, 9, 0, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_train_cloud_1, 0.96, -0.09, 0, -10, 530,           0.98, 0, 0, 54, 288, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_train_cloud_2, 0.96, -0.12, 0, 34, 530,           0.98, 0, 0, -14, 288, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_train_cloud_3, 0.96, -0.09, 0, 102, 530,           0.98, 0, 0, 20, 288, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_train_cloud_4, 0.96, -0.21, 0, 242, 530,           0.98, 0, 0, 50, 288, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_train_cloud_4, 0.96, -0.09, 0, 299, 530,           0.98, 0, 0, -6, 288, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_train_cloud_1, 0.96, -0.12, 0, 393, 530,           0.98, 0, 0, 7, 288, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_train_cloud_2, 0.96, -0.09, 0, 426, 530,           0.98, 0, 0, 64, 288, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_train_cloud_3, 0.96, -0.12, 0, 503, 530,           0.98, 0, 0, 27, 288, 0, 0, -1, -1);
+
+    
     scr_parallax_add_node(1, bg_train_mountains_1, -0.005, -1, 0, 0, 0,           0.8, 0, 0,   97, 0, 0, 0, -1, -1);
     scr_parallax_add_node(1, bg_train_mountains_2, -0.006, -3, 0, 420, 0,           0.8, 0, 0,   142, 0, 0, 0, -1, -1);
     scr_parallax_add_node(1, bg_train_mountains_3, -0.007, -5, 0, 200, 0,           0.8, 0, 0,   202, 0, 0, 0, -1, -1);
