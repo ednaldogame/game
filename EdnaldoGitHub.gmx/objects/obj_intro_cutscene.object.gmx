@@ -243,7 +243,7 @@ if (scene_time &gt;= 450)
     if (scene == 9 &amp;&amp; sprite_index != spr_empty)
     {
         scene_text = text(
-        "Will Ednaldo be able to defeat Elite Preta and collect all his compositions that were lost in outer space?",
+        "Will Ednaldo be able to defeat The Dark Elite and collect all his compositions that were lost in outer space?",
         "Será que Ednaldo conseguirá derrotar a Elite Preta e coletar todas suas composições que foram perdidas pelo espaço sideral?"
         )
         sprite_index = spr_empty;

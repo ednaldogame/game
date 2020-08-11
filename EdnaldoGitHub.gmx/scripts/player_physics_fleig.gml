@@ -6,4 +6,4 @@
  // Vertical:
     y_max          = 12;
     y_gravity      = 0.25;
-    y_jumpstrength = -8;
+    y_jumpstrength = -8.5;

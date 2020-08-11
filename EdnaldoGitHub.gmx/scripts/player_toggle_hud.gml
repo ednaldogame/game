@@ -1,6 +1,6 @@
 if input_triggerL_pressed
 {
-    aud_play_simple(snd_swap);
+    aud_play_simple(snd_camera_click);
     
     if global.display_hud = true
     {

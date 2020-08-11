@@ -13,6 +13,20 @@
             instance_destroy();
         }
     }
+    
+// ------------ Grapes   
+    var h;
+    h = instance_place(x,y,obj_red_lilnote);
+    
+    if h
+    {
+    //What Happens To The Grape?
+        with h
+        {
+            event_user(0)
+            instance_destroy();
+        }
+    }
 
 // ------------ Pellet   
     var h;

@@ -15,7 +15,15 @@ if doubleJumping = false && input_action_pressed && !ground && (state = STATE_DE
     state = STATE_DEFAULT;
     scr_create_smoke(x,y,sprSmoke16)
     aud_play_simple(snd_double_jump);
-    y_speed = y_jumpstrength/1.25;
+    
+    if player_index != CHAR_FLEIG
+    {
+        y_speed = y_jumpstrength/1.25;
+    }
+    else
+    {
+        y_speed = y_jumpstrength/1.1;
+    }
 }
 
 if ground && doubleJumping

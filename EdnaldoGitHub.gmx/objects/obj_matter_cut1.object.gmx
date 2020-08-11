@@ -98,7 +98,7 @@ if state = 1
 {
 sprite_index = spr_matter_laugh;
 scr_display_message(2, text(
-"WEAKLING, GO BACK TO#YOUR BUNKER AND LET ME RULE#IN PEACE!!",
+"MESS WITH THE DARK#AND YOU END UP#WITH THE DEVIL!",
 "MEXE COM A PRETA # E TU TE METE #COM O CAPETAAA!!"
 ))
 voice_play(snd_voice_matter_capeta)

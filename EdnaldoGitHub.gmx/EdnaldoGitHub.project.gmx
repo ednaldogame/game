@@ -95,6 +95,9 @@
       <sound>sound\snd_camera_zoom_out</sound>
       <sound>sound\snd_camera_click</sound>
       <sound>sound\snd_door</sound>
+      <sound>sound\snd_red_collect</sound>
+      <sound>sound\snd_red_start</sound>
+      <sound>sound\snd_red_collect_all</sound>
     </sounds>
     <sounds name="BGM">
       <sound>sound\bgm_paraiba</sound>
@@ -181,6 +184,8 @@
         <sprite>sprites\spr_fleig_jump</sprite>
         <sprite>sprites\spr_fleig_fall</sprite>
         <sprite>sprites\spr_fleig_hurt</sprite>
+        <sprite>sprites\spr_fleig_cursor</sprite>
+        <sprite>sprites\spr_fleig_block</sprite>
       </sprites>
       <sprites name="Vehicles">
         <sprite>sprites\spr_layer_switch</sprite>
@@ -226,6 +231,7 @@
     <sprites name="ASSETS">
       <sprites name="Mechanics">
         <sprite>sprites\spr_collectable</sprite>
+        <sprite>sprites\spr_paper</sprite>
         <sprite>sprites\spr_red_lilnote</sprite>
         <sprite>sprites\spr_redring_normal</sprite>
         <sprite>sprites\spr_redring_activate</sprite>
@@ -361,6 +367,7 @@
         <sprite>sprites\spr_black_bar</sprite>
         <sprite>sprites\spr_boss_time</sprite>
         <sprite>sprites\spr_death_filter</sprite>
+        <sprite>sprites\spr_display_thumb_bars</sprite>
       </sprites>
       <sprites name="Menus">
         <sprites name="Main Menu">
@@ -477,9 +484,16 @@
       <sprites name="CidadeCapital">
         <sprite>sprites\spr_mickey_idle</sprite>
       </sprites>
+      <sprites name="Shoe Store">
+        <sprite>sprites\sprCloudTexture</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <backgrounds name="ShoeStore">
+      <background>background\tl_shoestore</background>
+      <background>background\tl_shoestore_outer</background>
+    </backgrounds>
     <backgrounds name="Assets">
       <backgrounds name="Guaraiba">
         <background>background\tiles_paraiba</background>
@@ -490,9 +504,6 @@
       </backgrounds>
       <backgrounds name="Tutorial">
         <background>background\tl_ednildows</background>
-      </backgrounds>
-      <backgrounds name="ShoeStore">
-        <background>background\tl_shoestore</background>
       </backgrounds>
       <backgrounds name="General">
         <background>background\tileset_general</background>
@@ -546,6 +557,10 @@
         <background>background\bg_tutorial_mountains</background>
       </backgrounds>
       <backgrounds name="ShoeStore">
+        <background>background\bg_SSO_gradient</background>
+        <background>background\bg_SSO_clouds</background>
+        <background>background\bg_SSO_mountains_back</background>
+        <background>background\bg_SSO_mountains_front</background>
         <background>background\bg_SS_back</background>
         <background>background\bg_SS_cabinet_1</background>
         <background>background\bg_SS_cabinet_2</background>
@@ -731,6 +746,7 @@
         <script>scripts\player_state_lookup.gml</script>
         <script>scripts\player_state_crouch.gml</script>
         <script>scripts\player_toggle_hud.gml</script>
+        <script>scripts\player_state_draw.gml</script>
       </scripts>
       <scripts name="inputs">
         <script>scripts\player_inputs_null.gml</script>
@@ -810,6 +826,7 @@
     <objects name="STAGE ASSETS">
       <objects name="Main">
         <object>objects\obj_collectable</object>
+        <object>objects\obj_red_lilnote</object>
         <object>objects\obj_redring_normal</object>
         <object>objects\obj_endstage_portal</object>
         <object>objects\obj_camera_finder</object>
@@ -839,6 +856,7 @@
         <object>objects\obj_pellet</object>
         <object>objects\obj_door</object>
         <object>objects\obj_wall_laser</object>
+        <object>objects\obj_paper</object>
       </objects>
       <objects name="Waterfall">
         <object>objects\obj_waterfall</object>
@@ -884,6 +902,7 @@
         </objects>
         <object>objects\obj_golden_note_main</object>
         <object>objects\obj_golden_note_lilnotes</object>
+        <object>objects\obj_golden_note_reds</object>
       </objects>
     </objects>
     <objects name="Game">
@@ -1001,6 +1020,8 @@
         <object>objects\obj_GHZ_loop_3</object>
         <object>objects\obj_GHZ_loop_generator</object>
       </objects>
+      <object>objects\obj_fleig_cursor</object>
+      <object>objects\obj_fleig_block</object>
       <object>objects\par_attack_object</object>
       <object>objects\obj_camera</object>
       <object>objects\obj_stomp_dust</object>
@@ -1067,6 +1088,7 @@
       </objects>
       <objects name="ShoeStore">
         <object>objects\obj_bg_shoestore</object>
+        <object>objects\obj_bg_shoestore_outer</object>
       </objects>
       <objects name="IntroSpaceship">
         <object>objects\obj_ednaldo_spaceship_big</object>
@@ -1097,6 +1119,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_shoestore</room>
+    <room>rooms\rm_paraiba</room>
+    <room>rooms\rm_tutorial</room>
     <rooms name="Resistencia">
       <room>rooms\rm_resistance</room>
       <room>rooms\rm_resistance_timmaia</room>
@@ -1111,10 +1136,7 @@
       <room>rooms\rm_intro_ingame</room>
       <room>rooms\rm_intro_spaceship</room>
       <rooms name="Stages">
-        <room>rooms\rm_tutorial</room>
-        <room>rooms\rm_paraiba</room>
         <room>rooms\rm_CC</room>
-        <room>rooms\rm_shoestore</room>
         <room>rooms\rm_jojo</room>
         <room>rooms\rm_chancerecords</room>
         <room>rooms\rm_train</room>

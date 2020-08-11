@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>image_speed = 0.25;
 note_min = 10;
+
+
 </string>
           </argument>
         </arguments>
@@ -51,7 +53,12 @@ note_min = 10;
             <kind>1</kind>
             <string>if inside_view()
 {
-    image_alpha = choose(0.9,1)
+    image_alpha = choose(0.9,1)   
+}
+
+if global.golden_notes &gt;= note_min
+{
+    instance_destroy()
 }
 </string>
           </argument>

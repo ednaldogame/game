@@ -576,6 +576,7 @@ if player_index = CHAR_EDNALDO
 if player_index = CHAR_FLEIG
 {
     player_state_spin()
+    player_state_draw()
 }
 player_handle_throwables()
 

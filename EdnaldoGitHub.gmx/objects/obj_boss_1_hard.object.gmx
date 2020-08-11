@@ -105,7 +105,7 @@ instance_destroy()
 
 voice_play(snd_voice_matter_poodle2);
 scr_display_message_ext(2, text(
-"NOOO, NOT MY POODLE!! HOW DARE YOU!",
+"NOOO, NOT MY POODLE!!# HOW DARE YOU!",
 "NÃOOO O MEU POODLE NÃO!!#COMO OUSA!!#"), 160, c_white);
 </string>
           </argument>

@@ -3,47 +3,26 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-9</depth>
+  <depth>99999995</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_bg_parallax_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>604</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///SHS Lighting Controller
-
-//Light surface global variable
-global.surf_light = surface_create(room_width,room_height);
-
-//Ambient light global variable
-global.ambient_light = 8421504; //c_black
-
-fading_enabled = false;
-fading = "in";
-
-//If there's a lighting block in place, halve the ambient light
-alarm[1] = 5;
-</string>
-          </argument>
-        </arguments>
       </action>
-    </event>
-    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -60,67 +39,29 @@ alarm[1] = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (fading_enabled) {
-    global.ambient_light = 8421504;
-    alarm[0] = 8;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Decrement ambient light
-
-alarm[0] = 8;
-if fading = "in"
-{
-    if (global.ambient_light &gt; c_black) 
-    {   
-        global.ambient_light -= 65793;
-    }
-    else
-    {
-        fading = "out";
-        exit;
-    }
-}
- 
-if fading = "out"
-{
-    if (global.ambient_light &lt; 8421504) 
-    {   
-        global.ambient_light += 65793;
-    }
-    else
-    {
-        fading = "in";
-        exit;
-    }
-}
+            <string>   /// Setup 3D    
+  cloudTexY = 0;
+  lpY = 0;
+  lpYDir = 0;
+    
+  draw3D = false;
+  drawBG = true;    
+  drawTM = true
+  drawLP = true;
+  animateWater = false;
+    
+  cloudTex = sprite_get_texture(sprCloudTexture, 0);
+    
+  var x1,x2,y1,y2;
   
+  x2=sprite_xoffset
+  y2=sprite_yoffset+sprite_height  
+  x1=x2+lengthdir_x(sprite_height,view_current)
+  y1=y2+lengthdir_y(sprite_height,90)
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -137,48 +78,64 @@ if fading = "out"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///SHS Lighting surface and drawing methods.
+            <string>/// Set Nodes.
+//The Background System can be used to mimic complex parallax from the
+//Genesis games.
 
-//Prepare the surface
-if (!surface_exists(global.surf_light)) {
+    var OverallYOffset; OverallYOffset = 0.96;
 
-    global.surf_light = surface_create(room_width, room_height);
-}
+    scr_parallax_add_node(1, bg_SSO_clouds, 0.95, -0.2, 0, 0, 0,           0.99, 0, 0, 110, 0, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_SSO_mountains_back, 0.8, 0, 0, 0, 0,           0.97, 0, 0, 133, 0, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_SSO_mountains_back, 0.7, 0, 0, 200, 0,           0.96, 0, 0, 180, 0, 0, 0, -1, -1);
+    scr_parallax_add_node(1, bg_SSO_mountains_front, 0.6, 0, 0, 0, 0,           0.95, 0, 0, 185, 0, 0, 0, -1, -1);
 
-//Set the surface target
-surface_set_target(global.surf_light);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Move Cloud Texture
+    cloudTexY += 0.001;
+    if(cloudTexY &gt; 0.5)
+        cloudTexY -= 0.5;
+                
+    
+    // Draw clouds delayed.
+        draw3D = true;
+     
 
-//Clear the white colour from the lights
-draw_clear(c_white-global.ambient_light);
 
-//Set the blending mode
-draw_set_blend_mode(bm_subtract);
-
-//Enable texture interpolation
-texture_set_interpolation(true);
-
-//Draw all the lights
-for (var i=0; i&lt;instance_count; i++;) {
-
-    if ((instance_exists(instance_id[i]))
-    &amp;&amp; (object_is_ancestor(instance_id[i].object_index, obj_lightparent))) {
-        
-        with (instance_id[i]) {
-
-            //Draw each light, alpha does not work in subtractive mode
-            draw_sprite_ext(sprite_index, image_index, x-view_xview[view_current], y-view_yview[view_current], image_xscale, image_yscale, image_angle, image_blend, 1);
-        }
-    }
-}
-
-//Disable texture interpolation
-texture_set_interpolation(false);
-
-//Set the blending mode to normal
-draw_set_blend_mode(bm_normal);
-
-//Reset the surface target
-surface_reset_target();
 </string>
           </argument>
         </arguments>
@@ -201,19 +158,71 @@ surface_reset_target();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the surface
-
-//Set blend mode
-draw_set_blend_mode(bm_subtract);
-
-//Draw surface
-draw_surface(global.surf_light, view_xview[0], view_yview[0]);
-
-//Set blend mode to normal
-draw_set_blend_mode(bm_normal);
+            <string>/// Gradient
+draw_background_tiled(bg_SSO_gradient,view_xview[0],view_yview[0])
 </string>
           </argument>
         </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw Clouds
+    if(draw3D){
+    
+        // Set up 3D Perspectve
+    d3d_set_projection_ext(0, 0, 0, 0, 0, 2000, 0, -1, 0, 45, 256/224, 1, 2000);       
+    d3d_set_perspective(true);
+    draw_set_color(c_white);
+    d3d_set_hidden(false);
+
+    // Draw 2 polygons to render a quad.
+    d3d_primitive_begin_texture(pr_trianglelist, cloudTex);
+
+    d3d_vertex_texture(-1000, -100, 0, 0, cloudTexY);
+    d3d_vertex_texture(1000, -100, 0, 1, cloudTexY);
+    d3d_vertex_texture(1000, -100, 1600, 1, 0.5+cloudTexY);
+
+    d3d_vertex_texture(-1000, -100, 0, 0, cloudTexY);
+    d3d_vertex_texture(-1000, -100, 1600, 0, 0.5+cloudTexY);
+    d3d_vertex_texture(1000, -100, 1600, 1, 0.5+cloudTexY);
+    
+    d3d_primitive_end();
+    d3d_set_hidden(true);
+
+    // Set projection back to 2D
+    d3d_set_projection_ortho(view_xview+0, view_yview+0, 512, 288, 0);    
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

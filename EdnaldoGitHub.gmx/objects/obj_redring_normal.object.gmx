@@ -3,7 +3,7 @@
   <spriteName>spr_redring_normal</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,6 +26,207 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.2;
+timer = 8;
+active = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>aud_play_simple(snd_menu_bleep);
+timer --;
+
+if timer = 0
+{
+aud_play_simple(snd_grand_explosion)
+instance_create(x,y,obj_fade_in_white_fast);
+with obj_red_lilnote
+{
+    scr_tear_apart()
+    visible = false
+    scr_create_smoke(x,y,sprSmoke8);   
+}
+
+alarm[1] = 30;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if sprite_index != spr_empty
+{
+scr_sparkle()
+}
+
+if active = true
+{
+    if timer &gt; 0
+    {
+        if alarm[0] = -1
+        {
+            alarm[0] = room_speed;
+        }
+    }
+    
+    if !instance_exists(obj_red_lilnote)
+    {
+        aud_play_simple(snd_red_collect_all);
+        instance_destroy()
+    } 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !other.ai_flag &amp;&amp; sprite_index = spr_redring_normal
+{
+    aud_play_simple(snd_red_start);
+    
+    with obj_red_lilnote
+    {
+        visible = true
+        scr_create_fading_out(x,y,sprite_index);
+    }
+    
+    scr_create_fading_out(x,y,sprite_index);
+    scr_display_message(0, text("GET ALL RED LILNOTES!","PEGUE TODAS NOTINHAS#VERMELHAS!"))
+    sprite_index = spr_redring_activate;
+    
+    active = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if sprite_index = spr_redring_activate
+{
+sprite_index = spr_empty;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+
+if active
+{
+    draw_set_font(fnt_century_26);
+    draw_set_halign(fa_center);
+    draw_text_shadowed_colored(view_xview[0] + 256, view_yview[0] + 4, string(timer),c_red)
+    draw_set_color(c_white);
+}
 </string>
           </argument>
         </arguments>

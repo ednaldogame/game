@@ -509,7 +509,7 @@ global.SideObjectives = text(
     <instance objName="obj_collision_basic" x="10304" y="1472" name="inst_B710E29A" locked="0" code="" scaleX="14.222222328186" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="10432" y="0" name="inst_6EB04C43" locked="0" code="" scaleX="1" scaleY="4.06349229812622" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_cam" x="9738" y="217" name="inst_BBC66AD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDebugStartPlace" x="8995" y="314" name="inst_B9A73782" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDebugStartPlace" x="7360" y="1088" name="inst_B9A73782" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge" x="9664" y="384" name="inst_0BDEA3EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge" x="9728" y="384" name="inst_FF6CFE15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge" x="9600" y="384" name="inst_BDD5BE84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -653,6 +653,15 @@ global.SideObjectives = text(
     <instance objName="obj_life_pot" x="8143" y="1776" name="inst_EF6CFCA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_throw_pot" x="7777" y="1072" name="inst_0609287C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_life_pot" x="7649" y="1136" name="inst_91BA605D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_redring_normal" x="6816" y="1048" name="inst_70256FBD" locked="0" code="timer = 12;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_red_lilnote" x="6623" y="450" name="inst_0F4B73FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_red_lilnote" x="6431" y="417" name="inst_E7EB46D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_red_lilnote" x="6176" y="480" name="inst_8BBA93D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_red_lilnote" x="5986" y="385" name="inst_8039D5FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_red_lilnote" x="6288" y="426" name="inst_47DF4BA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_red_lilnote" x="6521" y="467" name="inst_ECB83DBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_red_lilnote" x="6083" y="435" name="inst_FC8666BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_golden_note_reds" x="6994" y="1011" name="inst_5F7417A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tiles_paraiba" x="1600" y="1472" w="64" h="64" xo="192" yo="320" id="10012738" name="inst_00DA549A" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
