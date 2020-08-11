@@ -36,6 +36,8 @@
      gmp_cspecial = false;
      gmp_cspecialB = false;
      gmp_cspecialC = false;
+     gmp_ctriggerL = false;
+     gmp_ctriggerR = false;     
      gmp_center   = false;
      alarm[0]     = 30;
 </string>
@@ -137,7 +139,7 @@
           }            
     
        // Right:
-          if(joystick_pov(1) == 90 || joystick_direction(1) == 102 || joystick_direction(1) == 45)
+          if(joystick_pov(1) == 90 || joystick_direction(1) == 102)
           {
              gmp_cright = true;
              keyboard_key_press(global.key_right);
@@ -211,7 +213,36 @@
              }
           }  
           
+             // TriggerL:
+          if(joystick_check_button(1, global.gmp_triggerL))
+          {
+             gmp_ctriggerL = true;
+             keyboard_key_press(global.key_triggerL);
+          }
+          else
+          {
+             if(gmp_ctriggerL == true)
+             {
+                gmp_ctriggerL = false;
+                keyboard_key_release(global.key_triggerL);
+             }
+          }  
     
+             // TriggerR:
+          if(joystick_check_button(1, global.gmp_triggerR))
+          {
+             gmp_ctriggerR = true;
+             keyboard_key_press(global.key_triggerR);
+          }
+          else
+          {
+             if(gmp_ctriggerR == true)
+             {
+                gmp_ctriggerR = false;
+                keyboard_key_release(global.key_triggerR);
+             }
+          } 
+          
        // Enter:
           if(joystick_check_button(1, global.gmp_enter))
           {

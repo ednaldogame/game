@@ -34,7 +34,7 @@
 **  turn = Will the NPC turn towards the character?
 */
 
-//scr_lightsource(1)
+scr_lightsource(0,-13, 1.5, 1.5)
 image_speed = 0.2;
 turn = true;
 

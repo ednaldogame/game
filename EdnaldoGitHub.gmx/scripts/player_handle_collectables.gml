@@ -14,6 +14,20 @@
         }
     }
 
+// ------------ Pellet   
+    var h;
+    h = instance_place(x,y,obj_pellet);
+    
+    if h
+    {
+    //What Happens To The Pellet?
+        with h
+        {
+            event_user(0)
+            instance_destroy();
+        }
+    }    
+    
 // ------------ Letters
     var h;
     h = instance_place(x,y,par_letter);

@@ -2,13 +2,13 @@
 <sprite>
   <type>0</type>
   <xorig>40</xorig>
-  <yorigin>67</yorigin>
+  <yorigin>63</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>12</bbox_left>
-  <bbox_right>65</bbox_right>
+  <bbox_left>13</bbox_left>
+  <bbox_right>67</bbox_right>
   <bbox_top>7</bbox_top>
   <bbox_bottom>79</bbox_bottom>
   <HTile>0</HTile>
@@ -22,5 +22,6 @@
   <frames>
     <frame index="0">images\spr_ednaldo_jump_0.png</frame>
     <frame index="1">images\spr_ednaldo_jump_1.png</frame>
+    <frame index="2">images\spr_ednaldo_jump_2.png</frame>
   </frames>
 </sprite>

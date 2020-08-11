@@ -79,11 +79,16 @@ if (ready)
 &amp;&amp; (player.ground) 
 &amp;&amp; (keyboard_check_pressed(global.key_up)) 
 &amp;&amp; (interact &gt;= 1)
-&amp;&amp; (!instance_exists(obj_fade_to))
+&amp;&amp; (!instance_exists(obj_fade_to_white))
 {
-    with instance_create(obj_tv.x, obj_tv.y, obj_fade_to)
+    with instance_create(obj_tv.x, obj_tv.y, obj_fade_to_white_alt)
     {
-        value = rm_map;
+        value = rm_stage_transitioner;
+        global.last_icon = 1;
+        global.room_warp = rm_tutorial;
+        global.temp_room = room;
+        global.stage_index = text("Stage 1 - 1","Fase 1 - 1");
+        global.stage_name = "Tutorial - Ednildows XP";
     }
     
     aud_play_simple(snd_menu_accept)

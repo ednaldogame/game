@@ -414,7 +414,7 @@ alarm[1] = 10;
             <kind>1</kind>
             <string>/// Save
 
-if room = rm_map or instance_exists(obj_player)
+if instance_exists(obj_player)
 {
 scr_save_game()
 }

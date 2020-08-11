@@ -91,12 +91,12 @@ alarm[1] = 50;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_normal_6)
+            <string>/*draw_set_font(fnt_normal_6)
 draw_set_color(c_lime)
 draw_set_halign(fa_right)
 draw_set_alpha(0.2)
 
-draw_text(view_xview[0] + text_x, view_yview[0] + 270, "Game Saved.")
+//draw_text(view_xview[0] + text_x, view_yview[0] + 270, "Game Saved.")
 
 draw_set_color(c_white)
 draw_set_halign(fa_left)

@@ -32,5 +32,7 @@
     <frame index="9">images\spr_keyboard_keys_pressed_9.png</frame>
     <frame index="10">images\spr_keyboard_keys_pressed_10.png</frame>
     <frame index="11">images\spr_keyboard_keys_pressed_11.png</frame>
+    <frame index="12">images\spr_keyboard_keys_pressed_12.png</frame>
+    <frame index="13">images\spr_keyboard_keys_pressed_13.png</frame>
   </frames>
 </sprite>

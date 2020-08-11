@@ -9,8 +9,8 @@
   <speed>60</speed>
   <persistent>0</persistent>
   <colour>16758639</colour>
-  <showcolour>-1</showcolour>
-  <code>global.MissionName = text("The Resistance - The House of The Connected Journeys", "Resistência - A Casa Dos Destinos Cruzados")</code>
+  <showcolour>0</showcolour>
+  <code>global.MissionName = text("The Resistance - The Castle of The Connected Journeys", "Resistência - O Castelo Dos Destinos Cruzados")</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -92,6 +92,21 @@
     <instance objName="obj_collision_basic" x="1728" y="96" name="inst_E1BB442D" locked="0" code="" scaleX="4.06349229812622" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="64" y="96" name="inst_BE869C2D" locked="0" code="" scaleX="4.06349229812622" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="1728" y="416" name="inst_74BF3B41" locked="0" code="" scaleX="4" scaleY="2.03174614906311" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="64" y="688" name="inst_4589640F" locked="0" code="exit_id = 1;&#xA;rm = rm_resistance_bene;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="984" y="816" name="inst_3C28815E" locked="0" code="rm = rm_resistance_timmaia;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_startplace" x="1030" y="883" name="inst_7D4B7742" locked="0" code="exit_id = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_startplace" x="126" y="755" name="inst_AE411377" locked="0" code="exit_id = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="1918" y="688" name="inst_41F7B941" locked="0" code="exit_id = 2;&#xA;rm = rm_resistance_bene;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_startplace" x="1948" y="755" name="inst_DDCB8334" locked="0" code="exit_id = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_laser" x="1280" y="32" name="inst_BA19AA3F" locked="0" code="" scaleX="1" scaleY="32" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_laser" x="736" y="32" name="inst_54062B49" locked="0" code="" scaleX="1" scaleY="32" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_laser" x="640" y="608" name="inst_24562148" locked="0" code="" scaleX="1" scaleY="18" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_laser" x="1408" y="608" name="inst_C41D671B" locked="0" code="" scaleX="1" scaleY="18" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_laser" x="256" y="256" name="inst_372DA641" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_laser" x="1792" y="256" name="inst_43774135" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_laser" x="192" y="672" name="inst_FB74DA87" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_laser" x="1856" y="672" name="inst_408AA5F0" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="obj_portal_resistance" x="749" y="781" name="inst_0E90AD5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tiles_resistencia" x="256" y="768" w="64" h="64" xo="96" yo="0" id="10011024" name="inst_C74FF139" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -105,7 +120,6 @@
     <tile bgName="tiles_resistencia" x="224" y="864" w="32" h="32" xo="96" yo="32" id="10011032" name="inst_BE3564EC" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="320" y="800" w="64" h="32" xo="96" yo="0" id="10011033" name="inst_ABE01B69" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="320" y="832" w="32" h="32" xo="96" yo="32" id="10011036" name="inst_C35E60C3" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="352" y="832" w="32" h="32" xo="96" yo="32" id="10011037" name="inst_1EED85B7" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="320" y="864" w="32" h="32" xo="96" yo="32" id="10011039" name="inst_331A8E31" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="352" y="864" w="32" h="32" xo="96" yo="32" id="10011040" name="inst_F6C4C868" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="384" y="832" w="64" h="64" xo="96" yo="0" id="10011070" name="inst_A64FE84A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -140,12 +154,6 @@
     <tile bgName="tiles_resistencia" x="1664" y="800" w="64" h="64" xo="96" yo="64" id="10011266" name="inst_9C73949A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="1600" y="832" w="64" h="64" xo="96" yo="64" id="10011267" name="inst_D10EAD7D" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="1536" y="864" w="64" h="32" xo="96" yo="64" id="10011269" name="inst_30FA1BD7" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1664" y="864" w="32" h="32" xo="96" yo="32" id="10011270" name="inst_0138406A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1696" y="864" w="32" h="32" xo="96" yo="32" id="10011271" name="inst_71047F90" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1728" y="864" w="32" h="32" xo="96" yo="32" id="10011272" name="inst_E2E4CECB" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1728" y="832" w="32" h="32" xo="96" yo="32" id="10011273" name="inst_BFBD4C26" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1760" y="832" w="32" h="32" xo="96" yo="32" id="10011274" name="inst_189B4B7B" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1760" y="864" w="32" h="32" xo="96" yo="32" id="10011275" name="inst_AC615C8D" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="1792" y="768" w="32" h="32" xo="96" yo="32" id="10011276" name="inst_E1A74577" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="1792" y="800" w="32" h="32" xo="96" yo="32" id="10011277" name="inst_33B88436" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="1792" y="832" w="32" h="32" xo="96" yo="32" id="10011278" name="inst_82A815ED" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -444,15 +452,6 @@
     <tile bgName="tiles_resistencia" x="352" y="512" w="32" h="32" xo="96" yo="32" id="10012176" name="inst_68D26170" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="384" y="512" w="32" h="32" xo="96" yo="32" id="10012177" name="inst_CB85D6C9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="416" y="512" w="32" h="32" xo="96" yo="32" id="10012178" name="inst_CAD7A60F" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1600" y="512" w="32" h="32" xo="96" yo="96" id="10012179" name="inst_B13D8492" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1632" y="512" w="32" h="32" xo="96" yo="96" id="10012180" name="inst_72BF6C0E" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1664" y="480" w="32" h="32" xo="96" yo="96" id="10012181" name="inst_316C7B1F" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1696" y="480" w="32" h="32" xo="96" yo="96" id="10012182" name="inst_77EA6A85" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1696" y="512" w="32" h="32" xo="96" yo="96" id="10012183" name="inst_BE2317D9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1664" y="512" w="32" h="32" xo="96" yo="96" id="10012184" name="inst_C51E0762" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1728" y="512" w="32" h="32" xo="96" yo="96" id="10012185" name="inst_97B97D0C" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1728" y="480" w="32" h="32" xo="96" yo="96" id="10012186" name="inst_348C0D5A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_resistencia" x="1728" y="448" w="32" h="32" xo="96" yo="96" id="10012187" name="inst_220219BF" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="1728" y="416" w="32" h="32" xo="96" yo="96" id="10012188" name="inst_20B2737C" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="288" y="512" w="32" h="32" xo="96" yo="32" id="10012194" name="inst_65D86672" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="288" y="480" w="32" h="32" xo="96" yo="32" id="10012195" name="inst_CF7DACD4" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -699,6 +698,22 @@
     <tile bgName="tiles_resistencia" x="1088" y="64" w="32" h="32" xo="32" yo="96" id="10012735" name="inst_2A5CF3D1" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="1088" y="32" w="32" h="32" xo="32" yo="96" id="10012736" name="inst_45491F55" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="1088" y="0" w="32" h="32" xo="32" yo="96" id="10012737" name="inst_F4D225ED" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="352" y="832" w="32" h="32" xo="128" yo="32" id="10012791" name="inst_926B8ECE" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1728" y="448" w="32" h="32" xo="128" yo="96" id="10012792" name="inst_2AAC143D" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1728" y="480" w="32" h="32" xo="128" yo="96" id="10012793" name="inst_2E278EE6" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1728" y="512" w="32" h="32" xo="128" yo="96" id="10012794" name="inst_F2CD7821" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1696" y="512" w="32" h="32" xo="128" yo="96" id="10012795" name="inst_B9FDDA0D" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1664" y="512" w="32" h="32" xo="128" yo="96" id="10012796" name="inst_D05EF4EF" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1632" y="512" w="32" h="32" xo="128" yo="96" id="10012797" name="inst_C2FD280C" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1600" y="512" w="32" h="32" xo="128" yo="96" id="10012798" name="inst_E3AB5440" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1664" y="480" w="32" h="32" xo="128" yo="96" id="10012799" name="inst_4FFF36CE" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1696" y="480" w="32" h="32" xo="128" yo="96" id="10012800" name="inst_525D0907" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1664" y="864" w="32" h="32" xo="128" yo="96" id="10012801" name="inst_3359A4D7" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1696" y="864" w="32" h="32" xo="128" yo="96" id="10012802" name="inst_6757C584" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1728" y="864" w="32" h="32" xo="128" yo="96" id="10012803" name="inst_0EB3DAEB" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1760" y="864" w="32" h="32" xo="128" yo="96" id="10012804" name="inst_D2612343" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1760" y="832" w="32" h="32" xo="128" yo="96" id="10012805" name="inst_35BCA77B" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_resistencia" x="1728" y="832" w="32" h="32" xo="128" yo="96" id="10012806" name="inst_D86ECA06" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="0" y="768" w="32" h="32" xo="32" yo="0" id="10011015" name="inst_D579B11C" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="32" y="768" w="32" h="32" xo="32" yo="0" id="10011016" name="inst_8F185B67" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_resistencia" x="64" y="768" w="32" h="32" xo="32" yo="0" id="10011017" name="inst_6DC7BE7F" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

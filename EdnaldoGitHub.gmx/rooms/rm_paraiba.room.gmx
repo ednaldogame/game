@@ -9,7 +9,7 @@
   <speed>60</speed>
   <persistent>0</persistent>
   <colour>8484230</colour>
-  <showcolour>-1</showcolour>
+  <showcolour>0</showcolour>
   <code>global.MissionName = text(
 "Guarabira - Deja Vú",
 "Guarabira - Paisagem Campestre")
@@ -509,7 +509,7 @@ global.SideObjectives = text(
     <instance objName="obj_collision_basic" x="10304" y="1472" name="inst_B710E29A" locked="0" code="" scaleX="14.222222328186" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="10432" y="0" name="inst_6EB04C43" locked="0" code="" scaleX="1" scaleY="4.06349229812622" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_cam" x="9738" y="217" name="inst_BBC66AD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDebugStartPlace" x="9024" y="320" name="inst_B9A73782" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDebugStartPlace" x="8995" y="314" name="inst_B9A73782" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge" x="9664" y="384" name="inst_0BDEA3EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge" x="9728" y="384" name="inst_FF6CFE15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge" x="9600" y="384" name="inst_BDD5BE84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -624,6 +624,35 @@ global.SideObjectives = text(
     <instance objName="obj_camera_finder" x="3265" y="613" name="inst_43BA77B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch_post" x="3572" y="704" name="inst_BD0B0494" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_jumper" x="3902" y="684" name="inst_D51A8CCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spring_up" x="11934" y="1520" name="inst_5D1C931D" locked="0" code="y_strength = -13;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spring_up_special" x="12719" y="1264" name="inst_7F1FF36A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_endstage_portal" x="12722" y="769" name="inst_48E82363" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_intro_piece_1" x="2368" y="1088" name="inst_D418EAAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_intro_piece_2" x="6042" y="512" name="inst_48D45E1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="8782" y="368" name="inst_22CFA209" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="3760" y="688" name="inst_71913D38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="1771" y="1072" name="inst_4168976D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="1735" y="1072" name="inst_C36D6CF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="1698" y="1072" name="inst_A724ED9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="8743" y="368" name="inst_64C9F0D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="861" y="1327" name="inst_07E8ACA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="3796" y="688" name="inst_76245A22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="11559" y="1520" name="inst_DDF40170" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="11596" y="1520" name="inst_3B9DBB73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="9139" y="368" name="inst_2DECF55F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="9101" y="368" name="inst_39A8F13F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="9062" y="368" name="inst_EA3E28DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="11632" y="1520" name="inst_ADBEB7F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="11668" y="1520" name="inst_3E256ABD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="8702" y="368" name="inst_8916F168" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="8743" y="560" name="inst_7AFE55CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="8706" y="560" name="inst_BB9C3A51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="8251" y="945" name="inst_6404A4F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="8288" y="945" name="inst_FB320F34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="8179" y="1776" name="inst_CAF2CD9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="8143" y="1776" name="inst_EF6CFCA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="7777" y="1072" name="inst_0609287C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="7649" y="1136" name="inst_91BA605D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tiles_paraiba" x="1600" y="1472" w="64" h="64" xo="192" yo="320" id="10012738" name="inst_00DA549A" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

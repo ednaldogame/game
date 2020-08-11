@@ -67,7 +67,15 @@ repeat (10) {
 //Increase Score and Grape Amount
 score+=1000;
 aud_play_simple(snd_letter)
+
+
 //global.grapes+=1;
+
+if sprite_index = spr_golden_note
+{
+    global.golden_notes += 1;
+    scr_save_game()
+}
 </string>
           </argument>
         </arguments>

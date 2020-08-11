@@ -104,31 +104,7 @@ TweenFire(id, EaseInOutQuad, 0, false, 120, 60, "save_alpha", 0, 1);
           <argument>
             <kind>1</kind>
             <string>/// Handle Files.
-var i;
-for (i = 0; i &lt; 5; i += 1)
-{
-    if !file_exists("save0" + string(i) + ".ini")
-    {
-        data_text[i] = text("File 0" + string(i) + " is empty.", "Arquivo 0" + string(i) + " está vazio.")
-        data_icon[i] = 0;
-    }
-    else
-    {
-        ini_open("save0" + string(i) + ".ini")
-            var createdate;  
-            createdate = ini_read_string("Misc","createdate","----");
-            
-            var stages;  
-            stages = ini_read_real("Values","stages_unlocked",global.stages_unlocked);
-            
-            data_icon[i] = ini_read_real("Values", "last_icon", 0)
-        ini_close();
-    
-        data_text[i] = text(
-        "File 0" + string(i) + " - " + string(stages) + " stages unlocked.#Created In: " + string(createdate),
-        "Arquivo 0" + string(i) + " - " + string(stages) + " fases desbloqueadas.#Criado em: " + string(createdate));
-    }
-}
+event_user(0)
 </string>
           </argument>
         </arguments>
@@ -165,6 +141,15 @@ for (i = 0; i &lt; 5; i += 1)
     aud_play_simple(snd_menu_bleep);
     }
     
+    if keyboard_check_pressed(global.key_special)
+    {
+            aud_play_simple(snd_swap);           
+            with instance_create(0,0,obj_fade_to)
+            {
+                value = rm_menu;
+            }    
+    }
+    
     // Select
     if keyboard_check_pressed(global.key_enter)
     {
@@ -195,9 +180,14 @@ for (i = 0; i &lt; 5; i += 1)
             aud_play_simple(snd_menu_accept);
             scr_load_game()
             
+            // Placeholder?
+            global.temp_room = rm_resistance;
+            global.exit_id = EXIT_NULL;
+            global.temp_exit = EXIT_NULL;
+            
             with instance_create(0,0,objFadeToValue)
             {
-                value = rm_map;
+                value = global.temp_room;
             }
         }
     }
@@ -209,6 +199,7 @@ for (i = 0; i &lt; 5; i += 1)
         {
             file_delete("save0" + string(current_option) + ".ini")
             aud_play_simple(snd_swap);
+            event_user(0)
         }
         else
         {
@@ -218,6 +209,53 @@ for (i = 0; i &lt; 5; i += 1)
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var i;
+for (i = 0; i &lt; 5; i += 1)
+{
+    if !file_exists("save0" + string(i) + ".ini")
+    {
+        data_text[i] = text("File 0" + string(i) + " is empty.", "Arquivo 0" + string(i) + " está vazio.")
+        data_icon[i] = 0;
+    }
+    else
+    {
+        ini_open("save0" + string(i) + ".ini")
+            var createdate;  
+            createdate = ini_read_string("Misc","createdate","----");
+            
+            var stages;  
+            stages = ini_read_real("Values","golden_notes",0);
+            
+            data_icon[i] = ini_read_real("Values", "last_icon", 0)
+        ini_close();
+    
+        data_text[i] = text(
+        "File 0" + string(i) + " - " + string(stages) + " Golden Notes.#Created In: " + string(createdate),
+        "Arquivo 0" + string(i) + " - " + string(stages) + " Notas Douradas.#Criado em: " + string(createdate));
+    }
+}
 </string>
           </argument>
         </arguments>

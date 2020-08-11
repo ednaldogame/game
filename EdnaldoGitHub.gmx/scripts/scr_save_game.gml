@@ -4,7 +4,12 @@
         ini_write_real("Values","stages_unlocked", global.stages_unlocked); 
         ini_write_real("Values","score", score); 
         ini_write_real("Values","last_icon", global.last_icon); 
-    
+        ini_write_real("Values","golden_notes", global.golden_notes);
+        ini_write_real("Values","lilnotes_bank", global.lilnotes_bank); 
+        ini_write_real("Values","exit_id", global.exit_id);  
+        ini_write_real("Values","temp_exit", global.temp_exit);  
+        ini_write_real("Values","temp_room", global.temp_room);  
+        
     ini_close(); 
     
     // Create Saving Text.

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-99999999</depth>
+  <depth>-99999995</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_player.x;
+            <string>if instance_exists(obj_intro_piece_1)
+{
+instance_create(x,y,obj_intro_cam);
+}
+
+x = obj_player.x;
 y = obj_player.y;
 
 step = 0;
@@ -54,6 +59,36 @@ main_mission_desc_x = -279;
 side_mission_desc_x = -279;
 
 event_user(0)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if instance_exists(obj_intro_cam)
+{
+    with obj_intro_cam
+    {
+        instance_destroy()
+    }
+    
+}
 </string>
           </argument>
         </arguments>
@@ -208,8 +243,8 @@ if instance_exists(obj_player)
 with obj_player
 {
     control_lock = true;
-    y = view_yview[0] - 128;
-    x = view_xview[0] + 32;
+    y = - 128;
+    x = 32;
     player_inputs_null()
 }
 }
@@ -236,12 +271,14 @@ with obj_player
             <kind>1</kind>
             <string>/// Fade Out
 if finished &amp;&amp; (keyboard_check_released(global.key_enter) or keyboard_check_released(global.key_action)) &amp;&amp; !fading_out{
+aud_play_simple(snd_menu_accept)
 fading_out = true;
+instance_create(x,y,obj_fade_bar)
 }
 
 if fading_out{
-if general_alpha!= -1{
-general_alpha -= 0.1;
+if general_alpha&gt; -1{
+general_alpha -= 0.03;
 }
 else
 {
@@ -249,7 +286,7 @@ with obj_level_controller
 {
 alarm[0] = 80;
 }
-aud_play_simple(snd_menu_accept)
+aud_play_simple(snd_jump)
 with obj_player
 {
 control_lock = -1;

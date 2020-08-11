@@ -287,7 +287,8 @@ with obj_player
             aud_play_simple(snd_menu_accept);
             with instance_create(0,0,objFadeToValue)
             {
-                value = rm_map;
+                value = global.temp_room;
+                global.exit_id = room;
             }
         }
     }

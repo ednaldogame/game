@@ -41,6 +41,7 @@ if instance_exists(obj_mission_card)
 display_alpha = 1;
 ai_exists = 0;
 hurt_alpha = 0;
+boss_alpha = 0;
 </string>
           </argument>
         </arguments>
@@ -360,7 +361,7 @@ if !global.game_paused
           <argument>
             <kind>1</kind>
             <string>/// Display Alpha
-if instance_exists(obj_player) &amp;&amp; instance_exists(global.main_player) &amp;&amp; global.main_player.control_lock = false
+if instance_exists(obj_player) &amp;&amp; instance_exists(global.main_player) &amp;&amp; global.main_player.control_lock = false &amp;&amp; !instance_exists(par_boss)
 {
     display_alpha = scr_approach(display_alpha, 1, 0.025)
 }
@@ -368,6 +369,17 @@ else
 {
     display_alpha = scr_approach(display_alpha, 0, 0.05)
 }
+
+// Boss Alpha
+if instance_exists(obj_player) &amp;&amp; instance_exists(global.main_player) &amp;&amp; global.main_player.control_lock = false &amp;&amp; instance_exists(par_boss)
+{
+    boss_alpha = scr_approach(boss_alpha, 1, 0.025)
+}
+else
+{
+    boss_alpha = scr_approach(boss_alpha, 0, 0.05)
+}
+
 
 // Hurt Alpha
 if instance_exists(obj_player) &amp;&amp; instance_exists(global.main_player) &amp;&amp; global.main_player.hp &lt;= 1
@@ -576,30 +588,43 @@ global.hit_times = 0;
           <argument>
             <kind>1</kind>
             <string>/// General Display
-draw_sprite_ext(spr_HUD_bar, 0, view_xview[0], view_yview[0] + 269 + screenoff, 1, 1, image_angle, c_white, display_alpha)
-draw_sprite_ext(spr_HUD_blue_bar, 0, view_xview[0], view_yview[0] + 260 + screenoff, 1, 1, image_angle, c_white, display_alpha)
-draw_sprite_ext(spr_HUD_hp, global.main_player.hp, view_xview[0] + 169, view_yview[0] + 265 + screenoff, 1, 1, image_angle, c_white, display_alpha)
-
-draw_set_alpha(display_alpha);
-draw_set_font(fnt_century_11);
-draw_set_halign(fa_left);
-draw_text(view_xview[0] + 96, view_yview[0] + 263 + screenoff, ":"+string(string_add_zeros(global.lilnotes,3))+ "/" + string(string_add_zeros(global.lilnotes_total,3)))
-
-draw_set_halign(fa_center);
-draw_set_color(c_yellow);
-draw_text(view_xview[0] + 464, view_yview[0] + 263 + screenoff, letter_e + letter_d + letter_n + letter_a + letter_l + letter_d2 + letter_o)
-
-draw_set_color(c_white);
-draw_set_halign(fa_left);
-draw_set_font(fnt_consolas_8);
-draw_text(view_xview[0] + 223, view_yview[0] + 262 + screenoff, text("SCORE", "PONTOS"))
-draw_text(view_xview[0] + 223, view_yview[0] + 271 + screenoff, text("TIME", "TEMPO"))
-
-draw_set_halign(fa_right);
-draw_text(view_xview[0] + 306, view_yview[0] + 262 + screenoff, string(string_add_zeros(score,6)))
-draw_text(view_xview[0] + 306, view_yview[0] + 271 + screenoff, string(floor(global.game_time/60000))+":"+string_place_number(floor(global.game_time/1000) mod 60, 2, 0))
-
-draw_set_alpha(1);
+if global.display_hud = true
+{
+    draw_sprite_ext(spr_HUD_bar, 0, view_xview[0], view_yview[0] + 269 + screenoff, 1, 1, image_angle, c_white, display_alpha)
+    draw_sprite_ext(spr_HUD_blue_bar, 0, view_xview[0], view_yview[0] + 260 + screenoff, 1, 1, image_angle, c_white, display_alpha)
+    draw_sprite_ext(spr_HUD_hp, global.main_player.hp, view_xview[0] + 169, view_yview[0] + 265 + screenoff, 1, 1, image_angle, c_white, display_alpha)
+    
+    draw_set_alpha(display_alpha);
+    draw_set_font(fnt_century_11);
+    draw_set_halign(fa_left);
+    draw_text(view_xview[0] + 96, view_yview[0] + 263 + screenoff, ":"+string(string_add_zeros(global.lilnotes,3))+ "/" + string(string_add_zeros(global.lilnotes_total,3)))
+    
+    draw_set_halign(fa_center);
+    draw_set_color(c_yellow);
+    draw_text(view_xview[0] + 464, view_yview[0] + 263 + screenoff, letter_e + letter_d + letter_n + letter_a + letter_l + letter_d2 + letter_o)
+    
+    draw_set_color(c_white);
+    draw_set_halign(fa_left);
+    draw_set_font(fnt_consolas_8);
+    draw_text(view_xview[0] + 223, view_yview[0] + 262 + screenoff, text("SCORE", "PONTOS"))
+    draw_text(view_xview[0] + 223, view_yview[0] + 271 + screenoff, text("TIME", "TEMPO"))
+    
+    draw_set_halign(fa_right);
+    draw_text(view_xview[0] + 306, view_yview[0] + 262 + screenoff, string(string_add_zeros(score,6)))
+    draw_text(view_xview[0] + 306, view_yview[0] + 271 + screenoff, string(floor(global.game_time/60000))+":"+string_place_number(floor(global.game_time/1000) mod 60, 2, 0))
+    
+    draw_set_alpha(1);
+    
+    // Boss Alpha
+    draw_sprite_ext(spr_ko_bar, 0, view_xview[0], view_yview[0], 1, 1, image_angle, c_white, boss_alpha)
+    if instance_exists(par_boss) &amp;&amp; boss_alpha &gt; 0
+    {
+        draw_set_color(c_red);
+        draw_rectangle(view_xview[0] + 237, view_yview[0] + 13, view_xview[0] + global.main_player.hp/global.main_player.max_hp * (226), view_yview[0] + 20, 0)
+        draw_rectangle(view_xview[0] + 274, view_yview[0] + 13, view_xview[0] + 274 + par_boss.enemy_hp/par_boss.enemy_max_hp * (226), view_yview[0] + 20, 0)
+    
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -621,6 +646,8 @@ draw_set_alpha(1);
           <argument>
             <kind>1</kind>
             <string>/// Heads
+if global.display_hud = true
+{
     if instance_exists(obj_ai_player) &amp;&amp; ai_exists
     {
      draw_sprite_ext(spr_UI_faces, head_frame[1], view_xview[0] + 48 - screenoff, view_yview[0] + 248, 0.5, 0.5, 0, c_white, display_alpha/2)
@@ -633,8 +660,7 @@ draw_set_alpha(1);
      
      draw_sprite_ext(spr_UI_faces, head_frame[0], view_xview[0] + 4 - screenoff, view_yview[0] + 218, 1, 1, 0, c_white, display_alpha)
     }
-    
-
+}
     
 
 </string>

@@ -180,7 +180,7 @@ global.SideObjectives = text(
     <instance objName="obj_groundpound_blocks" x="5376" y="288" name="inst_383EF702" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_groundpound_blocks" x="5376" y="224" name="inst_0C9ABDA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="5440" y="0" name="inst_58DE1D2F" locked="0" code="" scaleX="0.5" scaleY="19.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collision_basic" x="5344" y="1344" name="inst_336E847E" locked="0" code="" scaleX="16.2539691925049" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision_basic" x="5344" y="1344" name="inst_336E847E" locked="0" code="" scaleX="15" scaleY="0.515625" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_8bitnaldo" x="5656" y="1331" name="inst_090A0C05" locked="0" code="varmsg = text(&quot;We then come to your most difficult task. See that purple block on my right? You can use them to activate buttons. To pick up the block, press D while near it. To drop the block on top of the button without it exploding, press down. You can also shoot the block, and you can even use it to defeat enemies. To do this, just press D. It is also possible to throw them upwards by holding the up arrow and pressing D. If you end up using the block improperly just stay on top of the generator and press down. Understood?&quot;,&#xA;&quot;Chegamos então à sua tarefa mais dificil. Está vendo esse bloco roxo à minha direita? Você pode usa-los para ativar botões. Para pegar o bloco, aperte D enquanto perto dele. Para soltar o bloco em cima do botão sem que ele exploda, aperte para baixo. Você também pode atirar o bloco, podendo utiliza-lo até para derrotar inimigos. Para isso apenas aperte D novamente. Também é possivel atira-los para cima segurando a seta para cima e apertando D. Caso você acabe utilizando o bloco indevidamente apenas fique em cima do gerador e aperte para baixo. Entendido?&quot;)&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_throwblock_spawner" x="5801" y="1312" name="inst_E2BCAB87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="5943" y="1328" name="inst_18C93860" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -189,13 +189,13 @@ global.SideObjectives = text(
     <instance objName="obj_key_display" x="5948" y="1252" name="inst_80D11402" locked="0" code="key = &quot;DOWN&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wood_door" x="6112" y="1216" name="inst_6921536E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="6048" y="1024" name="inst_129BC616" locked="0" code="" scaleX="3.55555558204651" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spring_up" x="6338" y="1329" name="inst_3FA938BF" locked="0" code="y_strength = -16;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spring_up" x="6336" y="1365" name="inst_3FA938BF" locked="0" code="y_strength = -17;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_groundpound_blocks" x="6080" y="960" name="inst_014E6E77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="6048" y="736" name="inst_634A8133" locked="0" code="" scaleX="0.5" scaleY="4.57142877578735" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="6368" y="736" name="inst_6A75ED82" locked="0" code="" scaleX="2.5" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="6080" y="736" name="inst_DF968AC1" locked="0" code="" scaleX="4.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="6110" y="1008" name="inst_478A3338" locked="0" code="y_strength = -16;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDebugStartPlace" x="6562" y="672" name="inst_90D12755" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDebugStartPlace" x="8960" y="1280" name="inst_90D12755" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch_post" x="6444" y="736" name="inst_FE8CCA65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="6688" y="736" name="inst_E49140A2" locked="0" code="" scaleX="3.5" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="6738" y="719" name="inst_AA582467" locked="0" code="y_strength = -13;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -279,6 +279,15 @@ global.SideObjectives = text(
     <instance objName="obj_collision_platform" x="7648" y="160" name="inst_DF33BD93" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_platform" x="7520" y="160" name="inst_83D3B87B" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_sign" x="6632" y="712" name="inst_D4E2C7C1" locked="0" code="content = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_intro_piece_1" x="1344" y="640" name="inst_CE64BFBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_intro_piece_2" x="1920" y="928" name="inst_45DAC335" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="6241" y="1008" name="inst_1D2E878D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="6206" y="1008" name="inst_FC3443D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_pot" x="6064" y="720" name="inst_BB4A0B7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="6097" y="720" name="inst_F4062B16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_throw_pot" x="6130" y="720" name="inst_BBB2A490" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_8bitnaldo" x="6224" y="1331" name="inst_A9BCF044" locked="0" code="varmsg = text(&#xA;&quot;If you are having trouble seeing what is at the bottom of the screen, press Q to disable the display.&quot;&#xA;,&#xA;&quot;Caso você esteja tendo problemas vendo o que está na parte inferior da tela, aperte Q para desabilitar o display.&quot;&#xA;)&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_key_display" x="6267" y="1251" name="inst_044982FE" locked="0" code="key = &quot;Q&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tl_ednildows" x="0" y="1216" w="160" h="32" xo="0" yo="0" id="10003531" name="inst_D85925E6" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2629,9 +2638,6 @@ global.SideObjectives = text(
     <tile bgName="tl_ednildows" x="6080" y="1344" w="128" h="32" xo="0" yo="32" id="10008123" name="inst_01F7F468" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6208" y="1344" w="32" h="32" xo="160" yo="0" id="10008124" name="inst_C5656FE5" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6240" y="1344" w="32" h="32" xo="160" yo="0" id="10008125" name="inst_43D77625" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tl_ednildows" x="6272" y="1344" w="32" h="32" xo="160" yo="0" id="10008126" name="inst_9D0A1E05" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tl_ednildows" x="6304" y="1344" w="32" h="32" xo="160" yo="0" id="10008130" name="inst_D1D5543D" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tl_ednildows" x="6336" y="1344" w="32" h="32" xo="160" yo="0" id="10008131" name="inst_9CA62C83" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6240" y="1184" w="32" h="32" xo="128" yo="128" id="10008133" name="inst_98097B17" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6240" y="1152" w="32" h="32" xo="96" yo="128" id="10008134" name="inst_EC070368" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6240" y="1120" w="32" h="32" xo="96" yo="128" id="10008135" name="inst_44D0B2FA" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2670,7 +2676,7 @@ global.SideObjectives = text(
     <tile bgName="tl_ednildows" x="6048" y="832" w="32" h="32" xo="96" yo="128" id="10008175" name="inst_C0FC7CA7" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6048" y="800" w="32" h="32" xo="96" yo="128" id="10008176" name="inst_24C61D3D" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6048" y="768" w="32" h="32" xo="96" yo="128" id="10008177" name="inst_BFCEDE04" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tl_ednildows" x="6368" y="1344" w="32" h="32" xo="192" yo="0" id="10008179" name="inst_B6AD03F2" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tl_ednildows" x="6272" y="1344" w="32" h="32" xo="192" yo="0" id="10008179" name="inst_B6AD03F2" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6368" y="896" w="32" h="32" xo="96" yo="128" id="10008180" name="inst_BDF89C3F" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6368" y="928" w="32" h="32" xo="96" yo="128" id="10008181" name="inst_C15A2E42" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="6368" y="864" w="32" h="32" xo="96" yo="128" id="10008182" name="inst_BF5A19DD" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -3958,6 +3964,7 @@ global.SideObjectives = text(
     <tile bgName="tl_ednildows" x="7552" y="480" w="32" h="32" xo="0" yo="96" id="10012783" name="inst_8C7572E7" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="7488" y="480" w="32" h="32" xo="0" yo="64" id="10012786" name="inst_EBD757DE" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tl_ednildows" x="7520" y="480" w="32" h="32" xo="0" yo="96" id="10012787" name="inst_0050223D" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tl_ednildows" x="6368" y="1344" w="32" h="32" xo="96" yo="128" id="10012991" name="inst_224CBC79" depth="50" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

@@ -7,6 +7,12 @@
     global.letter_order = false;
     global.debug = true;
     global.vsync = false;
+    global.exit_id = EXIT_NULL;
+    global.display_hud = true;
+    global.stage_index = "";
+    global.stage_name = ""
+    global.temp_exit = EXIT_NULL;
+    global.temp_room = rm_resistance;
     
  // Language
     global.lang = LANG_PORTUGUESE;
@@ -22,6 +28,8 @@
     global.key_special      = ord("S");
     global.key_specialB      = ord("D");
     global.key_specialC      = ord("W");
+    global.key_triggerL      = ord("Q");
+    global.key_triggerR      = ord("E");
     global.key_enter        = vk_enter;
     
  // Gamepad input:
@@ -30,11 +38,14 @@
     global.gmp_special      = 0;
     global.gmp_specialB      = 0;
     global.gmp_specialC      = 0;
+    global.gmp_triggerL      = 0;
+    global.gmp_triggerR      = 0;
     global.gmp_enter        = 0;
 
  // Stage.
     global.main_player = noone;
     global.cpu_player = noone;
+    global.golden_notes = 0;
     global.lilnotes = 0;
     global.lilnotes_total = 0;
     global.lilnotes_bank = 0;

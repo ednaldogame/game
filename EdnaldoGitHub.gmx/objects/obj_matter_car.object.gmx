@@ -76,7 +76,7 @@ alarm[0] = 5;
             <kind>1</kind>
             <string>if state = 0
 {
-if x &lt; view_xview[0]
+if x &lt; view_xview[0] &amp;&amp; !instance_exists(obj_intro_cam) &amp;&amp; distance_to_object(obj_player) &lt; 600
 {
 state = 1;
 visible = true;

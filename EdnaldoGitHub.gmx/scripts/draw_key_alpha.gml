@@ -1,4 +1,4 @@
-///draw_key_alpha(x,y,"UP"|"RIGHT"|"DOWN"|"LEFT"|"A"|"S"|"D"|"W"|"ENTER"|"MOUSE",alpha)
+///draw_key_alpha(x,y,"UP"|"RIGHT"|"DOWN"|"LEFT"|"A"|"S"|"D"|"W"|"Q"|"ENTER"|"MOUSE",alpha)
 
 var img;
 img = 0;
@@ -102,7 +102,33 @@ pres = false;
 }
 }
 
+///--------------SET UP ANOTHER KEY
+    if argument2 == "Q"{
+        //Check If Pressed
+            if keyboard_check(global.key_triggerL)
+            {
+                pres = true;
+                img = 12;
+            }else
+            {
+                pres = false;
+                img = 10;
+            }
+    }
 
+///--------------SET UP ANOTHER KEY
+    if argument2 == "E"{
+        //Check If Pressed
+            if keyboard_check(global.key_triggerR)
+            {
+                pres = true;
+                img = 13;
+            }else
+            {
+                pres = false;
+                img = 11;
+            }
+    }
 
 ///--------------SET UP ANOTHER KEY
 if argument2 == "ENTER"{

@@ -120,7 +120,7 @@ y = ystart+lengthdir_y(12,ang_radius)
 
     if(option_bind == 1)
     {
-       if(bind_status == 10)
+       if(bind_status == 12)
        {
           option_bind  = 0;
           bind_status  = 1;
@@ -137,6 +137,9 @@ y = ystart+lengthdir_y(12,ang_radius)
               case 7: { bind_key = text("ACTION D", "TECLA D"); break; }
               case 8: { bind_key = text("ACTION W", "TECLA W"); break; }
               case 9: { bind_key = "ENTER";   break; }
+              case 10: { bind_key = text("TRIGGER L (Q)", "GATILHO ESQ. (Q)"); break; }
+              case 11: { bind_key = text("TRIGGER R (E)", "GATILHO DIR. (E)"); break; }
+              
        }       
        if(option_delay == 0)
        {
@@ -154,7 +157,9 @@ y = ystart+lengthdir_y(12,ang_radius)
                   case 6: { global.key_special = bind_check; option_delay = 30; bind_status = 7; keyboard_clear(vk_anykey);  break; } 
                   case 7: { global.key_specialB = bind_check; option_delay = 30; bind_status = 8; keyboard_clear(vk_anykey);  break; }    
                   case 8: { global.key_specialC = bind_check; option_delay = 30; bind_status = 9; keyboard_clear(vk_anykey);  break; }      
-                  case 9: { global.key_enter   = bind_check; option_delay = 30; bind_status = 10; keyboard_clear(vk_anykey);  break; }                                                                                      
+                  case 9: { global.key_enter   = bind_check; option_delay = 30; bind_status = 10; keyboard_clear(vk_anykey);  break; }     
+                  case 10: { global.key_triggerL   = bind_check; option_delay = 30; bind_status = 11; keyboard_clear(vk_anykey);  break; }    
+                  case 11: { global.key_triggerR   = bind_check; option_delay = 30; bind_status = 12; keyboard_clear(vk_anykey);  break; }                                                                                     
            }
            
            aud_play_simple(snd_menu_accept);
@@ -191,7 +196,7 @@ y = ystart+lengthdir_y(12,ang_radius)
 
     if(option_bind == 2)
     {
-       if(bind_status == 6)
+       if(bind_status == 8)
        {
           option_bind  = 0;
           bind_status  = 1;
@@ -204,6 +209,9 @@ y = ystart+lengthdir_y(12,ang_radius)
               case 3: { bind_key = text("ACTION D", "AÇÃO D");  break; }
               case 4: { bind_key = text("ACTION W", "AÇÃO W");  break; }
               case 5: { bind_key = "ENTER";    break; }
+              case 6: { bind_key = text("TRIGGER L (Q)", "GATILHO ESQ. (Q)"); break; }
+              case 7: { bind_key = text("TRIGGER R (E)", "GATILHO DIR. (E)"); break; }
+              
        }       
        if(option_delay == 0)
        {
@@ -217,7 +225,9 @@ y = ystart+lengthdir_y(12,ang_radius)
                   case 2: { global.gmp_special = bind_check; controller_frame = 2; option_delay = 40; bind_status = 3; break; }              
                   case 3: { global.gmp_specialB = bind_check; controller_frame = 3; option_delay = 40; bind_status = 4; break; }              
                   case 4: { global.gmp_specialC = bind_check; controller_frame = 4; option_delay = 40; bind_status = 5; break; }               
-                  case 5: { global.gmp_enter   = bind_check; controller_frame = 0; option_delay = 40; bind_status = 6; break; }                                                                                        
+                  case 5: { global.gmp_enter   = bind_check; controller_frame = 5; option_delay = 40; bind_status = 6; break; }      
+                  case 6: { global.gmp_triggerL   = bind_check; controller_frame = 6; option_delay = 40; bind_status = 7; break; }     
+                  case 7: { global.gmp_triggerR   = bind_check; controller_frame = 0; option_delay = 40; bind_status = 8; break; }                                                                                       
            }
            
            
@@ -603,7 +613,7 @@ draw_sprite_ext(spr_options_tab, 0, 512 + menu_off, 0, 1, 1, 0, c_white, 1)
                    option_ended = 1;
                    with(instance_create(0, 0, objFadeToValue))
                    {
-                        value = rm_title_screen;
+                        value = rm_menu;
                    }
                    aud_play_simple(snd_menu_accept);
                    save_global_create();

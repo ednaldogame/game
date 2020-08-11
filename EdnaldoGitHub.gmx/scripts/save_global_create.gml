@@ -5,6 +5,7 @@
     ini_open("settings.bin");
     {
        ini_write_real("Display",   "Scale",      global.screen_scale);
+       ini_write_real("Display",   "VSync",      global.vsync);
        ini_write_real("Audio", "BGMVolume",      global.bgm_volume);       
        ini_write_real("Audio", "SFXVolume",      global.sfx_volume);          
        ini_write_real("Keyboard",  "KeyUp",      global.key_up);        
@@ -15,11 +16,15 @@
        ini_write_real("Keyboard",  "KeySpecial", global.key_special);
        ini_write_real("Keyboard",  "KeySpecialB", global.key_specialB);
        ini_write_real("Keyboard",  "KeySpecialC", global.key_specialC);
+       ini_write_real("Keyboard",  "KeyTriggerL", global.key_triggerL);
+       ini_write_real("Keyboard",  "KeyTriggerR", global.key_triggerR);
        ini_write_real("Keyboard",  "KeyEnter",   global.key_enter);           
        ini_write_real("Gamepad",  "GMPAction",   global.gmp_action);  
        ini_write_real("Gamepad",  "GMPSpecial",  global.gmp_special);
        ini_write_real("Gamepad",  "GMPSpecialB",  global.gmp_specialB);
        ini_write_real("Gamepad",  "GMPSpecialC",  global.gmp_specialC);
+       ini_write_real("Gamepad",  "GMPTriggerL",  global.gmp_triggerL);
+       ini_write_real("Gamepad",  "GMPTriggerR",  global.gmp_triggerR);
        ini_write_real("Gamepad",  "GMPEnter",    global.gmp_enter);                                 
     }
     ini_close()

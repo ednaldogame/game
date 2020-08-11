@@ -1,23 +1,60 @@
 // Grab it
 if holding = false
 {
-    var h;
-    h = instance_nearest(x,y,obj_throwblock);
-    if h
-    {
-        if h.interact && input_specialB_released && player_index = CHAR_EDNALDO
+    // Throw Block
+        var h;
+        h = instance_nearest(x,y,obj_throwblock);
+        if h
         {
-            with h
+            if h.interact && input_specialB_released && player_index = CHAR_EDNALDO
             {
-                instance_destroy()
+                with h
+                {
+                    instance_destroy()
+                }
+                
+                holding = true;
+                hold_item = ITEM_THROWBLOCK;
+                aud_play_simple(snd_message_open)
+                exit;
             }
-            
-            holding = true;
-            hold_item = ITEM_THROWBLOCK;
-            aud_play_simple(snd_message_open)
-            exit;
         }
-    }
+    
+    // Throw Pot
+        h = instance_nearest(x,y,obj_throw_pot);
+        if h
+        {
+            if h.interact && input_specialB_released && player_index = CHAR_EDNALDO
+            {
+                with h
+                {
+                    instance_destroy()
+                }
+                
+                holding = true;
+                hold_item = ITEM_POT;
+                aud_play_simple(snd_message_open)
+                exit;
+            }
+        }
+ 
+    // Life Pot
+        h = instance_nearest(x,y,obj_life_pot);
+        if h
+        {
+            if h.interact && input_specialB_released && player_index = CHAR_EDNALDO
+            {
+                with h
+                {
+                    instance_destroy()
+                }
+                
+                holding = true;
+                hold_item = ITEM_LIFE_POT;
+                aud_play_simple(snd_message_open)
+                exit;
+            }
+        }       
 }
 
 // Throw It.
@@ -25,15 +62,31 @@ if holding = false
     {
         if input_specialB_pressed or input_down
         {
+        
+            // Define Item
+            var inst;
+            inst = obj_throwblock;
+            
+            if hold_item = ITEM_POT
+            {
+                inst = obj_throw_pot;
+            }
+            
+            if hold_item = ITEM_LIFE_POT
+            {
+                inst = obj_life_pot;
+            }
+            
+            // Define Position        
             if !instance_place(floor(x) - (14 * animation_direction), floor(bbox_top) + 4, par_solid)
             {
                 var b;
-                b = instance_create(floor(x) - (12 * animation_direction), floor(bbox_top) + 4, obj_throwblock)
+                b = instance_create(floor(x) - (12 * animation_direction), floor(bbox_top) + 4, inst)
             }
             else
             {
                 var b;
-                b = instance_create(floor(x) + (4 * animation_direction), floor(bbox_top) + 16, obj_throwblock)
+                b = instance_create(floor(x) + (4 * animation_direction), floor(bbox_top) + 16, inst)
             }
             
             b.scale = 0.85;

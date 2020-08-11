@@ -1,10 +1,10 @@
 /// scr_return_on(value)
 if argument0 = 0
 {
-    return false;    
+    return text("OFF", "DESLIGADO");    
 }
 
 if argument0 = 1
 {
-    return true;    
+    return text("ON", "LIGADO");    
 }

@@ -4,7 +4,6 @@
  // Crouch down when the character is quiet on the ground:
     if((ground && x_speed == 0 && (state == STATE_DEFAULT) && input_up)){
         state                  = STATE_LOOKUP;
-        animation_frame = 0;
         timer_down             = 0;
         x_speed                = 0;
     }      

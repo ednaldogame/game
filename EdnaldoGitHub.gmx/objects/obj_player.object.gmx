@@ -49,6 +49,30 @@
       </action>
       <action>
         <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>10</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>2</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -102,6 +126,35 @@
  {
     instance_create(x,y,obj_camera);
  }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Warps
+if global.exit_id != EXIT_NULL &amp;&amp; instance_exists(obj_startplace)
+{
+    x = global.warp_x[global.exit_id];
+    y = global.warp_y[global.exit_id];   
+    animation_direction = global.warp_dir[global.exit_id];
+}
 </string>
           </argument>
         </arguments>
@@ -326,6 +379,8 @@ if !ai_flag &amp;&amp; control_lock = 0
     input_special          = keyboard_check(global.key_special);
     input_specialB          = keyboard_check(global.key_specialB);
     input_specialC          = keyboard_check(global.key_specialC);
+    input_triggerL          = keyboard_check(global.key_triggerL);
+    input_triggerR          = keyboard_check(global.key_triggerR);
     
  // Key press.
     input_up_pressed       = keyboard_check_pressed(global.key_up);
@@ -336,7 +391,9 @@ if !ai_flag &amp;&amp; control_lock = 0
     input_special_pressed  = keyboard_check_pressed(global.key_special);    
     input_specialB_pressed  = keyboard_check_pressed(global.key_specialB);    
     input_specialC_pressed  = keyboard_check_pressed(global.key_specialC);    
-
+    input_triggerL_pressed  = keyboard_check_pressed(global.key_triggerL);    
+    input_triggerR_pressed  = keyboard_check_pressed(global.key_triggerR);    
+    
  // Key release.    
     input_up_released      = keyboard_check_released(global.key_up);
     input_down_released    = keyboard_check_released(global.key_down);
@@ -346,6 +403,8 @@ if !ai_flag &amp;&amp; control_lock = 0
     input_special_released = keyboard_check_released(global.key_special);    
     input_specialB_released = keyboard_check_released(global.key_specialB);    
     input_specialC_released = keyboard_check_released(global.key_specialC);    
+    input_triggerL_released = keyboard_check_released(global.key_triggerL);  
+    input_triggerR_released = keyboard_check_released(global.key_triggerR);   
 }
 
 if control_lock = -1 &amp;&amp; ground
@@ -505,7 +564,7 @@ player_state_lookup()
 player_state_crouch()
 player_state_jump()
 player_state_swap()
-player_handle_throwables()
+
 
 if player_index = CHAR_EDNALDO
 {
@@ -518,6 +577,7 @@ if player_index = CHAR_FLEIG
 {
     player_state_spin()
 }
+player_handle_throwables()
 
 if !ai_flag
 {
@@ -528,6 +588,8 @@ if !ai_flag
         hud_display_letters();
     }
 }
+
+player_toggle_hud()
 </string>
           </argument>
         </arguments>
@@ -624,7 +686,7 @@ animation_core()
       }
     
       // Lookup
-      if state = STATE_LOOKUP &amp;&amp; animation != "lookup"
+      if state = STATE_LOOKUP &amp;&amp; animation != "lookup" &amp;&amp; !instance_place(x,y,obj_door)
       {
         animation = "lookup";
       }
@@ -781,7 +843,7 @@ if state = STATE_DEATH
           }
 
        }
-    }else {
+    }else if !instance_place(x,y,obj_door){
         image_blend = c_white;
         image_alpha = 1;
         }
@@ -894,10 +956,20 @@ if instance_exists(obj_level_controller)
         {
                draw_sprite_ext(spr_throwblock_held, floor(animation_frame), floor(x) - (12 * animation_direction), floor(bbox_top) + 4, -animation_direction, image_yscale, image_angle, image_blend, image_alpha);
         }
+        
+        if (hold_item = ITEM_POT)
+        {
+               draw_sprite_ext(spr_pot, floor(animation_frame), floor(x) - (12 * animation_direction), floor(bbox_top) + 4, -animation_direction, image_yscale, image_angle, image_blend, image_alpha);
+        }
+        
+        if (hold_item = ITEM_LIFE_POT)
+        {
+               draw_sprite_ext(spr_life_pot, floor(animation_frame), floor(x) - (12 * animation_direction), floor(bbox_top) + 4, -animation_direction, image_yscale, image_angle, image_blend, image_alpha);
+        }
     }
 
     // Draw Arrow for Character Swap
-    if (keyboard_check(vk_tab) or audio_is_playing(snd_swap) or audio_is_playing(snd_swap_fail))
+    if (input_triggerR or audio_is_playing(snd_swap) or audio_is_playing(snd_swap_fail))
     {
         draw_sprite(spr_arrow_down, ai_flag, x, bbox_top - 16)
     }

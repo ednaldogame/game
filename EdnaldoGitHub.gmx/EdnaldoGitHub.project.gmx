@@ -94,17 +94,15 @@
       <sound>sound\snd_camera_zoom_in</sound>
       <sound>sound\snd_camera_zoom_out</sound>
       <sound>sound\snd_camera_click</sound>
+      <sound>sound\snd_door</sound>
     </sounds>
     <sounds name="BGM">
       <sound>sound\bgm_paraiba</sound>
       <sound>sound\bgm_wii</sound>
       <sound>sound\bgm_title</sound>
-      <sound>sound\bgm_map</sound>
       <sound>sound\bgm_resistance</sound>
-      <sound>sound\bgm_data_select</sound>
       <sound>sound\bgm_score</sound>
       <sound>sound\bgm_golden_note</sound>
-      <sound>sound\bgm_ednaldo_theme</sound>
       <sound>sound\bgm_boss</sound>
       <sound>sound\jingle_showtime</sound>
       <sound>sound\bgm_wasted</sound>
@@ -117,6 +115,8 @@
       <sound>sound\bgm_shoestore</sound>
       <sound>sound\bgm_racing</sound>
       <sound>sound\bgm_train</sound>
+      <sound>sound\bgm_main</sound>
+      <sound>sound\bgm_enterstage</sound>
     </sounds>
     <sounds name="Voices">
       <sounds name="Chico Melancia">
@@ -156,12 +156,14 @@
     <sprites name="Playable">
       <sprites name="Ednaldo">
         <sprite>sprites\spr_ednaldo_idle</sprite>
+        <sprite>sprites\spr_ednaldo_startplace</sprite>
         <sprite>sprites\spr_ednaldo_lookup</sprite>
         <sprite>sprites\spr_ednaldo_crouch</sprite>
         <sprite>sprites\spr_ednaldo_sunglasses_activate</sprite>
         <sprite>sprites\spr_ednaldo_sunglasses_deactivate</sprite>
         <sprite>sprites\spr_ednaldo_mask</sprite>
         <sprite>sprites\spr_ednaldo_walk</sprite>
+        <sprite>sprites\spr_ednaldo_walk_sillhouette</sprite>
         <sprite>sprites\spr_ednaldo_jump</sprite>
         <sprite>sprites\spr_ednaldo_hurt</sprite>
         <sprite>sprites\spr_ednaldo_fall</sprite>
@@ -224,6 +226,10 @@
     <sprites name="ASSETS">
       <sprites name="Mechanics">
         <sprite>sprites\spr_collectable</sprite>
+        <sprite>sprites\spr_red_lilnote</sprite>
+        <sprite>sprites\spr_redring_normal</sprite>
+        <sprite>sprites\spr_redring_activate</sprite>
+        <sprite>sprites\spr_pellet</sprite>
         <sprite>sprites\spr_camera_finder</sprite>
         <sprite>sprites\spr_watermelon</sprite>
         <sprite>sprites\spr_letters</sprite>
@@ -259,6 +265,10 @@
         <sprite>sprites\spr_wood_door</sprite>
         <sprite>sprites\spr_block_ninja</sprite>
         <sprite>sprites\spr_block_fire</sprite>
+        <sprite>sprites\spr_pot</sprite>
+        <sprite>sprites\spr_life_pot</sprite>
+        <sprite>sprites\spr_door_open</sprite>
+        <sprite>sprites\spr_wall_laser</sprite>
       </sprites>
       <sprites name="Waterfall">
         <sprite>sprites\spr_waterfall</sprite>
@@ -335,6 +345,7 @@
           <sprite>sprites\spr_mission_card_side_mission</sprite>
           <sprite>sprites\spr_mission_card_title_bar</sprite>
           <sprite>sprites\spr_small_sidebar</sprite>
+          <sprite>sprites\spr_fade_bar</sprite>
         </sprites>
         <sprite>sprites\spr_dialog</sprite>
         <sprite>sprites\spr_dialog_mugshot</sprite>
@@ -346,6 +357,10 @@
         <sprite>sprites\spr_UI_wasted</sprite>
         <sprite>sprites\spr_chico_melancia</sprite>
         <sprite>sprites\spr_options_overlay</sprite>
+        <sprite>sprites\spr_ko_bar</sprite>
+        <sprite>sprites\spr_black_bar</sprite>
+        <sprite>sprites\spr_boss_time</sprite>
+        <sprite>sprites\spr_death_filter</sprite>
       </sprites>
       <sprites name="Menus">
         <sprites name="Main Menu">
@@ -379,6 +394,7 @@
       <sprites name="Data Select">
         <sprite>sprites\spr_data_box</sprite>
         <sprite>sprites\spr_data_box_segmented</sprite>
+        <sprite>sprites\spr_stage_icon_outline</sprite>
       </sprites>
       <sprites name="Cutscenes">
         <sprite>sprites\spr_intro_scene_01</sprite>
@@ -399,23 +415,15 @@
         <sprite>sprites\spr_results_bbar</sprite>
         <sprite>sprites\spr_ranks</sprite>
       </sprites>
-      <sprite>sprites\spr_boss_time</sprite>
-      <sprites name="Edge FMV">
-        <sprite>sprites\spr_fmv</sprite>
-      </sprites>
-      <sprites name="Startup">
-        <sprite>sprites\spr_sage_startup</sprite>
-      </sprites>
       <sprites name="Options">
         <sprite>sprites\spr_options_sphere</sprite>
         <sprite>sprites\spr_ednaldo_options</sprite>
         <sprite>sprites\spr_options_tab</sprite>
         <sprite>sprites\spr_options_controller</sprite>
       </sprites>
-      <sprite>sprites\spr_black_bar</sprite>
-      <sprite>sprites\spr_stage_icon_outline</sprite>
       <sprite>sprites\spr_stage_icons</sprite>
-      <sprite>sprites\spr_death_filter</sprite>
+      <sprite>sprites\spr_stage_thing_1</sprite>
+      <sprite>sprites\spr_stage_thing_2</sprite>
     </sprites>
     <sprites name="VFX">
       <sprites name="Stage">
@@ -560,6 +568,7 @@
         <background>background\tile_jojo</background>
         <background>background\bg_black_gradient</background>
       </backgrounds>
+      <background>background\bg_black</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -721,6 +730,7 @@
         <script>scripts\groundpound_end.gml</script>
         <script>scripts\player_state_lookup.gml</script>
         <script>scripts\player_state_crouch.gml</script>
+        <script>scripts\player_toggle_hud.gml</script>
       </scripts>
       <scripts name="inputs">
         <script>scripts\player_inputs_null.gml</script>
@@ -740,6 +750,7 @@
     </scripts>
     <scripts name="Audio">
       <script>scripts\aud_play_music.gml</script>
+      <script>scripts\aud_play_jingle.gml</script>
       <script>scripts\aud_play_simple.gml</script>
       <script>scripts\voice_play.gml</script>
       <script>scripts\aud_play_simple_inview.gml</script>
@@ -783,6 +794,8 @@
     <font>fonts\fnt_century_11</font>
     <font>fonts\fnt_century_12</font>
     <font>fonts\fnt_century_14</font>
+    <font>fonts\fnt_century_16_italic</font>
+    <font>fonts\fnt_century_20_italic</font>
     <font>fonts\fnt_century_17</font>
     <font>fonts\fnt_century_20</font>
     <font>fonts\fnt_century_26</font>
@@ -797,6 +810,7 @@
     <objects name="STAGE ASSETS">
       <objects name="Main">
         <object>objects\obj_collectable</object>
+        <object>objects\obj_redring_normal</object>
         <object>objects\obj_endstage_portal</object>
         <object>objects\obj_camera_finder</object>
         <object>objects\obj_watermelon</object>
@@ -816,10 +830,21 @@
         <object>objects\obj_spring_up</object>
         <object>objects\obj_spring_up_special</object>
         <object>objects\obj_throwblock</object>
+        <object>objects\obj_throw_pot</object>
+        <object>objects\obj_life_pot</object>
         <object>objects\obj_button</object>
         <object>objects\obj_throwblock_spawner</object>
         <object>objects\obj_wood_door</object>
         <object>objects\obj_groundpound_blocks</object>
+        <object>objects\obj_pellet</object>
+        <object>objects\obj_door</object>
+        <object>objects\obj_wall_laser</object>
+      </objects>
+      <objects name="Waterfall">
+        <object>objects\obj_waterfall</object>
+        <object>objects\obj_waterfall_fg</object>
+        <object>objects\obj_waterfall_parallaxed</object>
+        <object>objects\obj_waterfall_parallaxed_bg</object>
       </objects>
       <objects name="Enemies">
         <object>objects\par_enemy</object>
@@ -840,12 +865,6 @@
         <object>objects\obj_cannon</object>
         <object>objects\obj_bullet</object>
       </objects>
-      <objects name="Waterfall">
-        <object>objects\obj_waterfall</object>
-        <object>objects\obj_waterfall_fg</object>
-        <object>objects\obj_waterfall_parallaxed</object>
-        <object>objects\obj_waterfall_parallaxed_bg</object>
-      </objects>
       <objects name="NPCs">
         <object>objects\obj_sign</object>
         <object>objects\obj_NPC_template</object>
@@ -855,16 +874,16 @@
         <object>objects\obj_dialog</object>
         <object>objects\obj_voice_player</object>
       </objects>
+      <objects name="Power Ups">
+        <object>objects\par_interactable_block</object>
+        <object>objects\obj_block_ninja</object>
+      </objects>
       <objects name="Golden Notes">
         <objects name="DONT USE">
           <object>objects\par_golden_note</object>
         </objects>
         <object>objects\obj_golden_note_main</object>
         <object>objects\obj_golden_note_lilnotes</object>
-      </objects>
-      <objects name="Power Ups">
-        <object>objects\par_interactable_block</object>
-        <object>objects\obj_block_ninja</object>
       </objects>
     </objects>
     <objects name="Game">
@@ -924,12 +943,12 @@
           <object>objects\obj_story_recap</object>
           <object>objects\obj_intro_cutscene</object>
         </objects>
-        <objects name="Startup">
-          <object>objects\obj_SAGE_startup</object>
-        </objects>
         <objects name="Options">
           <object>objects\obj_options</object>
           <object>objects\obj_gamepad_controller</object>
+        </objects>
+        <objects name="Stage Transitioner">
+          <object>objects\obj_stage_transition</object>
         </objects>
       </objects>
       <objects name="Fades">
@@ -945,7 +964,15 @@
         <object>objects\obj_fade_next</object>
         <object>objects\obj_fade_next_fast</object>
         <object>objects\obj_fade_to</object>
+        <object>objects\obj_fade_to_alt</object>
+        <object>objects\obj_fade_to_white_alt</object>
         <object>objects\obj_fade_to_white</object>
+        <object>objects\obj_fade_bar</object>
+      </objects>
+      <objects name="Stage Intro Elements">
+        <object>objects\obj_intro_piece_1</object>
+        <object>objects\obj_intro_piece_2</object>
+        <object>objects\obj_intro_cam</object>
       </objects>
       <object>objects\obj_saving</object>
       <object>objects\obj_message_display</object>
@@ -953,6 +980,7 @@
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
+      <object>objects\obj_startplace</object>
       <object>objects\obj_ai_player</object>
       <objects name="Vehicles">
         <object>objects\obj_vehicle</object>
@@ -1027,9 +1055,11 @@
       </objects>
       <objects name="Resistencia">
         <object>objects\obj_bg_resistance</object>
+        <object>objects\obj_bg_resistencia_outside</object>
         <object>objects\obj_leave_to_map</object>
         <object>objects\obj_tech_controller</object>
         <object>objects\obj_tv</object>
+        <object>objects\obj_portal_resistance</object>
       </objects>
       <objects name="Tutorial">
         <object>objects\obj_bg_tutorial</object>
@@ -1067,10 +1097,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_paraiba</room>
-    <room>rooms\rm_train</room>
-    <room>rooms\rm_tests</room>
-    <room>rooms\rm_tutorial</room>
+    <rooms name="Resistencia">
+      <room>rooms\rm_resistance</room>
+      <room>rooms\rm_resistance_timmaia</room>
+      <room>rooms\rm_resistance_bene</room>
+    </rooms>
     <rooms name="Game">
       <room>rooms\rm_language</room>
       <room>rooms\rm_disclaimer</room>
@@ -1079,26 +1110,29 @@
       <room>rooms\rm_data_select</room>
       <room>rooms\rm_intro_ingame</room>
       <room>rooms\rm_intro_spaceship</room>
-      <room>rooms\rm_resistance</room>
-      <room>rooms\rm_map</room>
       <rooms name="Stages">
+        <room>rooms\rm_tutorial</room>
+        <room>rooms\rm_paraiba</room>
         <room>rooms\rm_CC</room>
         <room>rooms\rm_shoestore</room>
         <room>rooms\rm_jojo</room>
         <room>rooms\rm_chancerecords</room>
-        <room>rooms\rm_SAGE</room>
+        <room>rooms\rm_train</room>
+        <room>rooms\rm_tests</room>
       </rooms>
     </rooms>
     <rooms name="Misc">
+      <room>rooms\rm_map</room>
       <room>rooms\rm_ednaldo_prologue</room>
       <room>rooms\rm_template</room>
       <room>rooms\rm_options</room>
+      <room>rooms\rm_stage_transitioner</room>
     </rooms>
-    <room>rooms\room14</room>
   </rooms>
-  <constants number="46">
+  <constants number="49">
     <constant name="GAME_NAME">"EDNALDO PEREIRA: MESCLADASSO"</constant>
     <constant name="GAME_VERSION">"vPRE RELEASE"</constant>
+    <constant name="EXIT_NULL">12345</constant>
     <constant name="CHAR_EDNALDO">1</constant>
     <constant name="CHAR_FLEIG">2</constant>
     <constant name="STATE_ROLL">-3</constant>
@@ -1115,6 +1149,8 @@
     <constant name="LANG_PORTUGUESE">0</constant>
     <constant name="LANG_ENGLISH">1</constant>
     <constant name="ITEM_THROWBLOCK">1</constant>
+    <constant name="ITEM_POT">2</constant>
+    <constant name="ITEM_LIFE_POT">3</constant>
     <constant name="NARRATE_LOOSE">1</constant>
     <constant name="NARRATE_HEATEN">2</constant>
     <constant name="NARRATE_OPORTUNITY">3</constant>
