@@ -306,26 +306,18 @@ if state = STATE_DEATH
     obj_camera.camera_locked = true;
     }
     
-    if instance_exists(obj_ai_player)
-    {
-        state = STATE_DEFAULT;
-        inv_timer = 120;
-        hp = floor(max_hp/2);
-        function_player_swap()
-        with obj_ai_player
-        {
-            instance_destroy()
-        }
-        event_user(0)
-        died = false;
-        state = STATE_DEFAULT;
-        exit;
-    }
-    else
-    {
+    // Commit Die
         if died = false
         {
            audio_stop_all() 
+           
+           with obj_ai_player
+           {
+                visible = false;
+                control_lock = true;
+                player_inputs_null()
+           }
+           
            instance_create(x,y,obj_fade_in_white);
            aud_play_simple(snd_hurt);
            aud_play_simple(snd_final_boom);
@@ -333,7 +325,6 @@ if state = STATE_DEATH
            dummy_effect_create(spr_stock_explosion,0.1,x,y,-10,0);
            instance_create(x,y,obj_death_handler);
         }
-    }
     
     died = true;
 }

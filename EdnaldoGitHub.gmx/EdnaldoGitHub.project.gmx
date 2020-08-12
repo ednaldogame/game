@@ -227,6 +227,12 @@
       <sprite>sprites\spr_empty</sprite>
       <sprite>sprites\sprDebugStartPlace</sprite>
       <sprite>sprites\spr_hitbox_16</sprite>
+      <sprites name="Directions">
+        <sprite>sprites\spr_platform_dir_down</sprite>
+        <sprite>sprites\spr_platform_dir_left</sprite>
+        <sprite>sprites\spr_platform_dir_right</sprite>
+        <sprite>sprites\spr_platform_dir_up</sprite>
+      </sprites>
     </sprites>
     <sprites name="ASSETS">
       <sprites name="Mechanics">
@@ -275,6 +281,7 @@
         <sprite>sprites\spr_life_pot</sprite>
         <sprite>sprites\spr_door_open</sprite>
         <sprite>sprites\spr_wall_laser</sprite>
+        <sprite>sprites\spr_spikeball</sprite>
       </sprites>
       <sprites name="Waterfall">
         <sprite>sprites\spr_waterfall</sprite>
@@ -722,6 +729,10 @@
       <script>scripts\string_add_zeros.gml</script>
       <script>scripts\instance_place_enlarged.gml</script>
       <script>scripts\define_npc.gml</script>
+      <scripts name="Moving">
+        <script>scripts\movement_create.gml</script>
+        <script>scripts\movement_step.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Player">
       <scripts name="Animation">
@@ -857,6 +868,7 @@
         <object>objects\obj_door</object>
         <object>objects\obj_wall_laser</object>
         <object>objects\obj_paper</object>
+        <object>objects\obj_spikeball</object>
       </objects>
       <objects name="Waterfall">
         <object>objects\obj_waterfall</object>
@@ -903,6 +915,12 @@
         <object>objects\obj_golden_note_main</object>
         <object>objects\obj_golden_note_lilnotes</object>
         <object>objects\obj_golden_note_reds</object>
+      </objects>
+      <objects name="Directions">
+        <object>objects\obj_moving_dir_down</object>
+        <object>objects\obj_moving_dir_left</object>
+        <object>objects\obj_moving_dir_right</object>
+        <object>objects\obj_moving_dir_up</object>
       </objects>
     </objects>
     <objects name="Game">
@@ -964,7 +982,6 @@
         </objects>
         <objects name="Options">
           <object>objects\obj_options</object>
-          <object>objects\obj_gamepad_controller</object>
         </objects>
         <objects name="Stage Transitioner">
           <object>objects\obj_stage_transition</object>
@@ -1035,6 +1052,7 @@
       <object>objects\obj_level_controller</object>
       <object>objects\obj_mission_card</object>
       <object>objects\obj_SharedTweener</object>
+      <object>objects\obj_gamepad_controller</object>
     </objects>
     <objects name="Collisions">
       <objects name="Parents">

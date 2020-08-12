@@ -126,6 +126,7 @@ interact -= 0.1;
 if (ready)
 &amp;&amp; (player)
 &amp;&amp; (player.ground) 
+&amp;&amp; (player.control_lock = false)
 &amp;&amp; (keyboard_check_pressed(global.key_up)) 
 &amp;&amp; (interact &gt;= 1){
 

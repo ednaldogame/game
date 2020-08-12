@@ -94,7 +94,7 @@
     {
     
        // Up:
-          if(joystick_pov(1) == 0 || joystick_direction(1) == 104)
+          if(joystick_pov(1) == 0 || joystick_direction(1) == 104 || joystick_direction(1) = 103 || joystick_direction(1) = 105)
           {
              gmp_cup = true;
              keyboard_key_press(global.key_up);
@@ -109,7 +109,7 @@
           }
     
        // Down:
-          if(joystick_pov(1) == 180 || joystick_direction(1) == 98)
+          if(joystick_pov(1) == 180 || joystick_direction(1) == 98  || joystick_direction(1) = 97  || joystick_direction(1) = 99)
           {
              gmp_cdown = true;
              keyboard_key_press(global.key_down);
@@ -124,7 +124,7 @@
           }
     
        // Left:
-          if(joystick_pov(1) == 270 || joystick_direction(1) == 100)
+          if(joystick_pov(1) == 270 || joystick_direction(1) == 100 || joystick_direction(1) = 103 || joystick_direction(1) = 97)
           {
              gmp_cleft = true;
              keyboard_key_press(global.key_left);
@@ -139,7 +139,7 @@
           }            
     
        // Right:
-          if(joystick_pov(1) == 90 || joystick_direction(1) == 102)
+          if(joystick_pov(1) == 90 || joystick_direction(1) == 102 || joystick_direction(1) = 105 || joystick_direction(1) = 99)
           {
              gmp_cright = true;
              keyboard_key_press(global.key_right);
