@@ -91,6 +91,8 @@
 y = starty+lengthdir_y(8,ang_radius)
 
 generalParallaxYOffset = y;
+
+
 </string>
           </argument>
         </arguments>

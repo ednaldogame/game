@@ -127,13 +127,15 @@ exit;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Find collision.
+            <string>    /// Find collision.
 //Ground Collision
     var g;
     g = scr_collision_check()
     
 //Uses both the default Neptune collision method and the collision rectangle scripts (used frequently in Mario Worlds Delta) to check for collision.
-    if g &amp;&amp; collision_rectangle(bbox_left, bbox_bottom+1, bbox_right, bbox_bottom+1, par_terrain, 0, 0){
+    if (g &amp;&amp; collision_rectangle(bbox_left, bbox_bottom+1, bbox_right, bbox_bottom+1, par_terrain, 0, 0)) 
+    or (collision_rectangle(bbox_left, bbox_bottom-10, bbox_right, bbox_bottom+8, par_moving_platform, 0, 0) &amp;&amp; !collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom-10, par_moving_platform, 0, 0) &amp;&amp; floor(y_speed) &gt;= 0)
+    {
     ground = true;
     }else{
     ground = false;

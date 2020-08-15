@@ -3,7 +3,7 @@
   <spriteName>spr_red_lilnote</spriteName>
   <solid>0</solid>
   <visible>0</visible>
-  <depth>2</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -130,7 +130,7 @@ repeat (4) {
 
 //Increase Score and Grape Amount
 score+=10;
-global.lilnotes+=1;
+
 </string>
           </argument>
         </arguments>

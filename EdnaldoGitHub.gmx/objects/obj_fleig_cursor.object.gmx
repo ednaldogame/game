@@ -103,6 +103,11 @@ if fading = -1
 
 if fading = 1
 {
+    with obj_player
+    {
+    control_lock = false;
+    }
+
     if image_alpha &gt; 0
     {
         image_alpha = scr_approach(image_alpha, 0, 0.125)

@@ -11,7 +11,7 @@
           // Destroy npc:
              with(nrsEnemy){
                  var nrsPlayer;
-                 nrsPlayer = instance_nearest(x,y,obj_player);
+                 nrsPlayer = other;//instance_nearest(x,y,obj_player);
                  
                scr_display_hp(x,y,"enemy","-" + string(nrsPlayer.attack_damage) + "/" + string(enemy_hp))             
                enemy_hp        = enemy_hp - nrsPlayer.attack_damage;

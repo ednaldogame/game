@@ -84,6 +84,8 @@ else if keyboard_check_pressed(global.key_special) or (keyboard_check_pressed(gl
 {
     with obj_player
     {
+        x=global.main_player.x;
+        y=global.main_player.y;
         control_lock = false;
     }
     

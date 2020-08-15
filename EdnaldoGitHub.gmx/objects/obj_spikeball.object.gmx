@@ -54,6 +54,7 @@ image_speed = 0.2;
 if inside_view()
 {
 image_angle += 2.5;
+scr_afterimage(sprite_index, image_index, x, y, image_xscale, image_yscale, image_alpha, image_angle, image_blend);
 }
 </string>
           </argument>

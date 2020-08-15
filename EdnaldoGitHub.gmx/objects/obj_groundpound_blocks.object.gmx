@@ -3,7 +3,7 @@
   <spriteName>spr_groundpound_blocks</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>-101</depth>
   <persistent>0</persistent>
   <parentName>par_solid</parentName>
   <maskName>&lt;undefined&gt;</maskName>

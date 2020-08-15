@@ -9,6 +9,14 @@
         animation_direction = obj_ai_player.animation_direction;
         obj_ai_player.animation_direction = temp;
         
+        temp = animation_frame;
+        animation_frame = obj_ai_player.animation_frame;
+        obj_ai_player.animation_frame = temp;
+        
+        temp = animation_speed;
+        animation_speed = obj_ai_player.animation_speed;
+        obj_ai_player.animation_speed = temp;
+        
         temp = x;
         x = obj_ai_player.x;
         obj_ai_player.x = temp;

@@ -178,6 +178,7 @@
       </sprites>
       <sprites name="Fleig">
         <sprite>sprites\spr_fleig_idle</sprite>
+        <sprite>sprites\spr_fleig_spawnplace</sprite>
         <sprite>sprites\spr_fleig_spin</sprite>
         <sprite>sprites\spr_fleig_mask</sprite>
         <sprite>sprites\spr_fleig_walk</sprite>
@@ -232,7 +233,10 @@
         <sprite>sprites\spr_platform_dir_left</sprite>
         <sprite>sprites\spr_platform_dir_right</sprite>
         <sprite>sprites\spr_platform_dir_up</sprite>
+        <sprite>sprites\spr_platform_dir_idle</sprite>
       </sprites>
+      <sprite>sprites\spr_enter_left</sprite>
+      <sprite>sprites\spr_enter_right</sprite>
     </sprites>
     <sprites name="ASSETS">
       <sprites name="Mechanics">
@@ -291,7 +295,10 @@
       </sprites>
       <sprites name="Enemies">
         <sprite>sprites\spr_jumper</sprite>
+        <sprite>sprites\spr_dark_jumper</sprite>
         <sprite>sprites\spr_jumper_air</sprite>
+        <sprite>sprites\spr_dark_jumper_air</sprite>
+        <sprite>sprites\spr_flier</sprite>
         <sprite>sprites\spr_badnik_block</sprite>
         <sprites name="Bosses">
           <sprites name="Poodle">
@@ -327,10 +334,12 @@
           <sprite>sprites\spr_npc_toad</sprite>
           <sprite>sprites\spr_NPC_doomer</sprite>
           <sprite>sprites\spr_NPC_sergio</sprite>
+          <sprite>sprites\spr_NPC_faustao</sprite>
         </sprites>
         <sprites name="Mugshots and Messages">
           <sprite>sprites\spr_message_display</sprite>
           <sprite>sprites\spr_mugshot_back</sprite>
+          <sprite>sprites\spr_mugshot_faustao</sprite>
           <sprite>sprites\spr_mugshot_sergio</sprite>
           <sprite>sprites\spr_mugshot_cellbit</sprite>
           <sprite>sprites\spr_mugshot_dummy</sprite>
@@ -341,6 +350,13 @@
           <sprite>sprites\spr_mugshot_sign</sprite>
           <sprite>sprites\spr_mugshot_8bitnaldo</sprite>
         </sprites>
+      </sprites>
+      <sprites name="Platforms">
+        <sprite>sprites\spr_moving_platform</sprite>
+        <sprite>sprites\spr_ferrisplatform</sprite>
+        <sprite>sprites\spr_ferrisplatform_segment</sprite>
+        <sprite>sprites\spr_ferrisplatform_spin</sprite>
+        <sprite>sprites\spr_platform_weighted</sprite>
       </sprites>
     </sprites>
     <sprites name="Interface e HUD">
@@ -438,6 +454,7 @@
       <sprite>sprites\spr_stage_icons</sprite>
       <sprite>sprites\spr_stage_thing_1</sprite>
       <sprite>sprites\spr_stage_thing_2</sprite>
+      <sprite>sprites\spr_pausemenu</sprite>
     </sprites>
     <sprites name="VFX">
       <sprites name="Stage">
@@ -751,8 +768,8 @@
         <script>scripts\function_player_swap.gml</script>
         <script>scripts\player_state_statue.gml</script>
         <script>scripts\player_state_attack.gml</script>
-        <script>scripts\player_state_spin.gml</script>
         <script>scripts\player_state_groundpound.gml</script>
+        <script>scripts\player_state_spin.gml</script>
         <script>scripts\groundpound_end.gml</script>
         <script>scripts\player_state_lookup.gml</script>
         <script>scripts\player_state_crouch.gml</script>
@@ -811,6 +828,7 @@
       <script>scripts\wrap_angle.gml</script>
       <script>scripts\rotate_towards.gml</script>
     </scripts>
+    <script>scripts\endlevel.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_normal_12</font>
@@ -869,6 +887,8 @@
         <object>objects\obj_wall_laser</object>
         <object>objects\obj_paper</object>
         <object>objects\obj_spikeball</object>
+        <object>objects\obj_ai_spawner</object>
+        <object>objects\obj_ai_spawnplace</object>
       </objects>
       <objects name="Waterfall">
         <object>objects\obj_waterfall</object>
@@ -880,8 +900,10 @@
         <object>objects\par_enemy</object>
         <object>objects\obj_badnik_block</object>
         <object>objects\obj_dummy</object>
+        <object>objects\obj_flier</object>
         <object>objects\obj_NPC_dummy</object>
         <object>objects\obj_jumper</object>
+        <object>objects\obj_dark_jumper</object>
         <objects name="Bosses">
           <object>objects\par_boss</object>
           <object>objects\obj_boss_time</object>
@@ -921,6 +943,7 @@
         <object>objects\obj_moving_dir_left</object>
         <object>objects\obj_moving_dir_right</object>
         <object>objects\obj_moving_dir_up</object>
+        <object>objects\obj_moving_dir_idle</object>
       </objects>
     </objects>
     <objects name="Game">
@@ -1053,12 +1076,15 @@
       <object>objects\obj_mission_card</object>
       <object>objects\obj_SharedTweener</object>
       <object>objects\obj_gamepad_controller</object>
+      <object>objects\obj_pausemenu</object>
     </objects>
     <objects name="Collisions">
       <objects name="Parents">
         <object>objects\par_solid</object>
         <object>objects\par_platform</object>
         <object>objects\par_terrain</object>
+        <object>objects\par_moving_platform</object>
+        <object>objects\par_moving_platform_main</object>
       </objects>
       <objects name="Masks">
         <object>objects\obj_collision_basic</object>
@@ -1069,6 +1095,14 @@
         <object>objects\obj_collision_slope_4</object>
         <object>objects\obj_collision_slope_1</object>
         <object>objects\obj_collision_slope_2</object>
+      </objects>
+      <objects name="Platform">
+        <object>objects\obj_moving_platform_test</object>
+        <object>objects\obj_moving_platform_moveplayer</object>
+        <object>objects\obj_ferrisplatform</object>
+        <object>objects\obj_ferrisplatform_2x</object>
+        <object>objects\obj_ferrisplatform_3x</object>
+        <object>objects\obj_ferrisplatform_platform</object>
       </objects>
     </objects>
     <objects name="Parents">
@@ -1107,6 +1141,8 @@
       <objects name="ShoeStore">
         <object>objects\obj_bg_shoestore</object>
         <object>objects\obj_bg_shoestore_outer</object>
+        <object>objects\obj_bg_switch01_SS</object>
+        <object>objects\obj_bg_switch10_SS</object>
       </objects>
       <objects name="IntroSpaceship">
         <object>objects\obj_ednaldo_spaceship_big</object>
@@ -1137,15 +1173,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_shoestore</room>
-    <room>rooms\rm_paraiba</room>
-    <room>rooms\rm_tutorial</room>
-    <rooms name="Resistencia">
-      <room>rooms\rm_resistance</room>
-      <room>rooms\rm_resistance_timmaia</room>
-      <room>rooms\rm_resistance_bene</room>
-    </rooms>
     <rooms name="Game">
+      <room>rooms\rm_shoestore</room>
       <room>rooms\rm_language</room>
       <room>rooms\rm_disclaimer</room>
       <room>rooms\rm_title_screen</room>
@@ -1153,15 +1182,22 @@
       <room>rooms\rm_data_select</room>
       <room>rooms\rm_intro_ingame</room>
       <room>rooms\rm_intro_spaceship</room>
+      <rooms name="Resistencia">
+        <room>rooms\rm_resistance</room>
+        <room>rooms\rm_resistance_timmaia</room>
+        <room>rooms\rm_resistance_bene</room>
+      </rooms>
       <rooms name="Stages">
+        <room>rooms\rm_tutorial</room>
+        <room>rooms\rm_paraiba</room>
         <room>rooms\rm_CC</room>
         <room>rooms\rm_jojo</room>
         <room>rooms\rm_chancerecords</room>
         <room>rooms\rm_train</room>
-        <room>rooms\rm_tests</room>
       </rooms>
     </rooms>
     <rooms name="Misc">
+      <room>rooms\rm_tests</room>
       <room>rooms\rm_map</room>
       <room>rooms\rm_ednaldo_prologue</room>
       <room>rooms\rm_template</room>

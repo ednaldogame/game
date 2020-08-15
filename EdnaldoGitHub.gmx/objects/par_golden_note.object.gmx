@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>image_speed = 0.125;
 ang_radius = 0;
+scr_lightsource(0,0,1,1)
 </string>
           </argument>
         </arguments>

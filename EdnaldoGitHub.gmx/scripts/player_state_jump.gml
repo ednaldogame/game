@@ -12,7 +12,12 @@ canjump = true;
 if doubleJumping = false && input_action_pressed && !ground && (state = STATE_DEFAULT or state = STATE_ATTACK or state = STATE_SPIN)
 {
     doubleJumping = true;
-    state = STATE_DEFAULT;
+    
+    if state != STATE_SPIN
+    {
+        state = STATE_DEFAULT;
+    }
+    
     scr_create_smoke(x,y,sprSmoke16)
     aud_play_simple(snd_double_jump);
     
@@ -35,7 +40,10 @@ if ground && doubleJumping
 
     if(ground && (canjump)){
        if(input_action_pressed){
-          state = STATE_DEFAULT;
+         if state != STATE_SPIN
+         {
+            state = STATE_DEFAULT;
+         }
           ground  = false;
           jump_flag = true;
           aud_play_simple_inview(snd_jump)

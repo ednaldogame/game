@@ -122,6 +122,16 @@ a = 0;
 /* Create Score */
 score_ = instance_create(xx,yy-10,obj_object_score)
  score_.sfx_score = 1;
+ 
+// Create XP Balls or whatever
+ repeat (ceil(enemy_max_hp))
+{
+    with instance_create(x,y,obj_pellet)
+    {
+        x_speed = random_range(-8, 8)
+        y_speed = random_range(-3, -8);
+    }
+}
 };
 
 </string>

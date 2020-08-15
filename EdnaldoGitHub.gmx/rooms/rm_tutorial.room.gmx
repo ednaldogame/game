@@ -21,8 +21,8 @@ global.MainObjective = text(
 "- Aprender a jogar o jogo")
 
 global.SideObjectives = text(
-"- Find all Letters#- Collect all lil' golden notes",
-"- Encontrar todas as letras#- Coletar todas notinhas douradas")</code>
+"- Find all Letters#- Collect all lil' golden notes#- Collect all red notes",
+"- Encontrar todas as letras#- Coletar todas notinhas douradas#- Coletar todas notas vermelhas")</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

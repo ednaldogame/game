@@ -34,11 +34,14 @@
     
     if h
     {
-    //What Happens To The Pellet?
-        with h
+        if h.follow = true
         {
-            event_user(0)
-            instance_destroy();
+        //What Happens To The Pellet?
+            with h
+            {
+                event_user(0)
+                instance_destroy();
+            }
         }
     }    
     

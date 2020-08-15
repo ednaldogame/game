@@ -220,15 +220,18 @@ if state = 1
           <argument>
             <kind>1</kind>
             <string>///Collision
-var h;
-h = instance_place(x,y,obj_player);
-if h
+if state = 0
 {
-    if floor(h.y_speed) &gt; 0 &amp;&amp; h.ground = false
+    var h;
+    h = instance_place(x,y,obj_player);
+    if h
     {
-        event_user(0);
-        instance_destroy();
-        obj_player.y_speed = -8;
+        if floor(h.y_speed) &gt; 0 &amp;&amp; h.ground = false &amp;&amp; inside_view()
+        {
+            event_user(0);
+            instance_destroy();
+            h.y_speed = -8;
+        }
     }
 }
 </string>

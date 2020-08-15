@@ -34,7 +34,7 @@ follow = false;
 spin_speed  = -15;
 angle       = 40;
 can_activate = false;
-radius = 120;
+radius = 180;
 alarm[0] = 20;
 </string>
           </argument>
@@ -111,7 +111,7 @@ if !active &amp;&amp; inside_view()
 if instance_exists(obj_player) &amp;&amp; image_index = 0
 {
     var _player;
-    _player = instance_nearest(x,y,obj_player);
+    _player = global.main_player;
     
     if distance_to_object(_player) &lt; 32
     {
@@ -200,7 +200,11 @@ if follow
 {
     if global.main_player.hp &gt;= global.main_player.max_hp
     {
+        scr_create_fading_out(x,y,sprite_index);
         follow = false;
+        x = xstart;
+        y = ystart;
+        scr_create_smoke(x,y,sprSmoke8);
         exit;
     }
 
@@ -211,8 +215,6 @@ if follow
   // Spin throught the player
   x = global.main_player.x + radius * cos(angle * pi / 360);
   y = global.main_player.y - radius * sin(angle * pi / 360);  
-
-
 }
 </string>
           </argument>
