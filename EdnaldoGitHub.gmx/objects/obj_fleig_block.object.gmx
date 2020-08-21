@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>par_solid</parentName>
+  <parentName>par_platform</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>destroy = false;
+start_time = 660;
 alarm[0] = 660;
 </string>
           </argument>
@@ -73,7 +74,12 @@ inv_timer = 60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if destroy
+            <string>if alarm[0]
+{
+    image_yscale = clamp(alarm[0]/start_time, 0.05, 1)
+}
+
+if destroy
 {
     // Timers
         if(inv_timer &gt; 0){

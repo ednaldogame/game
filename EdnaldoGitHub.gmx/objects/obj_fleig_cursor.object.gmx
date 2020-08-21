@@ -277,7 +277,7 @@ else
             <kind>1</kind>
             <string>/// Place Blocks
 mask_index = spr_fleig_block;
-if instance_place(x,y,obj_paper) &amp;&amp; !instance_place(x,y,obj_player) &amp;&amp; !instance_place(x,y,par_terrain)
+if instance_place(x,y - 32,obj_paper) &amp;&amp; !instance_place(x,y - 32,obj_player) &amp;&amp; !instance_place(x,y - 32,par_terrain)
 {
 can_place = true;
 }
@@ -288,7 +288,7 @@ can_place = false;
 
 if keyboard_check_pressed(global.key_action) &amp;&amp; can_place = true
 {
-    instance_create(x,y,obj_fleig_block)
+    instance_create(x,y - 32,obj_fleig_block)
     scr_create_smoke(x,y,sprSmoke16);
 }
 mask_index = sprite_index;
@@ -368,7 +368,7 @@ y += y_speed;
             <kind>1</kind>
             <string>if can_place
 {
-draw_sprite_alpha(spr_fleig_block,-1,x,y,0.5)
+draw_sprite_alpha(spr_fleig_block,-1,x,y - 32,0.5)
 }
 
 draw_self()

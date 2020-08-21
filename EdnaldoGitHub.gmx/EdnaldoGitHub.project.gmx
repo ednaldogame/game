@@ -847,7 +847,6 @@
     </scripts>
     <script>scripts\endlevel.gml</script>
   </scripts>
-  <shaders name="shaders"/>
   <fonts name="fonts">
     <font>fonts\fnt_normal_12</font>
     <font>fonts\fnt_normal_8</font>

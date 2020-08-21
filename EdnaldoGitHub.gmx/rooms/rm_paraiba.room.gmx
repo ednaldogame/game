@@ -624,7 +624,7 @@ global.SideObjectives = text(
     <instance objName="obj_camera_finder" x="3265" y="613" name="inst_43BA77B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch_post" x="3572" y="704" name="inst_BD0B0494" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_jumper" x="3902" y="684" name="inst_D51A8CCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spring_up" x="11934" y="1520" name="inst_5D1C931D" locked="0" code="y_strength = -13;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spring_up" x="11934" y="1520" name="inst_5D1C931D" locked="0" code="y_strength = -15;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up_special" x="12719" y="1264" name="inst_7F1FF36A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_endstage_portal" x="12722" y="769" name="inst_48E82363" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_intro_piece_1" x="2368" y="1088" name="inst_D418EAAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -697,8 +697,9 @@ global.SideObjectives = text(
     <tile bgName="tiles_paraiba" x="3584" y="1216" w="64" h="64" xo="192" yo="320" id="10012774" name="inst_71367CAE" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="4352" y="1344" w="64" h="64" xo="192" yo="320" id="10012775" name="inst_1BA0C4B2" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="5056" y="1344" w="64" h="64" xo="192" yo="320" id="10012776" name="inst_543AA447" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7360" y="1408" w="64" h="64" xo="64" yo="320" id="10012777" name="inst_C7475621" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="7296" y="1408" w="64" h="64" xo="192" yo="320" id="10012778" name="inst_C549EC37" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="4672" y="448" w="64" h="64" xo="192" yo="320" id="10018479" name="inst_23FD0D18" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="4864" y="448" w="64" h="64" xo="192" yo="320" id="10018480" name="inst_A9CEE301" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="5952" y="768" w="64" h="64" xo="128" yo="320" id="10001842" name="inst_D3048FC9" depth="111" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="5952" y="832" w="64" h="64" xo="128" yo="320" id="10001843" name="inst_2A8C92F2" depth="111" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="5952" y="896" w="64" h="64" xo="128" yo="320" id="10001844" name="inst_35D07CCF" depth="111" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1333,28 +1334,6 @@ global.SideObjectives = text(
     <tile bgName="tiles_paraiba" x="3264" y="1344" w="64" h="64" xo="128" yo="320" id="10001756" name="inst_E6196FE4" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="3264" y="1408" w="64" h="64" xo="128" yo="320" id="10001757" name="inst_EC248EA0" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="3264" y="1472" w="64" h="64" xo="128" yo="320" id="10001758" name="inst_C0F77BBE" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="5696" y="1408" w="64" h="64" xo="64" yo="320" id="10001759" name="inst_A37937F6" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="5632" y="1408" w="64" h="64" xo="64" yo="320" id="10001760" name="inst_75C3ED17" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="5568" y="1408" w="64" h="64" xo="64" yo="320" id="10001761" name="inst_E976ACC4" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="5760" y="1408" w="64" h="64" xo="64" yo="320" id="10001762" name="inst_714EDA1F" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="5824" y="1408" w="64" h="64" xo="64" yo="320" id="10001763" name="inst_DE4A6127" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="5888" y="1408" w="64" h="64" xo="64" yo="320" id="10001764" name="inst_8617A0B9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="5952" y="1408" w="64" h="64" xo="64" yo="320" id="10001765" name="inst_D9F5188C" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6016" y="1408" w="64" h="64" xo="64" yo="320" id="10001766" name="inst_4E299061" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6080" y="1408" w="64" h="64" xo="64" yo="320" id="10001767" name="inst_0BA10B99" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6144" y="1408" w="64" h="64" xo="64" yo="320" id="10001768" name="inst_41504606" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6208" y="1408" w="64" h="64" xo="64" yo="320" id="10001769" name="inst_318A7184" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6272" y="1408" w="64" h="64" xo="64" yo="320" id="10001770" name="inst_A47AB949" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6336" y="1408" w="64" h="64" xo="64" yo="320" id="10001771" name="inst_814687A5" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6400" y="1408" w="64" h="64" xo="64" yo="320" id="10001772" name="inst_8A61ED35" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6464" y="1408" w="64" h="64" xo="64" yo="320" id="10001773" name="inst_808C6096" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6528" y="1408" w="64" h="64" xo="64" yo="320" id="10001774" name="inst_D0E76803" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6592" y="1408" w="64" h="64" xo="64" yo="320" id="10001775" name="inst_78C877C0" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6656" y="1408" w="64" h="64" xo="64" yo="320" id="10001776" name="inst_95C196D1" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6720" y="1408" w="64" h="64" xo="64" yo="320" id="10001777" name="inst_050B1689" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6784" y="1408" w="64" h="64" xo="64" yo="320" id="10001778" name="inst_DA1A8480" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6848" y="1408" w="64" h="64" xo="64" yo="320" id="10001779" name="inst_17418B3F" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="6912" y="1408" w="64" h="64" xo="64" yo="320" id="10001780" name="inst_F58EDE01" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="9216" y="384" w="64" h="64" xo="64" yo="0" id="10002461" name="inst_7258E6B1" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="9280" y="384" w="64" h="64" xo="64" yo="0" id="10002464" name="inst_B4F0943A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="9216" y="448" w="64" h="64" xo="0" yo="0" id="10002466" name="inst_2B494495" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1707,15 +1686,40 @@ global.SideObjectives = text(
     <tile bgName="tiles_paraiba" x="10560" y="1600" w="64" h="64" xo="0" yo="128" id="10002995" name="inst_C517F5EB" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="10560" y="1664" w="64" h="64" xo="0" yo="128" id="10002996" name="inst_C39569CC" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_paraiba" x="10624" y="1664" w="64" h="64" xo="0" yo="128" id="10002997" name="inst_D1869DF3" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7392" y="1408" w="64" h="64" xo="64" yo="320" id="10003513" name="inst_61CC5793" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7456" y="1408" w="64" h="64" xo="64" yo="320" id="10003514" name="inst_B7B453E9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7520" y="1408" w="64" h="64" xo="64" yo="320" id="10003515" name="inst_3C27BDDB" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7584" y="1408" w="64" h="64" xo="64" yo="320" id="10003516" name="inst_21A7C34E" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7648" y="1408" w="64" h="64" xo="64" yo="320" id="10003517" name="inst_BA6C84FD" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7712" y="1408" w="64" h="64" xo="64" yo="320" id="10003518" name="inst_DFA26BCF" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7776" y="1408" w="64" h="64" xo="64" yo="320" id="10003519" name="inst_D5E93EFC" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7840" y="1408" w="64" h="64" xo="64" yo="320" id="10003520" name="inst_5CCD4C6E" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_paraiba" x="7904" y="1408" w="64" h="64" xo="64" yo="320" id="10003521" name="inst_3135AFDF" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5568" y="1408" w="64" h="64" xo="192" yo="576" id="10018483" name="inst_D742EEAB" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5504" y="1408" w="64" h="64" xo="192" yo="576" id="10018484" name="inst_682A06F5" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5632" y="1408" w="64" h="64" xo="192" yo="576" id="10018485" name="inst_1B19B74C" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5696" y="1408" w="64" h="64" xo="192" yo="576" id="10018486" name="inst_BFECB2A6" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5760" y="1408" w="64" h="64" xo="192" yo="576" id="10018487" name="inst_8F358E9C" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5824" y="1408" w="64" h="64" xo="192" yo="576" id="10018488" name="inst_0B2064CC" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5888" y="1408" w="64" h="64" xo="192" yo="576" id="10018489" name="inst_770CF353" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="5952" y="1408" w="64" h="64" xo="192" yo="576" id="10018490" name="inst_B65F26F6" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6016" y="1408" w="64" h="64" xo="192" yo="576" id="10018491" name="inst_C4ACBD96" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6080" y="1408" w="64" h="64" xo="192" yo="576" id="10018492" name="inst_5A15B06E" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6144" y="1408" w="64" h="64" xo="192" yo="576" id="10018493" name="inst_8388CCC9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6208" y="1408" w="64" h="64" xo="192" yo="576" id="10018494" name="inst_6BF9909D" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6272" y="1408" w="64" h="64" xo="192" yo="576" id="10018495" name="inst_C59913D6" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6336" y="1408" w="64" h="64" xo="192" yo="576" id="10018496" name="inst_04B0FD08" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6400" y="1408" w="64" h="64" xo="192" yo="576" id="10018497" name="inst_424AAB61" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6464" y="1408" w="64" h="64" xo="192" yo="576" id="10018498" name="inst_82451A6A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6528" y="1408" w="64" h="64" xo="192" yo="576" id="10018499" name="inst_EF64761A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6592" y="1408" w="64" h="64" xo="192" yo="576" id="10018500" name="inst_C910D45B" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6656" y="1408" w="64" h="64" xo="192" yo="576" id="10018501" name="inst_203BE31E" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6720" y="1408" w="64" h="64" xo="192" yo="576" id="10018502" name="inst_1A292D03" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6784" y="1408" w="64" h="64" xo="192" yo="576" id="10018503" name="inst_FDCD40B1" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6848" y="1408" w="64" h="64" xo="192" yo="576" id="10018504" name="inst_0545BCCC" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6912" y="1408" w="64" h="64" xo="192" yo="576" id="10018505" name="inst_BEC65076" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="6976" y="1408" w="64" h="64" xo="192" yo="576" id="10018506" name="inst_9622B1F8" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7424" y="1408" w="64" h="64" xo="192" yo="576" id="10018507" name="inst_FF077BC7" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7488" y="1408" w="64" h="64" xo="192" yo="576" id="10018508" name="inst_A1744985" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7552" y="1408" w="64" h="64" xo="192" yo="576" id="10018509" name="inst_C3DB141F" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7616" y="1408" w="64" h="64" xo="192" yo="576" id="10018510" name="inst_61C21D47" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7680" y="1408" w="64" h="64" xo="192" yo="576" id="10018511" name="inst_E8891829" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7744" y="1408" w="64" h="64" xo="192" yo="576" id="10018512" name="inst_DDCAC510" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7808" y="1408" w="64" h="64" xo="192" yo="576" id="10018513" name="inst_7C0E1990" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7872" y="1408" w="64" h="64" xo="192" yo="576" id="10018514" name="inst_8713A51B" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7936" y="1408" w="64" h="64" xo="192" yo="576" id="10018515" name="inst_012DA176" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_paraiba" x="7360" y="1408" w="64" h="64" xo="192" yo="576" id="10018516" name="inst_3361DDDA" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="decorations_paraiba" x="464" y="1088" w="128" h="128" xo="0" yo="0" id="10001078" name="inst_16872922" depth="80" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="decorations_paraiba" x="48" y="1088" w="128" h="128" xo="0" yo="0" id="10001080" name="inst_6B3E4E9B" depth="80" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="decorations_paraiba" x="688" y="1152" w="128" h="128" xo="0" yo="0" id="10001081" name="inst_CA7D2499" depth="80" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
