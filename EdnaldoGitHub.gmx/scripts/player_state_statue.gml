@@ -1,4 +1,4 @@
-if state = STATE_DEFAULT && input_special && input_down
+if state = STATE_DEFAULT && input_specialC
 {
     state = STATE_STATUE;
     aud_play_simple(snd_player_attack);
@@ -10,7 +10,7 @@ if state = STATE_STATUE
 {
     x_speed = 0;
     
-    if (!input_special or !input_down) && !instance_exists(obj_player_circle_aura)
+    if (!input_specialC) && !instance_exists(obj_player_circle_aura)
     {
         scr_create_smoke(x,y-13,sprSmoke16);
         animation_frame = 0;

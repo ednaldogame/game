@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>-999999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -51,7 +51,7 @@ uni_greyscale_fade = 0;//shader_get_uniform(shd_grayscale,"fade");
 var_greyscale_fade = 0;
 
 //Create a screenshot
-back = background_create_from_surface(application_surface,view_xview[0],view_yview[0],view_xview[0] + 512,view_yview[0] + 288,0,0);
+back = background_create_from_surface(application_surface, 0, 0, 512, 288, 0, 0);
 
 //Stop movement on all backgrounds
 for (var i=0; i&lt;8; i++) {
@@ -85,11 +85,18 @@ ready2 = 1;
 alarm[0] = 2;
 
 //Handle the Menus
-menu[0] = "Continue";
+menu[0] = text("Continue", "Continuar");
+menu[1] = text("Restart", "Reiniciar");
+menu[2] = text("Exit", "Sair");
 
-     menu[1] = "Return to map";
-
-menu[2] = "Quit Game";
+if room = rm_resistance
+{
+    menu[2] = text("Return to Menu", "Retornar ao Menu");
+}
+else
+{
+    menu[2] = text("Return to Ship", "Retornar à Nave");
+}
 </string>
           </argument>
         </arguments>
@@ -305,7 +312,11 @@ else if (keyboard_check_pressed(global.key_action)) {
                     aud_play_simple(snd_menu_accept);
                     
                     //Return to the map
-                    endlevel();
+                    with instance_create(0,0,objFadeToValue)
+                    {
+                        value = rm_resistance;
+                        global.exit_id = EXIT_NULL;
+                    }
                     
                     //Exit
                     exit;
@@ -317,7 +328,14 @@ else if (keyboard_check_pressed(global.key_action)) {
                 aud_play_simple(snd_menu_accept);
                 with instance_create(x,y,obj_fade_to)
                 {
-                value = rm_title_screen;
+                    if room = rm_resistance
+                    {
+                        value = rm_title_screen;
+                    }
+                    else
+                    {
+                        value = rm_resistance;
+                    }
                 }
                 exit;
                 
@@ -360,20 +378,21 @@ else if (keyboard_check_pressed(global.key_enter)) &amp;&amp; (!keyboard_check(v
             <kind>1</kind>
             <string>///Draw the menu.
 //Set the colour
+draw_set_colour(c_black);
+
+draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + 512, view_yview[0] + 288, 0)
+
+//Set the colour
 draw_set_colour(c_white);
 
 //Draw the background
 if (background_exists(back)) {
-    
-    //Disable alpha blending.
-    draw_enable_alphablend(0);
-    
+
+    draw_enable_alphablend(0);   
     //Draw the screenshot
-    draw_background(back, view_xview[0], view_yview[0]);
-    
-    //Enable alpha blending.
+    draw_background(back, view_xview, view_yview);  
     draw_enable_alphablend(1);
-}
+}   
 
 //Draw the actual border.
 draw_sprite_ext(spr_pausemenu, 1, view_xview[0]+512/2, view_yview[0]+288/2, image_xscale, image_yscale, 0, c_white, 1);
@@ -408,6 +427,8 @@ if (image_xscale == 1) {
     //Re-align the text
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
+    
+    draw_text(view_xview[0], view_yview[0], text("Golden Notes", "Notas Douradas") + ": " + string(global.golden_notes) + "#" + text("Double Golden Notes", "Notas Douradas Duplas") + ": " + string(global.golden_notes) );
 }
 </string>
           </argument>

@@ -5,7 +5,7 @@
     global.angle_mode = 1;
     global.last_icon = 0;
     global.letter_order = false;
-    global.debug = true;
+    global.debug = false;
     global.vsync = false;
     global.exit_id = EXIT_NULL;
     global.display_hud = true;
@@ -46,6 +46,7 @@
     global.main_player = noone;
     global.cpu_player = noone;
     global.golden_notes = 0;
+    global.double_golden_notes = 0;
     global.lilnotes = 0;
     global.lilnotes_total = 0;
     global.lilnotes_bank = 0;
@@ -53,6 +54,7 @@
     global.game_time = 0;
     global.game_paused = false;
     global.hit_times = 0;
+    global.stand_brother = 0;
     
  // Audio
     global.sfx_volume = 0.5;

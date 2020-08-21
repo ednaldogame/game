@@ -10,17 +10,8 @@
   <persistent>0</persistent>
   <colour>16758639</colour>
   <showcolour>-1</showcolour>
-  <code>global.MissionName = text(
-"Guarabira - Deja Vú",
-"Guarabira - Paisagem Campestre")
-
-global.MainObjective = text(
-"- Find all Letters",
-"- Encontrar todas as letras")
-
-global.SideObjectives = text(
-"- Save Fleig (The Bass Player)#- Collect all lil' golden notes",
-"- Salvar Fleig (O baixista)#- Coletar todas notinhas douradas")</code>
+  <code>global.stand_brother = true;
+scr_save_game()</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -61,13 +52,12 @@ global.SideObjectives = text(
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_player" x="81" y="211" name="inst_B4DDC780" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="54" y="210" name="inst_B4DDC780" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFadeIn" x="0" y="0" name="inst_75D31F31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_level_controller" x="64" y="0" name="inst_686163F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_collision_basic" x="0" y="224" name="inst_D6E349CE" locked="0" code="" scaleX="8" scaleY="1.25" colour="4294967295" rotation="0"/>
-    <instance objName="obj_NPC_template" x="467" y="211" name="inst_65F7339C" locked="0" code="sprite_index = spr_NPC_edjosuke;&#xA;mugshot = spr_mugshot_edjosuke;&#xA;varmsg = text(&quot;&quot;, &quot;Parabéns!#Você desbloqueou o stand [WHAT IS THE BROTHER PLATINUM].&quot;)&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision_basic" x="0" y="225" name="inst_D6E349CE" locked="0" code="" scaleX="8" scaleY="1.25" colour="4294967295" rotation="0"/>
+    <instance objName="obj_NPC_template" x="467" y="211" name="inst_65F7339C" locked="0" code="sprite_index = spr_NPC_edjosuke;&#xA;mugshot = spr_mugshot_edjosuke;&#xA;varmsg = text(&quot;Sup Ednaldo! # You have unlocked the stand [WHAT IS THE BROTHER PLATINUM]. # With this skill, you have a long-range attack that can help you collect things you normally wouldn't be able to do or defeat enemies in the area without getting close to them .&quot;, &quot;Fala naldão!#Você desbloqueou o stand [WHAT IS THE BROTHER PLATINUM].#Com esta habilidade, você tem um ataque de longo alcance que pode ajudar a coletar coisas que normalmente você não conseguiria ou a derrotar os inimigos na area sem chegar perto deles.&quot;)&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_jojo_symbol" x="61" y="73" name="inst_7C5AF406" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_jojo_stand" x="29" y="32" name="inst_3956B256" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_jojo_stand" x="46" y="34" name="inst_3956B256" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_typing_text" x="225" y="46" name="inst_5D453BA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="157" y="12" name="inst_69EEFB52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="187" y="29" name="inst_3B325BE5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -80,6 +70,7 @@ global.SideObjectives = text(
     <instance objName="obj_collectable" x="336" y="13" name="inst_023BFFA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="415" y="10" name="inst_18B1AEBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="452" y="29" name="inst_E4F9D5EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="0" y="144" name="inst_10430DE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

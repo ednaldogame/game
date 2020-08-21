@@ -17,6 +17,14 @@
         animation_speed = obj_ai_player.animation_speed;
         obj_ai_player.animation_speed = temp;
         
+        temp = animation_end;
+        animation_end = obj_ai_player.animation_end;
+        obj_ai_player.animation_end = temp;
+        
+        temp = animation_loop;
+        animation_loop = obj_ai_player.animation_loop;
+        obj_ai_player.animation_loop = temp;
+        
         temp = x;
         x = obj_ai_player.x;
         obj_ai_player.x = temp;

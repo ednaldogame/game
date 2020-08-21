@@ -120,6 +120,8 @@
       <sound>sound\bgm_train</sound>
       <sound>sound\bgm_main</sound>
       <sound>sound\bgm_enterstage</sound>
+      <sound>sound\bgm_credits</sound>
+      <sound>sound\bgm_josoares</sound>
     </sounds>
     <sounds name="Voices">
       <sounds name="Chico Melancia">
@@ -178,6 +180,8 @@
       </sprites>
       <sprites name="Fleig">
         <sprite>sprites\spr_fleig_idle</sprite>
+        <sprite>sprites\spr_fleig_lookup</sprite>
+        <sprite>sprites\spr_fleig_lookdown</sprite>
         <sprite>sprites\spr_fleig_spawnplace</sprite>
         <sprite>sprites\spr_fleig_spin</sprite>
         <sprite>sprites\spr_fleig_mask</sprite>
@@ -262,6 +266,8 @@
         <sprite>sprites\spr_spring_up</sprite>
         <sprite>sprites\spr_spring_up_special</sprite>
         <sprite>sprites\spr_golden_note</sprite>
+        <sprite>sprites\spr_double_golden_note</sprite>
+        <sprite>sprites\spr_double_golden_note_collected</sprite>
         <sprite>sprites\spr_golden_note_empty</sprite>
         <sprite>sprites\spr_golden_note_collected</sprite>
         <sprite>sprites\spr_portal</sprite>
@@ -285,6 +291,7 @@
         <sprite>sprites\spr_life_pot</sprite>
         <sprite>sprites\spr_door_open</sprite>
         <sprite>sprites\spr_wall_laser</sprite>
+        <sprite>sprites\spr_wall_laser_double</sprite>
         <sprite>sprites\spr_spikeball</sprite>
       </sprites>
       <sprites name="Waterfall">
@@ -335,10 +342,12 @@
           <sprite>sprites\spr_NPC_doomer</sprite>
           <sprite>sprites\spr_NPC_sergio</sprite>
           <sprite>sprites\spr_NPC_faustao</sprite>
+          <sprite>sprites\spr_NPC_jo</sprite>
         </sprites>
         <sprites name="Mugshots and Messages">
           <sprite>sprites\spr_message_display</sprite>
           <sprite>sprites\spr_mugshot_back</sprite>
+          <sprite>sprites\spr_mugshot_jo</sprite>
           <sprite>sprites\spr_mugshot_faustao</sprite>
           <sprite>sprites\spr_mugshot_sergio</sprite>
           <sprite>sprites\spr_mugshot_cellbit</sprite>
@@ -402,6 +411,9 @@
         <sprite>sprites\spr_disclaimer_screen</sprite>
         <sprite>sprites\spr_logo</sprite>
         <sprite>sprites\spr_story_recap</sprite>
+        <sprites name="Credits">
+          <sprite>sprites\spr_ednaldo_face</sprite>
+        </sprites>
       </sprites>
       <sprites name="Fading">
         <sprite>sprites\sprBlockDown</sprite>
@@ -531,6 +543,7 @@
       </backgrounds>
       <backgrounds name="General">
         <background>background\tileset_general</background>
+        <background>background\tl_movement_grid</background>
       </backgrounds>
       <backgrounds name="Cidade Capital">
         <background>background\tl_cidadecapital</background>
@@ -608,6 +621,10 @@
         <background>background\bg_black_gradient</background>
       </backgrounds>
       <background>background\bg_black</background>
+      <backgrounds name="Credits">
+        <background>background\bg_credits_clouds</background>
+        <background>background\bg_credits_hilltop</background>
+      </backgrounds>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -830,6 +847,7 @@
     </scripts>
     <script>scripts\endlevel.gml</script>
   </scripts>
+  <shaders name="shaders"/>
   <fonts name="fonts">
     <font>fonts\fnt_normal_12</font>
     <font>fonts\fnt_normal_8</font>
@@ -885,6 +903,7 @@
         <object>objects\obj_pellet</object>
         <object>objects\obj_door</object>
         <object>objects\obj_wall_laser</object>
+        <object>objects\obj_wall_laser_double</object>
         <object>objects\obj_paper</object>
         <object>objects\obj_spikeball</object>
         <object>objects\obj_ai_spawner</object>
@@ -1009,6 +1028,12 @@
         <objects name="Stage Transitioner">
           <object>objects\obj_stage_transition</object>
         </objects>
+        <objects name="Credits">
+          <object>objects\obj_credits</object>
+          <object>objects\obj_spawn_faces</object>
+          <object>objects\obj_faces</object>
+        </objects>
+        <object>objects\obj_enter_next</object>
       </objects>
       <objects name="Fades">
         <object>objects\parFade</object>
@@ -1174,7 +1199,6 @@
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <rooms name="Game">
-      <room>rooms\rm_shoestore</room>
       <room>rooms\rm_language</room>
       <room>rooms\rm_disclaimer</room>
       <room>rooms\rm_title_screen</room>
@@ -1184,16 +1208,23 @@
       <room>rooms\rm_intro_spaceship</room>
       <rooms name="Resistencia">
         <room>rooms\rm_resistance</room>
-        <room>rooms\rm_resistance_timmaia</room>
-        <room>rooms\rm_resistance_bene</room>
       </rooms>
       <rooms name="Stages">
         <room>rooms\rm_tutorial</room>
         <room>rooms\rm_paraiba</room>
+        <room>rooms\rm_shoestore</room>
         <room>rooms\rm_CC</room>
-        <room>rooms\rm_jojo</room>
         <room>rooms\rm_chancerecords</room>
         <room>rooms\rm_train</room>
+        <room>rooms\rm_credits</room>
+        <room>rooms\rm_postcredits</room>
+      </rooms>
+      <rooms name="Resistencia">
+        <room>rooms\rm_resistance_timmaia</room>
+        <room>rooms\rm_resistance_downstairs</room>
+        <room>rooms\rm_resistance_upstairs</room>
+        <room>rooms\rm_resistance_bene</room>
+        <room>rooms\rm_stand_brother</room>
       </rooms>
     </rooms>
     <rooms name="Misc">
@@ -1207,7 +1238,7 @@
   </rooms>
   <constants number="49">
     <constant name="GAME_NAME">"EDNALDO PEREIRA: MESCLADASSO"</constant>
-    <constant name="GAME_VERSION">"vPRE RELEASE"</constant>
+    <constant name="GAME_VERSION">"v0.0.1"</constant>
     <constant name="EXIT_NULL">12345</constant>
     <constant name="CHAR_EDNALDO">1</constant>
     <constant name="CHAR_FLEIG">2</constant>

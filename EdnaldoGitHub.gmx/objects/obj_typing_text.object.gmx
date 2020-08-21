@@ -25,11 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>txt = "VOCÊ DESBLOQUEOU O STAND
+            <string>txt = text("YOU UNLOCKED THE STAND
 [WHAT IS THE BROTHER PLATINUM]
 
-APERTE BAIXO + S PARA USAR
-SUA NOVA HABILIDADE"
+PRESS [W] TO USE
+YOUR NEW SKILL","VOCÊ DESBLOQUEOU O STAND
+[WHAT IS THE BROTHER PLATINUM]
+
+APERTE [W] PARA USAR
+SUA NOVA HABILIDADE")
 newtxt = ""
 alarm[0] = 30;
 </string>

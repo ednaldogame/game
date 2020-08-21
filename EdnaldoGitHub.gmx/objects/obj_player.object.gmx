@@ -379,8 +379,9 @@ if died or perm_lock
           <argument>
             <kind>1</kind>
             <string>/// Pause
-if keyboard_check_released(vk_enter) &amp;&amp; !ai_flag
+if keyboard_check_pressed(vk_enter) &amp;&amp; !ai_flag
 {
+    keyboard_clear(vk_enter);
     instance_create(x,y,obj_pausemenu);
 }
 </string>
@@ -619,7 +620,11 @@ player_state_swap()
 
 if player_index = CHAR_EDNALDO
 {
-    player_state_statue()
+    if global.stand_brother = true
+    {
+        player_state_statue()
+    }
+    
     player_state_attack()
     player_state_groundpound()
 }

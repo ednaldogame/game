@@ -66,7 +66,7 @@ if (type==SWITCH_DOOR or type==SWITCH_SPRING)
         obj=obj_spring_up_red_switch;
     }
     
-    if instance_place(x,y,obj_player) or instance_place(x,y,obj_throwblock) or  instance_place(x,y,par_attack_object)
+    if instance_place(x,y,global.main_player) or instance_place(x,y,obj_throwblock) or  instance_place(x,y,par_attack_object)
     {
         with instance_nearest(x,y,obj)
         {

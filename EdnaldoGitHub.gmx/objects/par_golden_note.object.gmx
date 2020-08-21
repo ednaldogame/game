@@ -72,9 +72,15 @@ aud_play_simple(snd_letter)
 
 //global.grapes+=1;
 
-if sprite_index = spr_golden_note
+if sprite_index = spr_golden_note || sprite_index = spr_double_golden_note
 {
     global.golden_notes += 1;
+    
+    if sprite_index = spr_double_golden_note
+    {
+            global.double_golden_notes += 1;
+    }
+    
     scr_save_game()
 }
 </string>
@@ -135,9 +141,9 @@ if inside_view
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !other.ai_flag &amp;&amp; (sprite_index = spr_golden_note or sprite_index = spr_golden_note_collected)
+            <string>if !other.ai_flag &amp;&amp; (sprite_index = spr_golden_note or sprite_index = spr_golden_note_collected || sprite_index = spr_double_golden_note || sprite_index = spr_double_golden_note_collected)
 {
-    if sprite_index = spr_golden_note
+    if sprite_index = spr_golden_note || sprite_index = spr_double_golden_note
     {
         collectable_collect(identifier)
         scr_display_message_ext(0, text("YOU GOT A#GOLDEN NOTE!", "VOCÊ PEGOU UMA#NOTA DOURADA!"), 125, c_yellow);

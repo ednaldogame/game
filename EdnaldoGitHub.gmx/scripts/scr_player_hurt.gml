@@ -1,6 +1,6 @@
 //Get Hurt!
 
-if inv_timer = 0 && control_lock = 0
+if inv_timer = 0 && control_lock = 0 && state != STATE_STATUE
 {
     if(hp > 1)
     {

@@ -662,6 +662,7 @@ global.SideObjectives = text(
     <instance objName="obj_red_lilnote" x="6521" y="467" name="inst_ECB83DBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_red_lilnote" x="6083" y="435" name="inst_FC8666BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_golden_note_reds" x="6994" y="1011" name="inst_5F7417A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_golden_note_main" x="12081" y="1175" name="inst_326245ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tiles_paraiba" x="1600" y="1472" w="64" h="64" xo="192" yo="320" id="10012738" name="inst_00DA549A" depth="112" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

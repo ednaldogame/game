@@ -26,7 +26,7 @@
         set_song(rm_train, bgm_train);
 
     // Resistance
-        if instance_exists(obj_bg_resistance)
+        if instance_exists(obj_bg_resistance) || room = rm_stand_brother
         {
             set_song(room, bgm_resistance);
         }
@@ -58,3 +58,19 @@ if room = rm_title_screen
     global.bgm = bgm_title;
     aud_play_jingle(global.bgm, global.bgm_volume, 1)
 }
+
+if room = rm_credits
+{
+    audio_stop_all()
+    global.bgm = bgm_credits;
+    aud_play_jingle(global.bgm, global.bgm_volume, 1)
+}
+
+if room = rm_postcredits
+{
+    audio_stop_all()
+    global.bgm = bgm_josoares;
+    aud_play_jingle(global.bgm, global.bgm_volume, 1)
+}
+
+
