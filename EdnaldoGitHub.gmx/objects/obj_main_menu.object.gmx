@@ -44,7 +44,7 @@ option_highlighted = 0;
 option_min = 0;
 option[0] = text("Play", "Jogar");
 option[1] = text("Options", "Opções");
-option[2] = text("Credits", "Créditos");
+option[2] = text("Online", "Online");
 option[3] = text("Exit", "Sair");
 
 
@@ -203,6 +203,21 @@ if keyboard_check_pressed(global.key_enter) &amp;&amp; !instance_exists(parFade)
         {
             value = rm_options;
         }
+        event_user(0);
+    }
+    
+    if option_highlighted = 2
+    {
+        with instance_create(0,0,objFadeToValue)
+        {
+            value = rm_login;
+        }
+        event_user(0);
+    }
+    
+    if option_highlighted = 3
+    {
+        game_end()
         event_user(0);
     }
 }

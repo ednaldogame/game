@@ -66,7 +66,6 @@ global.SideObjectives = text(
     <instance objName="obj_level_controller" x="64" y="0" name="inst_686163F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mission_card" x="128" y="0" name="inst_26A16AD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_basic" x="-64" y="1216" name="inst_AF24F4A0" locked="0" code="" scaleX="16" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ai_player" x="64" y="256" name="inst_9D2CE1EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_intro_piece_1" x="8134" y="360" name="inst_35D4F2E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_intro_piece_2" x="2189" y="223" name="inst_A94319CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring_up" x="992" y="1377" name="inst_2E3F4C19" locked="0" code="y_strength = -15;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -535,6 +534,7 @@ global.SideObjectives = text(
     <instance objName="obj_collectable" x="9022" y="536" name="inst_72C7859E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_golden_note_main" x="19168" y="965" name="inst_3E723515" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_toad" x="10114" y="1331" name="inst_AF914E85" locked="0" code="define_npc(spr_NPC_jo, spr_mugshot_jo,&#xA;text(&#xA;&quot;JO SOARES:&#xA;Hey, sweetie, you got some weight, huh? #Anyway, in this top section I hope Ednaldão has already managed to unlock the STAND [WHAT IS THE BROTHER PLATINUM] to make his life easier!&quot;&#xA;,&#xA;&quot;JO SOARES:#&#xA;Fala queridão, engordasse hein?#Enfim, nessa seção de cima espero que Ednaldão aí já tenha conseguido desbloquear o STAND [WHAT IS THE BROTHER PLATINUM] para facilitar a vida dele!&quot;))&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_AI_handler" x="50" y="302" name="inst_2F4E469B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tl_shoestore" x="17088" y="1216" w="64" h="64" xo="0" yo="192" id="10017657" name="inst_227B1AB9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

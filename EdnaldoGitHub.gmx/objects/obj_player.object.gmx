@@ -130,6 +130,35 @@
  {
     instance_create(x,y,obj_camera);
  }
+ 
+ if global.online_enabled = true
+ {
+    event_user(1);
+ }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Call Server Things
+event_user(1)
 </string>
           </argument>
         </arguments>
@@ -310,6 +339,36 @@ if h
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Server
+if global.online_enabled
+{
+    gms_self_set("sv_x", floor(x))
+    gms_self_set("sv_y", floor(y))
+    gms_self_set("sv_sprite", floor(sprite))
+    gms_self_set("sv_animation_frame", floor(animation_frame))
+    gms_self_set("sv_animation_direction", floor(animation_direction))
+    gms_self_set("sv_player_index", floor(player_index))
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Death
 if state = STATE_DEATH
 {   
@@ -379,7 +438,7 @@ if died or perm_lock
           <argument>
             <kind>1</kind>
             <string>/// Pause
-if keyboard_check_pressed(vk_enter) &amp;&amp; !ai_flag
+if (keyboard_check_pressed(vk_enter) &amp;&amp; !ai_flag) &amp;&amp; (!global.online_enabled or (global.online_enabled &amp;&amp; !gms_chat_istyping()))
 {
     keyboard_clear(vk_enter);
     instance_create(x,y,obj_pausemenu);
@@ -405,7 +464,7 @@ if keyboard_check_pressed(vk_enter) &amp;&amp; !ai_flag
           <argument>
             <kind>1</kind>
             <string>/// Set movement keys.
-if !ai_flag &amp;&amp; control_lock = 0
+if !ai_flag &amp;&amp; control_lock = 0 &amp;&amp; (!global.online_enabled or (global.online_enabled &amp;&amp; !gms_chat_istyping()))
 {
  // Key held.   
     input_up               = keyboard_check(global.key_up);
@@ -442,6 +501,12 @@ if !ai_flag &amp;&amp; control_lock = 0
     input_specialC_released = keyboard_check_released(global.key_specialC);    
     input_triggerL_released = keyboard_check_released(global.key_triggerL);  
     input_triggerR_released = keyboard_check_released(global.key_triggerR);   
+}
+
+// Stop Player When Typing
+if global.online_enabled &amp;&amp; gms_chat_istyping()
+{
+    player_inputs_null()
 }
 
 if control_lock = -1 &amp;&amp; ground
@@ -970,6 +1035,32 @@ if state = STATE_DEATH
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Set Server Variables
+gms_self_set("sv_ping", floor(gms_info_ping()))
+gms_self_set("sv_room", floor(room))
+alarm[3] = 60;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -1071,6 +1162,15 @@ if instance_exists(obj_level_controller)
 
     // Draw Playable
     draw_sprite_ext(sprite, floor(animation_frame), floor(x), floor(y), animation_direction, image_yscale, image_angle, image_blend, image_alpha);
+    
+    // Draw Names
+    if global.online_enabled
+    {
+        if global.show_names
+        {
+            draw_name(x,y,string(gms_self_name()),gms_self_admin_rights())
+        }
+    }    
 </string>
           </argument>
         </arguments>

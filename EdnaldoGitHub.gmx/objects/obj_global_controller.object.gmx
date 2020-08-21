@@ -523,7 +523,7 @@ draw_set_halign(-1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.debug = true
+            <string>if global.debug = true &amp;&amp; !gms_chat_istyping()
 {
 room_restart()
 }

@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="17" name="datafiles">
+  <datafiles number="18" name="datafiles">
     <datafile>
       <name>discord_rich_presence.dll</name>
       <exists>-1</exists>
@@ -38,11 +38,28 @@
       </ConfigOptions>
       <filename>discord-rpc.dll</filename>
     </datafile>
+    <datafile>
+      <name>DBGHELP.dll</name>
+      <exists>-1</exists>
+      <size>81962</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>DBGHELP.dll</filename>
+    </datafile>
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\TweenGMS</extension>
-    <extension index="1">extensions\GML Video Player - Edge Engine</extension>
-    <extension index="2">extensions\GMRichPresence</extension>
+    <extension index="1">extensions\GMRichPresence</extension>
+    <extension index="2">extensions\GameMaker Server+(Windows)</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="SFX">
@@ -180,6 +197,7 @@
       </sprites>
       <sprites name="Fleig">
         <sprite>sprites\spr_fleig_idle</sprite>
+        <sprite>sprites\spr_AI_spawner</sprite>
         <sprite>sprites\spr_fleig_lookup</sprite>
         <sprite>sprites\spr_fleig_lookdown</sprite>
         <sprite>sprites\spr_fleig_spawnplace</sprite>
@@ -524,6 +542,11 @@
         <sprite>sprites\sprCloudTexture</sprite>
       </sprites>
     </sprites>
+    <sprites name="GameMaker Server">
+      <sprite>sprites\sv_UI_online_players</sprite>
+      <sprite>sprites\spr_player_icons</sprite>
+      <sprite>sprites\sv_spr_connection_bar</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="ShoeStore">
@@ -845,6 +868,13 @@
       <script>scripts\wrap_angle.gml</script>
       <script>scripts\rotate_towards.gml</script>
     </scripts>
+    <scripts name="Online">
+      <script>scripts\on_token_login.gml</script>
+      <script>scripts\on_authentication_token.gml</script>
+      <script>scripts\scr_chat_verify.gml</script>
+      <script>scripts\sv_scr_returnping.gml</script>
+      <script>scripts\draw_name.gml</script>
+    </scripts>
     <script>scripts\endlevel.gml</script>
   </scripts>
   <fonts name="fonts">
@@ -867,6 +897,10 @@
     <font>fonts\fnt_comic_12</font>
     <font>fonts\fnt_mario64</font>
     <font>fonts\fnt_consolas_8</font>
+    <font>fonts\fnt_interface</font>
+    <font>fonts\fnt_gms1</font>
+    <font>fonts\fnt_gms2</font>
+    <font>fonts\fnt_gms3</font>
   </fonts>
   <objects name="objects">
     <objects name="STAGE ASSETS">
@@ -1064,6 +1098,7 @@
     <objects name="Player">
       <object>objects\obj_player</object>
       <object>objects\obj_startplace</object>
+      <object>objects\obj_AI_handler</object>
       <object>objects\obj_ai_player</object>
       <objects name="Vehicles">
         <object>objects\obj_vehicle</object>
@@ -1101,6 +1136,11 @@
       <object>objects\obj_SharedTweener</object>
       <object>objects\obj_gamepad_controller</object>
       <object>objects\obj_pausemenu</object>
+      <objects name="GameMaker Server">
+        <object>objects\GMS</object>
+        <object>objects\obj_login</object>
+        <object>objects\obj_other_player</object>
+      </objects>
     </objects>
     <objects name="Collisions">
       <objects name="Parents">
@@ -1232,12 +1272,13 @@
       <room>rooms\rm_ednaldo_prologue</room>
       <room>rooms\rm_template</room>
       <room>rooms\rm_options</room>
+      <room>rooms\rm_login</room>
       <room>rooms\rm_stage_transitioner</room>
     </rooms>
   </rooms>
   <constants number="49">
     <constant name="GAME_NAME">"EDNALDO PEREIRA: MESCLADASSO"</constant>
-    <constant name="GAME_VERSION">"v0.0.1"</constant>
+    <constant name="GAME_VERSION">"v0.0.2"</constant>
     <constant name="EXIT_NULL">12345</constant>
     <constant name="CHAR_EDNALDO">1</constant>
     <constant name="CHAR_FLEIG">2</constant>

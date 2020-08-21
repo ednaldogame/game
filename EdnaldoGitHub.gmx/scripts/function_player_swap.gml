@@ -1,3 +1,5 @@
+if global.online_enabled = false
+{
         var temp;
         temp = 0;
         
@@ -60,5 +62,46 @@
         
         audio_stop_sound(snd_swap_fail)
         aud_play_simple(snd_swap);
-        keyboard_clear(vk_tab)
         exit;
+}
+else
+{
+        var swapped;
+        swapped = false;
+        
+        if player_index = CHAR_EDNALDO && swapped = false
+        {
+            player_index = CHAR_FLEIG;
+            swapped = true;
+        }
+        
+        if player_index = CHAR_FLEIG && swapped = false
+        {
+            player_index = CHAR_EDNALDO;
+            swapped = true;
+        }
+
+        if instance_exists(obj_level_controller)
+        {
+            with obj_level_controller
+            {
+                event_user(0);
+            }
+        }
+        
+        with obj_global_controller
+        {
+            event_user(0);
+        }
+
+        // Hop when Swapped
+        if ground
+        {
+            ground = false;
+            y_speed = -3;
+        }
+        
+        audio_stop_sound(snd_swap_fail)
+        aud_play_simple(snd_swap);
+        exit;
+}

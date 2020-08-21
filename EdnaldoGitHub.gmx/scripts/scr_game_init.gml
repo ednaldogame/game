@@ -1,3 +1,10 @@
+ // Online
+    global.online_enabled = false;   
+    global.chat_enabled = true; 
+    global.show_names = true;
+    gms_init(GMS);
+    gms_settings(0, GAME_VERSION, obj_player, obj_other_player);
+     
  // Player
     global.spot_max = 1;
     global.stages_unlocked = 3;
