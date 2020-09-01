@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 12;
-scroll_hspeed = 0.5;
+active = false;
+scroll_xspeed = 2;
+x_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -52,7 +54,8 @@ scroll_hspeed = 0.5;
             <string>x = global.main_player.x;
 y = global.main_player.y;
 obj_camera.cam_obj = self.id;
-hspeed = scroll_hspeed;
+x_speed = scroll_xspeed;
+active = true;
 </string>
           </argument>
         </arguments>
@@ -75,18 +78,47 @@ hspeed = scroll_hspeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with obj_player
+            <string>// Keep Player Within Boundaries
+with obj_player
 {
-if x &lt; view_xview[0]
-{
-x = view_xview[0];
+    if x &lt; view_xview[0] &amp;&amp; !instance_place(view_xview[0], y, par_solid)
+    {
+        x = view_xview[0];
+    }
+    
+    
+    if x &gt; view_xview[0] + 512 &amp;&amp; !instance_place(view_xview[0] + 512, y, par_solid)
+    {
+        x = view_xview[0] + 512;
+    }
 }
 
-if x &gt; view_xview[0] + 512
+// Move
+if active
 {
-x = view_xview[0] + 512;
+    if instance_exists(obj_fleig_cursor)
+    {
+        x_speed = scr_approach(x_speed, scroll_xspeed/2, 0.05)
+    }
+    else if !global.main_player.control_lock
+    {
+        x_speed = scr_approach(x_speed, scroll_xspeed, 0.0125)
+    }
+    else
+    {
+        x_speed = scr_approach(x_speed, 0, 0.05)
+    }
+    
+    x += x_speed;
+    
+    if obj_camera.cam_obj = global.main_player
+    {
+        obj_camera.cam_obj = self.id;
+        x = view_xview[0] + 512/2;
+        y = global.main_player.y;
+    }
 }
-}
+
 </string>
           </argument>
         </arguments>

@@ -226,7 +226,7 @@ if state = 0
     h = instance_place(x,y,obj_player);
     if h
     {
-        if floor(h.y_speed) &gt; 0 &amp;&amp; h.ground = false &amp;&amp; inside_view()
+        if ((floor(h.y_speed) &gt; 0 &amp;&amp; h.ground = false) || h.harmful = true) &amp;&amp; inside_view()
         {
             event_user(0);
             instance_destroy();

@@ -45,7 +45,7 @@
 
     var OverallYOffset; OverallYOffset = 0.96;
 
-    scr_parallax_add_node(3, bg_tutorial_gradient, 0.98, 0, 0, 0, 0,           0.99, 0, 0, 0, 0, 0, 0, -1, -1);
+    scr_parallax_add_node(3, bg_gradient_gray, 0.98, 0, 0, 0, 0,           0.99, 0, 0, 0, 0, 0, 0, -1, -1);
     
     scr_parallax_add_node(1, bg_scloud_1, 0.96, -0.09, 0, -10, 530,           0.98, 0, 0, 54, 288, 0, 0, -1, -1);
     scr_parallax_add_node(1, bg_scloud_2, 0.96, -0.12, 0, 34, 530,           0.98, 0, 0, -14, 288, 0, 0, -1, -1);

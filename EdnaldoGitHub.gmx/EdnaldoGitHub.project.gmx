@@ -139,6 +139,7 @@
       <sound>sound\bgm_enterstage</sound>
       <sound>sound\bgm_credits</sound>
       <sound>sound\bgm_josoares</sound>
+      <sound>sound\bgm_train_interior</sound>
     </sounds>
     <sounds name="Voices">
       <sounds name="Chico Melancia">
@@ -171,6 +172,7 @@
       <sounds name="NPCs">
         <sound>sound\snd_voice_sergio_pereira</sound>
       </sounds>
+      <sound>sound\snd_voice_mickey_ohboy</sound>
     </sounds>
     <sound>sound\bgm_result</sound>
   </sounds>
@@ -194,9 +196,12 @@
         <sprite>sprites\spr_ednaldo_attack</sprite>
         <sprite>sprites\spr_arrow_down</sprite>
         <sprite>sprites\spr_watermelon_car</sprite>
+        <sprite>sprites\spr_super_idle</sprite>
+        <sprite>sprites\spr_super_go</sprite>
       </sprites>
       <sprites name="Fleig">
         <sprite>sprites\spr_fleig_idle</sprite>
+        <sprite>sprites\spr_fleig_look</sprite>
         <sprite>sprites\spr_AI_spawner</sprite>
         <sprite>sprites\spr_fleig_lookup</sprite>
         <sprite>sprites\spr_fleig_lookdown</sprite>
@@ -250,6 +255,7 @@
       <sprite>sprites\spr_empty</sprite>
       <sprite>sprites\sprDebugStartPlace</sprite>
       <sprite>sprites\spr_hitbox_16</sprite>
+      <sprite>sprites\spr_player_killer</sprite>
       <sprites name="Directions">
         <sprite>sprites\spr_platform_dir_down</sprite>
         <sprite>sprites\spr_platform_dir_left</sprite>
@@ -262,55 +268,75 @@
     </sprites>
     <sprites name="ASSETS">
       <sprites name="Mechanics">
-        <sprite>sprites\spr_collectable</sprite>
-        <sprite>sprites\spr_paper</sprite>
-        <sprite>sprites\spr_red_lilnote</sprite>
-        <sprite>sprites\spr_redring_normal</sprite>
-        <sprite>sprites\spr_redring_activate</sprite>
-        <sprite>sprites\spr_pellet</sprite>
-        <sprite>sprites\spr_camera_finder</sprite>
-        <sprite>sprites\spr_watermelon</sprite>
-        <sprite>sprites\spr_letters</sprite>
-        <sprites name="Letters">
-          <sprite>sprites\spr_letter_e</sprite>
-          <sprite>sprites\spr_letter_d_1</sprite>
-          <sprite>sprites\spr_letter_d</sprite>
-          <sprite>sprites\spr_letter_n</sprite>
-          <sprite>sprites\spr_letter_a</sprite>
-          <sprite>sprites\spr_letter_l</sprite>
-          <sprite>sprites\spr_letter_d_2</sprite>
-          <sprite>sprites\spr_letter_o</sprite>
+        <sprites name="Main">
+          <sprite>sprites\spr_collectable</sprite>
+          <sprite>sprites\spr_red_lilnote</sprite>
+          <sprite>sprites\spr_redring_normal</sprite>
+          <sprite>sprites\spr_redring_activate</sprite>
+          <sprite>sprites\spr_pellet</sprite>
+          <sprite>sprites\spr_watermelon</sprite>
+          <sprite>sprites\spr_camera_finder</sprite>
+          <sprite>sprites\spr_spring_up</sprite>
+          <sprite>sprites\spr_button</sprite>
+          <sprite>sprites\spr_wood_door</sprite>
+          <sprite>sprites\spr_spring_up_special</sprite>
+          <sprites name="Letters">
+            <sprite>sprites\spr_letters</sprite>
+            <sprite>sprites\spr_letter_e</sprite>
+            <sprite>sprites\spr_letter_d_1</sprite>
+            <sprite>sprites\spr_letter_d</sprite>
+            <sprite>sprites\spr_letter_n</sprite>
+            <sprite>sprites\spr_letter_a</sprite>
+            <sprite>sprites\spr_letter_l</sprite>
+            <sprite>sprites\spr_letter_d_2</sprite>
+            <sprite>sprites\spr_letter_o</sprite>
+          </sprites>
+          <sprites name="Golden Notes">
+            <sprite>sprites\spr_golden_note</sprite>
+            <sprite>sprites\spr_double_golden_note</sprite>
+            <sprite>sprites\spr_double_golden_note_collected</sprite>
+            <sprite>sprites\spr_golden_note_empty</sprite>
+            <sprite>sprites\spr_golden_note_collected</sprite>
+          </sprites>
+          <sprites name="Torches">
+            <sprite>sprites\spr_torch_post_activated</sprite>
+            <sprite>sprites\spr_torch_post_activates</sprite>
+            <sprite>sprites\spr_torch_post</sprite>
+          </sprites>
         </sprites>
-        <sprite>sprites\spr_spring_up</sprite>
-        <sprite>sprites\spr_spring_up_special</sprite>
-        <sprite>sprites\spr_golden_note</sprite>
-        <sprite>sprites\spr_double_golden_note</sprite>
-        <sprite>sprites\spr_double_golden_note_collected</sprite>
-        <sprite>sprites\spr_golden_note_empty</sprite>
-        <sprite>sprites\spr_golden_note_collected</sprite>
-        <sprite>sprites\spr_portal</sprite>
-        <sprite>sprites\spr_portal_open</sprite>
-        <sprite>sprites\spr_torch_post_activated</sprite>
-        <sprite>sprites\spr_torch_post_activates</sprite>
-        <sprite>sprites\spr_torch_post</sprite>
-        <sprite>sprites\spr_throwblock_idle</sprite>
-        <sprite>sprites\spr_throwblock_held</sprite>
-        <sprite>sprites\spr_throwblock_thrown</sprite>
-        <sprite>sprites\spr_throwblock_spawner</sprite>
-        <sprite>sprites\spr_stage_wall</sprite>
-        <sprite>sprites\spr_boss_wall</sprite>
-        <sprite>sprites\spr_letter_wall</sprite>
-        <sprite>sprites\spr_button</sprite>
-        <sprite>sprites\spr_groundpound_blocks</sprite>
-        <sprite>sprites\spr_wood_door</sprite>
-        <sprite>sprites\spr_block_ninja</sprite>
-        <sprite>sprites\spr_block_fire</sprite>
-        <sprite>sprites\spr_pot</sprite>
-        <sprite>sprites\spr_life_pot</sprite>
-        <sprite>sprites\spr_door_open</sprite>
-        <sprite>sprites\spr_wall_laser</sprite>
-        <sprite>sprites\spr_wall_laser_double</sprite>
-        <sprite>sprites\spr_spikeball</sprite>
+        <sprites name="Character Specific">
+          <sprite>sprites\spr_groundpound_blocks</sprite>
+          <sprite>sprites\spr_paper</sprite>
+        </sprites>
+        <sprites name="Walls">
+          <sprite>sprites\spr_boss_wall</sprite>
+          <sprite>sprites\spr_letter_wall</sprite>
+          <sprite>sprites\spr_stage_wall</sprite>
+        </sprites>
+        <sprites name="Portals">
+          <sprite>sprites\spr_portal</sprite>
+          <sprite>sprites\spr_portal_open</sprite>
+        </sprites>
+        <sprites name="Items">
+          <sprite>sprites\spr_throwblock_idle</sprite>
+          <sprite>sprites\spr_throwblock_held</sprite>
+          <sprite>sprites\spr_throwblock_thrown</sprite>
+          <sprite>sprites\spr_throwblock_spawner</sprite>
+          <sprite>sprites\spr_block_ninja</sprite>
+          <sprite>sprites\sprite297</sprite>
+          <sprite>sprites\spr_block_fire</sprite>
+          <sprite>sprites\spr_pot</sprite>
+          <sprite>sprites\spr_life_pot</sprite>
+          <sprite>sprites\spr_switch_block</sprite>
+          <sprite>sprites\spr_block_red</sprite>
+          <sprite>sprites\spr_block_blue</sprite>
+        </sprites>
+        <sprites name="Harmful">
+          <sprite>sprites\spr_firesmoke</sprite>
+          <sprite>sprites\spr_marker_firebar</sprite>
+          <sprite>sprites\spr_firebar</sprite>
+          <sprite>sprites\spr_thwomp</sprite>
+        </sprites>
       </sprites>
       <sprites name="Waterfall">
         <sprite>sprites\spr_waterfall</sprite>
@@ -335,7 +361,9 @@
         </sprites>
         <sprite>sprites\spr_dummy</sprite>
         <sprite>sprites\spr_cannon</sprite>
+        <sprite>sprites\spr_cannon_red</sprite>
         <sprite>sprites\spr_bullet</sprite>
+        <sprite>sprites\spr_bullet_red</sprite>
       </sprites>
       <sprites name="NPCs">
         <sprites name="Characters">
@@ -457,14 +485,20 @@
         <sprite>sprites\spr_stage_icon_outline</sprite>
       </sprites>
       <sprites name="Cutscenes">
-        <sprite>sprites\spr_intro_scene_01</sprite>
-        <sprite>sprites\spr_intro_scene_02</sprite>
-        <sprite>sprites\spr_intro_scene_03</sprite>
-        <sprite>sprites\spr_intro_scene_04</sprite>
-        <sprite>sprites\spr_intro_scene_05</sprite>
-        <sprite>sprites\spr_intro_scene_06</sprite>
-        <sprite>sprites\spr_intro_scene_07</sprite>
-        <sprite>sprites\spr_intro_scene_08</sprite>
+        <sprites name="Intro">
+          <sprite>sprites\spr_intro_scene_01</sprite>
+          <sprite>sprites\spr_intro_scene_02</sprite>
+          <sprite>sprites\spr_intro_scene_03</sprite>
+          <sprite>sprites\spr_intro_scene_04</sprite>
+          <sprite>sprites\spr_intro_scene_05</sprite>
+          <sprite>sprites\spr_intro_scene_06</sprite>
+          <sprite>sprites\spr_intro_scene_07</sprite>
+          <sprite>sprites\spr_intro_scene_08</sprite>
+        </sprites>
+        <sprites name="FleigUn">
+          <sprite>sprites\spr_unlockfleig</sprite>
+          <sprite>sprites\spr_cut_textshadow</sprite>
+        </sprites>
       </sprites>
       <sprites name="Result Screen">
         <sprite>sprites\spr_results_spaceship</sprite>
@@ -519,8 +553,18 @@
         <sprite>sprites\spr_leave_map</sprite>
         <sprite>sprites\spr_tv</sprite>
         <sprite>sprites\spr_tech_controller</sprite>
+        <sprite>sprites\spr_door_open</sprite>
+        <sprite>sprites\spr_wall_laser</sprite>
+        <sprite>sprites\spr_timed_switch_R</sprite>
+        <sprite>sprites\spr_timed_switch_L</sprite>
+        <sprite>sprites\spr_jump_switch_R</sprite>
+        <sprite>sprites\spr_jump_switch_L</sprite>
+        <sprite>sprites\spr_wall_laser_double</sprite>
       </sprites>
       <sprites name="Train">
+        <sprite>sprites\spr_target</sprite>
+        <sprite>sprites\spr_target_S</sprite>
+        <sprite>sprites\spr_target_D</sprite>
         <sprite>sprites\spr_train</sprite>
       </sprites>
       <sprites name="Jojo">
@@ -540,6 +584,7 @@
       </sprites>
       <sprites name="Shoe Store">
         <sprite>sprites\sprCloudTexture</sprite>
+        <sprite>sprites\spr_spikeball</sprite>
       </sprites>
     </sprites>
     <sprites name="GameMaker Server">
@@ -549,10 +594,6 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <backgrounds name="ShoeStore">
-      <background>background\tl_shoestore</background>
-      <background>background\tl_shoestore_outer</background>
-    </backgrounds>
     <backgrounds name="Assets">
       <backgrounds name="Guaraiba">
         <background>background\tiles_paraiba</background>
@@ -573,6 +614,14 @@
       </backgrounds>
       <backgrounds name="Chance Records">
         <background>background\tiles_chancerecords</background>
+      </backgrounds>
+      <backgrounds name="ShoeStore">
+        <background>background\tl_shoestore</background>
+        <background>background\tl_shoestore_outer</background>
+      </backgrounds>
+      <backgrounds name="Train">
+        <background>background\tl_train_exterior</background>
+        <background>background\tl_train_interior</background>
       </backgrounds>
     </backgrounds>
     <backgrounds name="Backgrounds">
@@ -635,8 +684,14 @@
         <background>background\bg_train_cloud_2</background>
         <background>background\bg_train_cloud_3</background>
         <background>background\bg_train_cloud_4</background>
+        <background>background\bg_train_interior_gradient</background>
+        <background>background\bg_train_interior_clouds</background>
+        <background>background\bg_train_interior</background>
+        <background>background\bg_train_layer1</background>
+        <background>background\bg_train_layer2</background>
       </backgrounds>
       <backgrounds name="Cidade Capital">
+        <background>background\bg_gradient_gray</background>
         <background>background\bg_buildings</background>
       </backgrounds>
       <backgrounds name="Jojo">
@@ -830,6 +885,7 @@
       </scripts>
       <script>scripts\player_sign.gml</script>
       <script>scripts\scr_player_afterimage.gml</script>
+      <script>scripts\return_other_mask.gml</script>
       <script>scripts\scr_afterimage.gml</script>
     </scripts>
     <scripts name="Audio">
@@ -876,6 +932,8 @@
       <script>scripts\draw_name.gml</script>
     </scripts>
     <script>scripts\endlevel.gml</script>
+    <script>scripts\stage_missions.gml</script>
+    <script>scripts\instance_place_mask.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_normal_12</font>
@@ -934,13 +992,31 @@
         <object>objects\obj_wood_door</object>
         <object>objects\obj_groundpound_blocks</object>
         <object>objects\obj_pellet</object>
-        <object>objects\obj_door</object>
-        <object>objects\obj_wall_laser</object>
-        <object>objects\obj_wall_laser_double</object>
         <object>objects\obj_paper</object>
-        <object>objects\obj_spikeball</object>
-        <object>objects\obj_ai_spawner</object>
-        <object>objects\obj_ai_spawnplace</object>
+        <object>objects\obj_player_killer</object>
+        <objects name="OnOff">
+          <object>objects\obj_block_switch</object>
+          <object>objects\obj_block_red</object>
+          <object>objects\obj_block_blue</object>
+          <object>objects\obj_switch_timer</object>
+          <object>objects\obj_timed_switch_R</object>
+          <object>objects\obj_timed_switch_L</object>
+          <object>objects\obj_jump_switch_R</object>
+          <object>objects\obj_jump_switch_L</object>
+        </objects>
+        <objects name="Harmful">
+          <object>objects\obj_firebar</object>
+          <object>objects\obj_firebar_manager</object>
+          <object>objects\obj_thwomp</object>
+        </objects>
+        <objects name="Specific">
+          <object>objects\obj_ai_spawner</object>
+          <object>objects\obj_ai_spawnplace</object>
+          <object>objects\obj_spikeball</object>
+          <object>objects\obj_target</object>
+          <object>objects\obj_target_S</object>
+          <object>objects\obj_target_D</object>
+        </objects>
       </objects>
       <objects name="Waterfall">
         <object>objects\obj_waterfall</object>
@@ -965,9 +1041,13 @@
           <object>objects\obj_boss_1</object>
           <object>objects\obj_boss_1_hard</object>
           <object>objects\obj_boss_1_shield</object>
+          <object>objects\obj_dark_jumper_boss</object>
         </objects>
         <object>objects\obj_cannon</object>
+        <object>objects\obj_cannon_red</object>
         <object>objects\obj_bullet</object>
+        <object>objects\obj_block_ninja</object>
+        <object>objects\obj_bullet_red</object>
       </objects>
       <objects name="NPCs">
         <object>objects\obj_sign</object>
@@ -980,7 +1060,6 @@
       </objects>
       <objects name="Power Ups">
         <object>objects\par_interactable_block</object>
-        <object>objects\obj_block_ninja</object>
       </objects>
       <objects name="Golden Notes">
         <objects name="DONT USE">
@@ -1094,6 +1173,10 @@
       <object>objects\obj_saving</object>
       <object>objects\obj_message_display</object>
       <object>objects\obj_result_screen</object>
+      <objects name="Final">
+        <object>objects\obj_super</object>
+      </objects>
+      <object>objects\obj_transition_next</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -1180,7 +1263,6 @@
     <objects name="Stages">
       <objects name="Paraiba">
         <object>objects\obj_bg_paraiba</object>
-        <object>objects\obj_NTZ_parallax</object>
         <object>objects\obj_matter_car</object>
         <object>objects\obj_matter_car_left</object>
         <object>objects\obj_cutscene_trigger_1</object>
@@ -1189,6 +1271,8 @@
         <object>objects\obj_matter_cut1</object>
         <object>objects\obj_chico_narrator</object>
         <object>objects\obj_cut_bomb</object>
+        <object>objects\obj_unlockfleig_trigger</object>
+        <object>objects\obj_cut_unlockfleig</object>
       </objects>
       <objects name="Resistencia">
         <object>objects\obj_bg_resistance</object>
@@ -1197,6 +1281,9 @@
         <object>objects\obj_tech_controller</object>
         <object>objects\obj_tv</object>
         <object>objects\obj_portal_resistance</object>
+        <object>objects\obj_wall_laser</object>
+        <object>objects\obj_wall_laser_double</object>
+        <object>objects\obj_door</object>
       </objects>
       <objects name="Tutorial">
         <object>objects\obj_bg_tutorial</object>
@@ -1216,11 +1303,15 @@
       <objects name="Train">
         <object>objects\obj_train</object>
         <object>objects\obj_bg_train</object>
+        <object>objects\obj_bg_train_interior</object>
+        <object>objects\obj_bg_train_fg</object>
         <object>objects\obj_autoscroll</object>
       </objects>
       <objects name="Cidade Capital">
         <object>objects\obj_CC_bg</object>
         <object>objects\obj_mickey_idle</object>
+        <object>objects\obj_instance_creator</object>
+        <object>objects\obj_fadeout_song</object>
       </objects>
       <objects name="Jojo">
         <object>objects\obj_jojo_symbol</object>
@@ -1233,10 +1324,12 @@
         <object>objects\obj_wilson_tv</object>
         <object>objects\obj_maicon_tv</object>
       </objects>
+      <object>objects\obj_NTZ_parallax</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_cc_1</room>
     <rooms name="Game">
       <room>rooms\rm_language</room>
       <room>rooms\rm_disclaimer</room>
@@ -1253,10 +1346,12 @@
         <room>rooms\rm_paraiba</room>
         <room>rooms\rm_shoestore</room>
         <room>rooms\rm_CC</room>
-        <room>rooms\rm_chancerecords</room>
+        <room>rooms\rm_train_interior</room>
         <room>rooms\rm_train</room>
+        <room>rooms\rm_chancerecords</room>
         <room>rooms\rm_credits</room>
         <room>rooms\rm_postcredits</room>
+        <room>rooms\rm_super</room>
       </rooms>
       <rooms name="Resistencia">
         <room>rooms\rm_resistance_timmaia</room>

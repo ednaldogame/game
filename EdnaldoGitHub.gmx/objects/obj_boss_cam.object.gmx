@@ -42,6 +42,11 @@ dif = abs(global.main_player.y - par_boss.y)
 y =min(global.main_player.y,par_boss.y)+(dif/2)
 
 }
+else
+{
+    obj_camera.cam_obj = global.main_player;
+    instance_destroy()
+}
 </string>
           </argument>
         </arguments>

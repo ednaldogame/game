@@ -8,7 +8,7 @@
        global.vsync = ini_read_real("Display",   "VSync",      0);
        
        global.bgm_volume   = ini_read_real("Audio", "BGMVolume",      1);       
-       global.sfx_volume   = ini_read_real("Audio", "SFXVolume",      0.5);      
+       global.sfx_volume   = ini_read_real("Audio", "SFXVolume",      0.7);      
        global.voice_volume   = ini_read_real("Audio", "VoiceVolume",      1);          
     
        global.key_up       = ini_read_real("Keyboard",  "KeyUp",      vk_up);        

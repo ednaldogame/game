@@ -10,17 +10,7 @@
   <persistent>0</persistent>
   <colour>16758639</colour>
   <showcolour>-1</showcolour>
-  <code>global.MissionName = text(
-"Guarabira - Deja Vú",
-"Guarabira - Paisagem Campestre")
-
-global.MainObjective = text(
-"- Find all Letters",
-"- Encontrar todas as letras")
-
-global.SideObjectives = text(
-"- Save Fleig (The Bass Player)#- Collect all lil' golden notes",
-"- Salvar Fleig (O baixista)#- Coletar todas notinhas douradas")</code>
+  <code>global.MissionName = text("Intro - The Overture", "Intro - Novos Horizontes")</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

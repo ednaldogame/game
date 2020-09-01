@@ -83,10 +83,11 @@ mask_index = sprite_index;
           <argument>
             <kind>1</kind>
             <string>/// Move up and down
-if !active &amp;&amp; inside_view()
+if !active &amp;&amp; inside_view() &amp;&amp; visible
 {
     ang_radius +=6
     y = ystart+lengthdir_y(16,ang_radius)
+    scr_sparkle()
 }
 </string>
           </argument>

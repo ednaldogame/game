@@ -1,5 +1,5 @@
 /// -- Fleig's SPin
-        if (input_special_pressed) && (state == STATE_DEFAULT) && holding = false
+        if (input_special_pressed) && (state == STATE_DEFAULT || (state == STATE_SPIN && spin_timer < 40)) && holding = false
         {
             // Spin
             state = STATE_SPIN;
@@ -12,7 +12,7 @@
             
             if !ai_flag
             {
-                y_speed = -2.5;
+                y_speed = y_speed/2;
             }
             
             

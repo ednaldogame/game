@@ -51,6 +51,11 @@
             <string>boss_spot = instance_nearest(x,y,objBossStartplace)
 instance_create(boss_spot.x, boss_spot.y, boss_obj);
 instance_create(boss_spot.x, boss_spot.y, obj_boss_cam);
+
+with obj_global_controller
+{
+    boss_flag = true;
+}
 </string>
           </argument>
         </arguments>

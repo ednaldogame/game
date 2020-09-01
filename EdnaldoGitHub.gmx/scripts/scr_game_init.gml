@@ -1,6 +1,6 @@
  // Online
     global.online_enabled = false;   
-    global.chat_enabled = true; 
+    global.chat_enabled = false; 
     global.show_names = true;
     gms_init(GMS);
     gms_settings(0, GAME_VERSION, obj_player, obj_other_player);
@@ -20,6 +20,7 @@
     global.stage_name = ""
     global.temp_exit = EXIT_NULL;
     global.temp_room = rm_resistance;
+    global.switch_state = false;
     
  // Language
     global.lang = LANG_PORTUGUESE;
@@ -83,3 +84,5 @@
         {
             file_delete("save00.ini")
         }
+        
+

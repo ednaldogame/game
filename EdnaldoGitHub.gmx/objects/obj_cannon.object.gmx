@@ -50,18 +50,23 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if bbox_left &lt; view_xview[0] + 512 &amp;&amp; bbox_right &gt; view_xview[0]
+            <string>if inside_view()
 {
-if shoot_timer &gt; 0
-{
-shoot_timer --;
-}
-else
-{
-instance_create(x - 32, y, obj_bullet);
-shoot_timer = fac_shoot_timer;
-image_speed = 0.2;
-}
+    if shoot_timer &gt; 0
+    {
+    shoot_timer --;
+    }
+    else
+    {
+    with instance_create(x, y, obj_bullet)
+    {
+        image_angle = other.image_angle;   
+        image_xscale = other.image_xscale;
+        motion_add(image_angle, 5 * image_xscale);
+    }
+    shoot_timer = fac_shoot_timer;
+    image_speed = 0.2;
+    }
 }
 </string>
           </argument>

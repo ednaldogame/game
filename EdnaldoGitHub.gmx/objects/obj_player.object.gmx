@@ -182,7 +182,7 @@ event_user(1)
           <argument>
             <kind>1</kind>
             <string>/// Warps
-if global.exit_id != EXIT_NULL &amp;&amp; instance_exists(obj_startplace)
+/*if global.exit_id != EXIT_NULL &amp;&amp; instance_exists(obj_startplace)
 {
     x = global.warp_x[global.exit_id];
     y = global.warp_y[global.exit_id];   
@@ -292,7 +292,7 @@ if h &amp;&amp; state = STATE_GROUNDPOUND
 // Powerup block
 h = collision_rectangle(bbox_left - 1, bbox_top - 1, bbox_right + 1, bbox_bottom + 1, par_interactable_block, 0, 0)
 
-if h
+if h &amp;&amp; !ai_flag
 {
     if  (harmful or (bbox_top &gt; h.bbox_bottom - 2))
     {
@@ -370,7 +370,7 @@ if global.online_enabled
           <argument>
             <kind>1</kind>
             <string>/// Death
-if state = STATE_DEATH
+if state = STATE_DEATH &amp;&amp; !ai_flag
 {   
     if died = false
     {
@@ -408,6 +408,12 @@ if state = STATE_DEATH
     died = true;
 }
 
+// HP Fix.
+if hp &lt;= 0
+{
+    state = STATE_DEATH;
+}
+
 // Lock Or Die
 if died or perm_lock
 {
@@ -438,7 +444,7 @@ if died or perm_lock
           <argument>
             <kind>1</kind>
             <string>/// Pause
-if (keyboard_check_pressed(vk_enter) &amp;&amp; !ai_flag) &amp;&amp; (!global.online_enabled or (global.online_enabled &amp;&amp; !gms_chat_istyping()))
+if ((keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_escape)) &amp;&amp; !ai_flag) &amp;&amp; (!global.online_enabled or (global.online_enabled &amp;&amp; !gms_chat_istyping()))
 {
     keyboard_clear(vk_enter);
     instance_create(x,y,obj_pausemenu);
@@ -604,7 +610,7 @@ if (ai_flag)
                     }
                     
                 // Warp
-                if !inside_view() &amp;&amp;((distance_to_object(FirstPlayer) &gt; 512 &amp;&amp; ground &amp;&amp; FirstPlayer.ground &amp;&amp; state = STATE_DEFAULT &amp;&amp; FirstPlayer.state = STATE_DEFAULT) or (FirstPlayer.state = STATE_DEFAULT &amp;&amp; FirstPlayer.ground &amp;&amp; FirstPlayer.input_triggerR))
+                if (!inside_view() &amp;&amp; ((distance_to_object(FirstPlayer) &gt; 512 &amp;&amp; ground &amp;&amp; FirstPlayer.ground &amp;&amp; state = STATE_DEFAULT &amp;&amp; FirstPlayer.state = STATE_DEFAULT) or (FirstPlayer.state = STATE_DEFAULT &amp;&amp; FirstPlayer.ground &amp;&amp; FirstPlayer.input_triggerR)) or state = STATE_DEATH or (instance_place(x,y,obj_block_red) or instance_place(x,y,obj_block_blue))) &amp;&amp; !instance_place(FirstPlayer.x, FirstPlayer.y, par_solid) &amp;&amp; global.main_player.state != STATE_DEATH
                 {
                         scr_create_fading_out(x,y,sprite)
                                            
@@ -614,6 +620,9 @@ if (ai_flag)
                         x_speed = 0;
                         y_speed = -5;
                         ground = false;
+                        state = STATE_DEFAULT;
+                        died = false;
+                        hp = max_hp;
                         
                         scr_create_smoke(x,y,sprSmoke16)
                 }
@@ -771,8 +780,26 @@ animation_core()
         }
      
      // Idle:
-        if(ground = true &amp;&amp; x_speed = 0 &amp;&amp; animation != "idle"){
-          animation = "idle";
+        if(ground = true &amp;&amp; x_speed = 0){
+            if player_index = CHAR_EDNALDO
+            {
+                if animation!="idle"
+                {
+                  animation = "idle";
+                }
+            }
+            else
+            {
+                if animation!="idle" &amp;&amp; !instance_exists(obj_fleig_cursor)
+                {
+                  animation = "idle";
+                }     
+                
+                if animation!="look" &amp;&amp; instance_exists(obj_fleig_cursor)
+                {
+                  animation = "look";
+                }          
+            }
         }
         
      // Walk:
@@ -1158,6 +1185,12 @@ if instance_exists(obj_level_controller)
     if (input_triggerR or audio_is_playing(snd_swap) or audio_is_playing(snd_swap_fail))
     {
         draw_sprite(spr_arrow_down, ai_flag, x, bbox_top - 16)
+    }
+    
+    // Draw Arrow up
+    if (bbox_top &lt; view_yview[0])
+    {
+        draw_sprite_ext(spr_arrow_down, ai_flag, x, view_yview[0], 1, -1, 0, c_white, 1)
     }
 
     // Draw Playable

@@ -73,9 +73,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.warp_x[exit_id] = x;
-global.warp_y[exit_id] = y;
-global.warp_dir[exit_id] = image_xscale;
+            <string>//global.warp_x[exit_id] = x;
+//global.warp_y[exit_id] = y;
+//global.warp_dir[exit_id] = image_xscale;
+
+if global.exit_id = exit_id
+{
+    with obj_player
+    {
+        x = other.x;
+        y = other.y;
+    }
+}
 </string>
           </argument>
         </arguments>

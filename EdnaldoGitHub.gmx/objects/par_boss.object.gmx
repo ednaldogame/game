@@ -98,6 +98,7 @@ with obj_boss_cam
 instance_destroy()
 }
 obj_camera.cam_obj = global.main_player;
+obj_camera.camera_locked = false;
 </string>
           </argument>
         </arguments>

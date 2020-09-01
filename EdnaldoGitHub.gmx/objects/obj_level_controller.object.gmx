@@ -42,6 +42,7 @@ display_alpha = 1;
 ai_exists = 0;
 hurt_alpha = 0;
 boss_alpha = 0;
+global.switch_state = false;
 </string>
           </argument>
         </arguments>
@@ -648,9 +649,22 @@ if global.display_hud = true
             <string>/// Heads
 if global.display_hud = true
 {
-    if instance_exists(obj_ai_player) &amp;&amp; ai_exists
+    if (instance_exists(obj_ai_player) &amp;&amp; ai_exists)
     {
      draw_sprite_ext(spr_UI_faces, head_frame[1], view_xview[0] + 48 - screenoff, view_yview[0] + 248, 0.5, 0.5, 0, c_white, display_alpha/2)
+    }
+    
+    if (!instance_exists(obj_ai_player) &amp;&amp; instance_exists(obj_AI_handler))
+    {
+        var fram;
+        fram = 0;
+        
+        if obj_player.player_index = CHAR_EDNALDO
+        {
+            fram = 7;
+        }
+        
+        draw_sprite_ext(spr_UI_faces, fram, view_xview[0] + 48 - screenoff, view_yview[0] + 248, 0.5, 0.5, 0, c_white, display_alpha/2)
     }
 
     if instance_exists(obj_player)

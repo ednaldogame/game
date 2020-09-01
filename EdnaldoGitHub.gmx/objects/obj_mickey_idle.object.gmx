@@ -5,10 +5,10 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>par_boss</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,14 +25,91 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_afterimage(sprite_index, image_index, x, y, 1, 1, 1, 0, c_white)
+            <string>//show_message("hi")
+event_inherited();
+alarm[0] = 60;
+//obj_camera.camera_locked = true;
+scr_shake_cam(320);
+x = objBossStartplace.x;
+y = objBossStartplace.y;
+enemy_max_hp = 60;
+enemy_hp = enemy_max_hp;
+visible = false;
+voice_play(snd_voice_mickey_ohboy);
+alarm[1] = 120;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if instance_number(obj_dark_jumper_boss) &lt; 5
+{
+    instance_create(x,y - 160, obj_dark_jumper_boss);
+}
+
+alarm[1] = 120;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>visible = true;
+TweenFire(id, EaseOutBounce, 0, false, 0, 120, "y", view_yview[0] - 64,1410);
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="81">
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,9 +126,43 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>TweenFireFrom(id, EaseOutBounce, 0, false, 0, 120, "y", 0);
-obj_camera.camera_locked = true;
-scr_shake_cam(320);
+            <string>
+scr_afterimage(sprite_index, image_index, x, y, 1, 1, 1, 0, c_white)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Keep Player Within Boundaries
+with obj_player
+{
+    if x &lt; view_xview[0] &amp;&amp; !instance_place(view_xview[0], y, par_solid)
+    {
+        x = view_xview[0];
+    }
+    
+    
+    if x &gt; view_xview[0] + 512 &amp;&amp; !instance_place(view_xview[0] + 512, y, par_solid)
+    {
+        x = view_xview[0] + 512;
+    }
+}
 </string>
           </argument>
         </arguments>

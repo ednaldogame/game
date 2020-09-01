@@ -226,7 +226,7 @@ if state = 0
     h = instance_place(x,y,global.main_player);
     if h
     {
-        if h.bbox_bottom &lt; bbox_top + 6 &amp;&amp; h.y_speed &gt; 0 &amp;&amp; inside_view()
+        if ((h.bbox_bottom &lt; bbox_top + 6 &amp;&amp; h.y_speed &gt; 0) or h.harmful) &amp;&amp; inside_view()
         {
             event_user(0);
             instance_destroy();

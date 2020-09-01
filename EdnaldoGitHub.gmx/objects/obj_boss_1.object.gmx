@@ -150,8 +150,13 @@ if pitch_mode = false &amp;&amp; enemy_hp &lt; 10
 {
 aud_play_simple(snd_grand_explosion)
 instance_create(x,y,obj_fade_in_white_fast)
-instance_create(x,y,obj_rainmaker)
-instance_create(x,y,obj_filter_black);
+
+if instance_number(obj_rainmaker) &lt; 2
+{
+    instance_create(x,y,obj_rainmaker)
+    instance_create(x,y,obj_filter_black);
+}
+
 pitch_mode = true;
 scr_shake_cam(30)
 scr_chico_narrate(NARRATE_HEATEN)

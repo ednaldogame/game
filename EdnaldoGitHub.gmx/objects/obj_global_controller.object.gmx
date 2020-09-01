@@ -325,7 +325,7 @@ window_set_caption(string(GAME_NAME) + " " + string(GAME_VERSION) + " | FPS: " +
 
 if discord_active
 {
-    if instance_exists(obj_player)
+    if instance_exists(obj_player) &amp;&amp; !instance_exists(obj_pausemenu)
     {
         // Get Character
             discord_set_state("Playing as " + string(scr_return_character_name(global.main_player.player_index)))
@@ -334,37 +334,73 @@ if discord_active
             // Ednaldo.
             if global.main_player.player_index = CHAR_EDNALDO
             {
-                discord_set_image_large("ednaldoicon")
+                discord_set_image_small("ednaldonew")
             }
             
             // Fleig.
             if global.main_player.player_index = CHAR_FLEIG
             {
-                discord_set_image_large("fleigicon")
+                discord_set_image_small("fleignew")
             }
-    
-        // In Stage
-        if global.game_paused = false
-        {
+            
+        // Define Icon
+            var stg;
+            stg = "gameimage";
+            
+            switch room
+            {
+                case rm_paraiba:
+                stg = "guarabira";
+                break;
+                
+                case rm_shoestore:
+                stg = "shoestore";
+                break;
+                
+                case rm_tutorial:
+                stg = "ednildowsxp";
+                break;
+                
+                default:
+                stg = "gameimage";
+                break;
+            }
+            
+            if instance_exists(obj_bg_resistance)
+            {
+                stg = "resistance";
+            }
+            
+            // Define Details
             discord_set_details("Doing '" + string(global.MissionName) + "'.")
             
-            discord_set_image_small("play")
-            discord_set_text_small("Currently In-Stage")
-        }
-        
-        // In Pause Menu
-        if global.game_paused = true
-        {       
-            discord_set_details("Stages Unlocked: " + string(global.stages_unlocked))
-            discord_set_image_small("pause")
-            discord_set_text_small("Currently Paused")
-        }
+            // Define Large Image
+            discord_set_image_large(stg)
+            
+            // Define Small Text
+            if gms_info_isconnected() &amp;&amp; global.online_enabled
+            {
+                discord_set_text_small("Currently Online.");
+            }
+            else
+            {
+                discord_set_text_small("Currently Offline.");
+            }
+    }
+    else if instance_exists(obj_pausemenu)
+    {       
+        // Pause
+        discord_set_details("Golden Notes: " + string(global.golden_notes))
+        discord_set_text_small("")
+        discord_set_image_small("pause")
+        discord_set_text_small("Currently Paused")
     }
     else
     {
+        // Menu
         discord_set_details("FPS: " + string(fps))
         discord_set_state("In-menus")
-        discord_set_image_large("ednaldoicon")
+        discord_set_image_large("gameimage")
         discord_set_image_small("menu")
         discord_set_text_large("Ednaldo Pereira")
         discord_set_text_small("Currently In-Menus")

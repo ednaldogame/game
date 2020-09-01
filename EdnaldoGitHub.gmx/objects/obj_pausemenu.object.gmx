@@ -252,6 +252,10 @@ else if (ready2 == 2) {
             <kind>1</kind>
             <string>///Handles keyboard presses.
 
+// Activate instances.
+instance_activate_object(GMS);
+instance_activate_object(obj_other_player);
+
 //Check if the 'Up Key' is pressed.
 if (keyboard_check_pressed(global.key_up)) {
 
@@ -281,7 +285,7 @@ else if (keyboard_check_pressed(global.key_down)) {
 }
 
 //Check if the 'Shift Key' is pressed.
-else if (keyboard_check_pressed(global.key_action)) {
+else if (keyboard_check_pressed(global.key_action) ||  (keyboard_check_pressed(global.key_enter)) ) {
 
     //Has the action been completed?
     if (ready == 1) {
@@ -344,16 +348,6 @@ else if (keyboard_check_pressed(global.key_action)) {
     }
 }
 
-//Check if the 'Enter Key' is pressed without alt.
-else if (keyboard_check_pressed(global.key_enter)) &amp;&amp; (!keyboard_check(vk_alt)) {
-
-    //Makes the menu ready to be closed.
-    if (ready == 1)
-        ready2 = 2;
-    
-    //Shrinks...
-    alarm[0] = 1;
-}
 </string>
           </argument>
         </arguments>
@@ -394,6 +388,13 @@ if (background_exists(back)) {
     draw_enable_alphablend(1);
 }   
 
+// Darken.
+draw_set_color(c_black);
+draw_set_alpha(0.8);
+draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + 512, view_yview[0] + 288, 0)
+draw_set_alpha(1);
+draw_set_color(c_white);
+
 //Draw the actual border.
 draw_sprite_ext(spr_pausemenu, 1, view_xview[0]+512/2, view_yview[0]+288/2, image_xscale, image_yscale, 0, c_white, 1);
 
@@ -429,6 +430,11 @@ if (image_xscale == 1) {
     draw_set_valign(fa_top);
     
     draw_text(view_xview[0], view_yview[0], text("Golden Notes", "Notas Douradas") + ": " + string(global.golden_notes) + "#" + text("Double Golden Notes", "Notas Douradas Duplas") + ": " + string(global.golden_notes) );
+
+    if global.online_enabled
+    {
+        draw_text(view_xview[0], view_yview[0] + 260, "Connected: " + string(gms_info_isconnected()));
+    }
 }
 </string>
           </argument>

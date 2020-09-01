@@ -41,7 +41,7 @@
             <kind>1</kind>
             <string>/// Init
 physics_init()
-enemy_max_hp = 32;
+enemy_max_hp = 60;
 enemy_hp = enemy_max_hp;
 image_speed =0.2 ;
 image_index = 0;
@@ -57,6 +57,13 @@ skid_dust_timer = -1;
 instance_create(x,y,obj_boss_1_shield);
 shield_active = false;
 alarm[0] = 220;
+
+if instance_number(obj_rainmaker) &lt; 2
+{
+    instance_create(x,y,obj_rainmaker)
+    instance_create(x,y,obj_filter_black);
+}
+
 </string>
           </argument>
         </arguments>
@@ -173,12 +180,17 @@ alarm[0] = 220;
           <argument>
             <kind>1</kind>
             <string>/// Pitch
-if pitch_mode = false &amp;&amp; enemy_hp &lt; 10
+if pitch_mode = false &amp;&amp; enemy_hp &lt; 30
 {
 aud_play_simple(snd_grand_explosion)
 instance_create(x,y,obj_fade_in_white_fast)
-instance_create(x,y,obj_rainmaker)
-instance_create(x,y,obj_filter_black);
+
+if instance_number(obj_rainmaker) &lt; 2
+{
+    instance_create(x,y,obj_rainmaker)
+    instance_create(x,y,obj_filter_black);
+}
+
 pitch_mode = true;
 scr_shake_cam(30)
 scr_chico_narrate(NARRATE_HEATEN)
@@ -530,17 +542,17 @@ mt_factor = 1.5;
 
 if (state != 2)
 {
-    x_accel   = 0.3*mt_factor;
-    x_decel   = 0.025 * 2*mt_factor;
-    x_friction = 0.05 * 2*mt_factor;
-    x_max     = 5*mt_factor;
+    x_accel   = 0.5*mt_factor;
+    x_decel   = 0.05 * 2*mt_factor;
+    x_friction = 0.1 * 2*mt_factor;
+    x_max     = 6*mt_factor;
 }
 else
 {
-    x_accel   = 0.5*mt_factor;
-    x_decel   = 0.25*mt_factor;
+    x_accel   = 0.8*mt_factor;
+    x_decel   = 0.3*mt_factor;
     x_friction = 0.05*mt_factor;
-    x_max     = 8.5*mt_factor;
+    x_max     = 9.5*mt_factor;
 }
 </string>
           </argument>

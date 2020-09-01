@@ -12,3 +12,8 @@
     dummyFX . image_yscale   = argument8;
     dummyFX . image_blend   = argument9;
     dummyFX . image_alpha  = argument10;
+    
+    if room = rm_super
+    {
+        dummyFX.hspeed = -5;
+    }

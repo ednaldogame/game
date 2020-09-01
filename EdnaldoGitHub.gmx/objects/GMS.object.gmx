@@ -275,7 +275,7 @@ gms_draw();
           <argument>
             <kind>1</kind>
             <string>/// Players online
-    if (keyboard_check(vk_tab) &amp;&amp; instance_exists(obj_player))
+    if (keyboard_check(vk_tab) &amp;&amp; instance_exists(obj_player) &amp;&amp; global.online_enabled)
     {   
         // Vars Starts
             var xx, yy, text_x_off, text_y_off, ping_x_off, ping_y_off, page, x_off, y_off, y_spacing, font_height, cur_player;

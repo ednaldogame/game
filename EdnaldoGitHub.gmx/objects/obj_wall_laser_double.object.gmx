@@ -27,8 +27,9 @@
             <kind>1</kind>
             <string>image_speed = 0.25;
 note_min = 10;
-
-
+active = true;
+fac = 1;
+bbox_init = bbox_bottom;
 </string>
           </argument>
         </arguments>
@@ -51,14 +52,46 @@ note_min = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if inside_view()
-{
-    image_alpha = choose(0.9,1)   
-}
-
+            <string>/// Note Requirements
 if global.double_golden_notes &gt;= note_min
 {
-    instance_destroy()
+    active = false;
+}
+else
+{
+    active = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Handle Activity
+if !active
+{
+    mask_index = spr_empty;
+        image_alpha = choose(0,0.2)   
+    fac = 0.5;
+}
+else
+{
+        image_alpha = choose(0.9,1)   
+    fac = 1;
 }
 </string>
           </argument>
@@ -87,7 +120,8 @@ draw_set_halign(fa_center)
 
 draw_set_font(fnt_century_20)
 draw_set_color(c_black)
-draw_set_alpha(0.5);
+
+    draw_set_alpha(0.5 * fac);
 
 var w;
 w = string_width(string(note_min));
@@ -95,14 +129,15 @@ w = string_width(string(note_min));
 var h;
 h = string_height(string(note_min));
 
-draw_rectangle(x + 8 - w, bbox_bottom - 64 - h - 16, x + 8 + w, bbox_bottom - 64 + h + 16, false)
+draw_rectangle(x + 8 - w, bbox_init - 64 - h - 16, x + 8 + w, bbox_init - 64 + h + 16, false)
 
-draw_set_alpha(1);
+draw_set_alpha(1 * fac);
 draw_set_color(c_white);
 
-draw_sprite_ext(spr_double_golden_note, 0, x + 8, bbox_bottom - 84, 1, 1, 0, c_white, 1)
-draw_text_shadowed( x + 8, bbox_bottom - 64, string(note_min))
+draw_sprite_ext(spr_double_golden_note, 0, x + 8, bbox_init - 84, 1, 1, 0, c_white, 1 * fac)
+draw_text_shadowed( x + 8, bbox_init - 64, string(note_min))
 
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

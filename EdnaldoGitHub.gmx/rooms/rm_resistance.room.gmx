@@ -94,7 +94,7 @@
     <instance objName="obj_collision_basic" x="1728" y="416" name="inst_74BF3B41" locked="0" code="" scaleX="4" scaleY="2.03174614906311" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="64" y="688" name="inst_4589640F" locked="0" code="exit_id = 1;&#xA;rm = rm_resistance_bene;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="984" y="816" name="inst_3C28815E" locked="0" code="rm = rm_resistance_timmaia;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_startplace" x="1013" y="883" name="inst_7D4B7742" locked="0" code="exit_id = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_startplace" x="1013" y="883" name="inst_7D4B7742" locked="0" code="exit_id = &quot;center&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_startplace" x="126" y="755" name="inst_AE411377" locked="0" code="exit_id = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="1918" y="688" name="inst_41F7B941" locked="0" code="exit_id = 2;&#xA;rm = rm_resistance_bene;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_startplace" x="1948" y="755" name="inst_DDCB8334" locked="0" code="exit_id = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

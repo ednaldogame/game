@@ -56,7 +56,74 @@ alarm[1] = 280;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y,objFadeRestart);
+            <string>/// Respawn Player(s)
+if room != rm_train
+{
+    instance_create(x,y,obj_fade_in_white_fast);
+    
+    with obj_player
+    {
+        if !instance_exists(par_boss)
+        {
+            if instance_exists(obj_torch_post_activated)
+            {
+                var near;
+                near = instance_nearest(x,y,obj_torch_post_activated);
+                x = near.x;
+                y = near.bbox_bottom - 14;
+            }
+            else
+            {
+                y = - 128;
+                x = 32;
+            }
+        }
+        else
+        {  
+            with par_boss
+            {
+                enemy_hp = enemy_max_hp;
+                pitch_mode = false;
+            }
+        }
+        
+        hp = max_hp;
+        died = false;
+        inv_timer = 200;
+        visible = true;
+        state = STATE_DEFAULT;
+        control_lock = false;
+    }
+    
+        audio_stop_all()
+        aud_play_music(global.bgm, global.bgm_volume, 1)
+        aud_play_simple(snd_teleport);
+        instance_destroy()
+        obj_camera.camera_locked = false;
+        
+        // Shoestore BG. Done since the torches are always on the outer section.
+            if room = rm_shoestore
+            {
+                with obj_bg_shoestore_outer
+                {
+                        visible = true;
+                }
+            }   
+            
+        // Dark Jumper
+        if instance_exists(obj_dark_jumper_boss)
+        {
+            with obj_dark_jumper_boss
+            {
+                instance_destroy()
+            }
+        }
+}
+else
+{
+    instance_create(x,y,objFadeRestart);
+} 
+
 </string>
           </argument>
         </arguments>

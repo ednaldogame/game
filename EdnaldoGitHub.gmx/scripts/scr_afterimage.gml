@@ -1,5 +1,6 @@
 ///scr_afterimage(sprite_index,image_index,x,y,xscale,yscale,image_alpha,image_angle,image_blend)
-
+if visible 
+{
 var aft;
 aft = instance_create(argument2,argument3,obj_afterimage)
 aft.sprite_index = argument0;
@@ -13,4 +14,8 @@ aft.image_blend = argument8;
 
 aft.depth = depth+1;
 
-
+if room = rm_super
+{
+    aft.hspeed = -5;
+}
+}
