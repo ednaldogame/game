@@ -108,7 +108,7 @@ if jump_active
     
     if global.main_player.ground &amp;&amp; keyboard_check_pressed(global.key_action) &amp;&amp; global.main_player.control_lock = false
     {
-        
+        aud_play_simple(snd_menu_bleep);
         var j;
         j = false;
         

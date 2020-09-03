@@ -110,6 +110,15 @@ event_user(0);
     sv_animation_direction = gms_other_get(player_id, "sv_animation_direction");
     sv_player_index = gms_other_get(player_id, "sv_player_index");
     
+    if !instance_exists(obj_vehicle)
+    {
+        sv_animation_angle = 0;
+    }
+    else
+    {
+        sv_animation_angle = gms_other_get(player_id, "sv_animation_angle");
+    }
+    
     // Define X and Y
     x = xx;
     y = yy;
@@ -185,7 +194,7 @@ alarm[0] = 60;
             draw_name(x,y,string(gms_other_get(player_id, "name")),gms_other_admin_rights(player_id))
         }
         
-        draw_sprite_ext(sv_sprite, floor(sv_animation_frame), floor(x), floor(y), sv_animation_direction, image_yscale, image_angle, image_blend, image_alpha);
+        draw_sprite_ext(sv_sprite, floor(sv_animation_frame), floor(x), floor(y), sv_animation_direction, image_yscale, sv_animation_angle, image_blend, image_alpha);
     }
 }
 </string>

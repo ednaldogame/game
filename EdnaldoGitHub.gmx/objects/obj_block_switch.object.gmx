@@ -84,10 +84,21 @@ if state = 1
 
 if state = 2
 {
-    if distance_to_object(obj_player)&gt;128 or (distance_to_object(obj_player)&gt;32 &amp;&amp; obj_player.ground)
-    {    
-        image_xscale = scr_approach(image_xscale, 1, 0.15)
-        image_yscale = scr_approach(image_yscale, 1, 0.15)
+    if !instance_exists(obj_vehicle)
+    {
+        if (distance_to_object(obj_player)&gt;128) or (distance_to_object(obj_player)&gt;32 &amp;&amp; obj_player.ground)
+        {    
+            image_xscale = scr_approach(image_xscale, 1, 0.15)
+            image_yscale = scr_approach(image_yscale, 1, 0.15)
+        }
+    }
+    else
+    {
+        if (distance_to_object(obj_vehicle)&gt;128) or (distance_to_object(obj_vehicle)&gt;32 &amp;&amp; obj_vehicle.ground)
+        {    
+            image_xscale = scr_approach(image_xscale, 1, 0.15)
+            image_yscale = scr_approach(image_yscale, 1, 0.15)
+        }
     }
     
     if image_xscale &gt;= 1 &amp;&amp; image_yscale &gt;= 1
@@ -122,6 +133,7 @@ if state = 2
             <kind>1</kind>
             <string>if state = 0
 {
+    aud_play_simple(snd_menu_accept);
     state = 1;
     scr_shake_cam(15);
     

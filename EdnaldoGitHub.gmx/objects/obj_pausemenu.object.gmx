@@ -316,11 +316,8 @@ else if (keyboard_check_pressed(global.key_action) ||  (keyboard_check_pressed(g
                     aud_play_simple(snd_menu_accept);
                     
                     //Return to the map
-                    with instance_create(0,0,objFadeToValue)
-                    {
-                        value = rm_resistance;
-                        global.exit_id = EXIT_NULL;
-                    }
+                    instance_create(0,0,objFadeRestart)
+                    global.exit_id = EXIT_NULL;
                     
                     //Exit
                     exit;

@@ -60,6 +60,7 @@
           
  // Terrain:
     ground          = 0;        // Checks if the player has/is grounded.
+    ground_prev = 0;
     angle           = 0;        // Returns the angle of the player.
     angle_round     = 0;        // Returns the angle of the player, rounded.
     angle_relative  = 0;        // Returns the angle, relative to gravity values.
@@ -126,7 +127,6 @@
     animation_speed = 0;
     animation_frame = 0;
     aft_timer = 0;
-
 
 </string>
           </argument>
@@ -221,6 +221,8 @@
             <string>obj_camera.cam_obj = self.id;
 initialized = true;
 state = STATE_DEFAULT;
+    aud_play_simple(snd_car_land);
+
 </string>
           </argument>
         </arguments>
@@ -401,6 +403,34 @@ if abs(x_speed) &gt; 12
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if ground != ground_prev
+{
+    if ground = false
+    {
+        aud_play_simple(snd_drift);
+    }
+    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="1">
       <action>
@@ -513,6 +543,7 @@ if abs(x_speed) &gt; 12
  // Previous Positions:
     previous_x = x;
     previous_y = y;
+    ground_prev = ground;
     
 vehicle_physics()
 </string>
@@ -521,6 +552,31 @@ vehicle_physics()
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if obj_player.state = STATE_DEATH &amp;&amp; visible = true
+{
+    dummy_effect_create(spr_stock_explosion,0.1,x,y,-10,0);
+    visible = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1002,6 +1058,7 @@ vehicle_physics()
               {
                  // We grounded:
                     ground = true;
+                    aud_play_simple(snd_car_land);
                     
                  // Return to normal state:
                     if(state = STATE_JUMP || state = STATE_HURT)
@@ -1077,6 +1134,175 @@ vehicle_physics()
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="par_hurt">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !instance_exists(obj_death_handler)
+{
+    with obj_player
+    {
+        state = STATE_DEATH;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="par_enemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other
+{
+    scr_display_hp(x,y,"enemy","-" + string(enemy_max_hp) + "/" + string(enemy_max_hp))             
+    enemy_hp        = 0;
+    event_user(11);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_block_switch">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other
+{
+    event_user(0);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player_killer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !instance_exists(obj_death_handler)
+{
+    with obj_player
+    {
+        state = STATE_DEATH;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_pellet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other
+{
+    if follow = true
+    {
+    event_user(0);
+    instance_destroy();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_collectable">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other
+{
+    event_user(0);
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -1095,6 +1321,15 @@ vehicle_physics()
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index, floor(animation_frame), floor(x), floor(y), 1, 1, animation_angle, c_white, 1);    
+
+    // Draw Names
+    if global.online_enabled
+    {
+        if global.show_names
+        {
+            draw_name(x,y,string(gms_self_name()),gms_self_admin_rights())
+        }
+    }
 </string>
           </argument>
         </arguments>

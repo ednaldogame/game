@@ -62,11 +62,11 @@ draw_text(512/2, 32,text(
 
 THIS IS A PROJECT MADE OUT
 OF PURE LOVE AND PASSION
-FOR 'EDNALDO PEREIRA' AND BRAZILLIAN
+FOR 'EDNALDO PEREIRA' AND BRAZILIAN
 CULTURE.
 
 Also online at:
-pedrovg.weebly.com
+bit.ly/ednaldogame
 
 [PRESS ENTER TO CONTINUE]"
 ,
@@ -78,7 +78,7 @@ PARA 'EDNALDO PEREIRA' E TODA
 CULTURA BRASILEIRA.
 
 Também estamos online em
-pedrovg.weebly.com
+bit.ly/ednaldogame
 
 [APERTE ENTER PARA CONTINUAR]"))
 draw_key(488, 262, "ENTER")

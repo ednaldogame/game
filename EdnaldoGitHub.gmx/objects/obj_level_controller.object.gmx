@@ -595,6 +595,7 @@ if global.display_hud = true
     draw_sprite_ext(spr_HUD_blue_bar, 0, view_xview[0], view_yview[0] + 260 + screenoff, 1, 1, image_angle, c_white, display_alpha)
     draw_sprite_ext(spr_HUD_hp, global.main_player.hp, view_xview[0] + 169, view_yview[0] + 265 + screenoff, 1, 1, image_angle, c_white, display_alpha)
     
+    draw_set_color(c_white);
     draw_set_alpha(display_alpha);
     draw_set_font(fnt_century_11);
     draw_set_halign(fa_left);

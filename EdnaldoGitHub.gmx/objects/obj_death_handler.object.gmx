@@ -57,7 +57,7 @@ alarm[1] = 280;
           <argument>
             <kind>1</kind>
             <string>/// Respawn Player(s)
-if room != rm_train
+if room != rm_train &amp;&amp; room != rm_CC
 {
     instance_create(x,y,obj_fade_in_white_fast);
     

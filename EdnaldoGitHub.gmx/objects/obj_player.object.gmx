@@ -244,6 +244,47 @@ event_user(0)
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Get Out of the Blocks 
+var h = instance_place(x,y,par_solid);
+
+if h
+{
+    if bbox_bottom &lt; h.bbox_bottom
+    {
+        y -= 10;
+    }
+    else
+    {
+        y += 10;
+    }
+    
+    if state = STATE_GROUNDPOUND
+    {
+        state = STATE_DEFAULT;
+        groundpound_end()
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>604</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -300,6 +341,12 @@ if h &amp;&amp; !ai_flag
         {
             event_user(0);
         }
+        
+        if state = STATE_GROUNDPOUND
+        {
+            groundpound_end()
+            state = STATE_DEFAULT;
+        }
         exit;
     }
 }
@@ -342,10 +389,22 @@ if h &amp;&amp; !ai_flag
             <string>/// Server
 if global.online_enabled
 {
-    gms_self_set("sv_x", floor(x))
-    gms_self_set("sv_y", floor(y))
-    gms_self_set("sv_sprite", floor(sprite))
-    gms_self_set("sv_animation_frame", floor(animation_frame))
+    if !instance_exists(obj_vehicle)
+    {
+        gms_self_set("sv_x", floor(x))
+        gms_self_set("sv_y", floor(y))
+        gms_self_set("sv_sprite", floor(sprite))
+        gms_self_set("sv_animation_frame", floor(animation_frame))
+    }
+    else
+    {
+        gms_self_set("sv_x", floor(obj_vehicle.x))
+        gms_self_set("sv_y", floor(obj_vehicle.y))
+        gms_self_set("sv_sprite", floor(obj_vehicle.sprite_index))
+        gms_self_set("sv_animation_frame", floor(obj_vehicle.animation_frame))
+        gms_self_set("sv_animation_angle", floor(obj_vehicle.animation_angle))
+    }
+    
     gms_self_set("sv_animation_direction", floor(animation_direction))
     gms_self_set("sv_player_index", floor(player_index))
 }
@@ -655,9 +714,12 @@ if (ai_flag)
             <string>/// Movement &amp; Actions
 
 // Boundaries:
-    x = max(x, sprite_width / 2);
-    x = min(x, room_width - sprite_height/2);
-
+    if !instance_place(x,y,obj_leave_to_map) &amp;&amp; !control_lock
+    {
+        x = max(x, sprite_width / 2);
+        x = min(x, room_width - sprite_height/2);
+    }
+    
 //Only do the basic actions if in the default state.
 if state != STATE_DEATH &amp;&amp; state != STATE_HURT
 {

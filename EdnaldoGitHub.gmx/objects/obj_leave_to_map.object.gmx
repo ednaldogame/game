@@ -8,6 +8,92 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>rm = rm_CC;
+lap = 0;
+laptotal = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_vehicle">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>lap += 1;
+
+if lap &gt;= laptotal
+{
+    if !instance_exists(parFade)
+    {
+        with instance_create(0,0,objFadeToValue)
+        {
+            value = other.rm;
+        }
+        global.lilnotes_bank += global.lilnotes;
+        scr_save_game()
+    }
+    
+    with other
+    {
+        control_lock = true;
+    }
+}
+else
+{
+    with other
+    {
+        x = xstart;
+        y = ystart;
+        obj_camera.cam_x = obj_vehicle.x;
+        obj_camera.cam_y = obj_vehicle.y;
+    }
+        scr_display_message(0, text("LAP", "VOLTA") + " " + string(lap) + "/" + string(laptotal));
+    instance_create(x,y,obj_fade_in_white_fast);
+    aud_play_simple(snd_teleport);
+    instance_create(x,y,obj_filter_black);
+    instance_create(x,y,obj_rainmaker);
+    
+    with obj_CC_bg
+    {
+        ds_grid_set(ParallaxNodes,  1, 0, bg_gradient_gray);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
@@ -27,10 +113,12 @@
             <kind>1</kind>
             <string>    if !instance_exists(parFade)
     {
-    with instance_create(0,0,objFadeToValue)
-    {
-        value = rm_map;
-    }
+        with instance_create(0,0,objFadeToValue)
+        {
+            value = other.rm;
+        }
+        global.lilnotes_bank += global.lilnotes;
+        scr_save_game()
     }
     
     with other

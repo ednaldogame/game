@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>3091249</colour>
   <showcolour>-1</showcolour>
-  <code>scr_game_init()
+  <code>randomize()
+scr_game_init()
 room_goto_next()</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

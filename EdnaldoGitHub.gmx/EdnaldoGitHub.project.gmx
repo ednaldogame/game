@@ -115,6 +115,8 @@
       <sound>sound\snd_red_collect</sound>
       <sound>sound\snd_red_start</sound>
       <sound>sound\snd_red_collect_all</sound>
+      <sound>sound\general_flame</sound>
+      <sound>sound\snd_car_land</sound>
     </sounds>
     <sounds name="BGM">
       <sound>sound\bgm_paraiba</sound>
@@ -140,6 +142,7 @@
       <sound>sound\bgm_credits</sound>
       <sound>sound\bgm_josoares</sound>
       <sound>sound\bgm_train_interior</sound>
+      <sound>sound\bgm_result</sound>
     </sounds>
     <sounds name="Voices">
       <sounds name="Chico Melancia">
@@ -174,7 +177,6 @@
       </sounds>
       <sound>sound\snd_voice_mickey_ohboy</sound>
     </sounds>
-    <sound>sound\bgm_result</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Playable">
@@ -195,7 +197,6 @@
         <sprite>sprites\spr_windwave</sprite>
         <sprite>sprites\spr_ednaldo_attack</sprite>
         <sprite>sprites\spr_arrow_down</sprite>
-        <sprite>sprites\spr_watermelon_car</sprite>
         <sprite>sprites\spr_super_idle</sprite>
         <sprite>sprites\spr_super_go</sprite>
       </sprites>
@@ -369,6 +370,7 @@
         <sprites name="Characters">
           <sprites name="Matter">
             <sprite>sprites\spr_matter_car</sprite>
+            <sprite>sprites\spr_matter_car_lonely</sprite>
             <sprite>sprites\spr_matter_car_left</sprite>
             <sprite>sprites\spr_matter_fall</sprite>
             <sprite>sprites\spr_matter_idle</sprite>
@@ -515,6 +517,11 @@
         <sprite>sprites\spr_options_tab</sprite>
         <sprite>sprites\spr_options_controller</sprite>
       </sprites>
+      <sprites name="Startup">
+        <sprite>sprites\spr_pvic_hat</sprite>
+        <sprite>sprites\spr_pvic_logo</sprite>
+        <sprite>sprites\spr_star_sparkles</sprite>
+      </sprites>
       <sprite>sprites\spr_stage_icons</sprite>
       <sprite>sprites\spr_stage_thing_1</sprite>
       <sprite>sprites\spr_stage_thing_2</sprite>
@@ -581,6 +588,7 @@
       </sprites>
       <sprites name="CidadeCapital">
         <sprite>sprites\spr_mickey_idle</sprite>
+        <sprite>sprites\spr_albuns</sprite>
       </sprites>
       <sprites name="Shoe Store">
         <sprite>sprites\sprCloudTexture</sprite>
@@ -611,6 +619,7 @@
       </backgrounds>
       <backgrounds name="Cidade Capital">
         <background>background\tl_cidadecapital</background>
+        <background>background\tl_CC_interior</background>
       </backgrounds>
       <backgrounds name="Chance Records">
         <background>background\tiles_chancerecords</background>
@@ -693,6 +702,7 @@
       <backgrounds name="Cidade Capital">
         <background>background\bg_gradient_gray</background>
         <background>background\bg_buildings</background>
+        <background>background\bg_CC_interior</background>
       </backgrounds>
       <backgrounds name="Jojo">
         <background>background\tile_jojo</background>
@@ -1146,6 +1156,11 @@
           <object>objects\obj_faces</object>
         </objects>
         <object>objects\obj_enter_next</object>
+        <objects name="Startup">
+          <object>objects\obj_pvic_hat</object>
+          <object>objects\obj_pvic_logo</object>
+          <object>objects\obj_names</object>
+        </objects>
       </objects>
       <objects name="Fades">
         <object>objects\parFade</object>
@@ -1276,6 +1291,7 @@
       </objects>
       <objects name="Resistencia">
         <object>objects\obj_bg_resistance</object>
+        <object>objects\obj_bg_CC_interior</object>
         <object>objects\obj_bg_resistencia_outside</object>
         <object>objects\obj_leave_to_map</object>
         <object>objects\obj_tech_controller</object>
@@ -1312,6 +1328,8 @@
         <object>objects\obj_mickey_idle</object>
         <object>objects\obj_instance_creator</object>
         <object>objects\obj_fadeout_song</object>
+        <object>objects\obj_CC_car</object>
+        <object>objects\obj_albuns</object>
       </objects>
       <objects name="Jojo">
         <object>objects\obj_jojo_symbol</object>
@@ -1329,10 +1347,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_cc_1</room>
     <rooms name="Game">
+      <room>rooms\rm_pvic_startup</room>
       <room>rooms\rm_language</room>
       <room>rooms\rm_disclaimer</room>
+      <room>rooms\rm_names</room>
       <room>rooms\rm_title_screen</room>
       <room>rooms\rm_menu</room>
       <room>rooms\rm_data_select</room>
@@ -1345,10 +1364,11 @@
         <room>rooms\rm_tutorial</room>
         <room>rooms\rm_paraiba</room>
         <room>rooms\rm_shoestore</room>
+        <room>rooms\rm_cc_1</room>
         <room>rooms\rm_CC</room>
+        <room>rooms\rm_chancerecords</room>
         <room>rooms\rm_train_interior</room>
         <room>rooms\rm_train</room>
-        <room>rooms\rm_chancerecords</room>
         <room>rooms\rm_credits</room>
         <room>rooms\rm_postcredits</room>
         <room>rooms\rm_super</room>
